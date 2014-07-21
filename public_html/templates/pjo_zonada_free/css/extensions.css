@@ -1,0 +1,13 @@
+/* slideshow navslide layout */
+.descslide .plh-navigator-wrapper .plh-bullets li div { background-image: url(../images/slideshow/slider_buttons.png) !important; }
+.descslide .plh-navigator-wrapper .plh-bullets li.active div { background-image: url(../images/slideshow/slider_buttons.png) !important; }
+.descslide .plh-main-wapper .plh-main-item .plh-description .readmore {  }
+.descslide a { font-size: 70% !important; }
+.descslide .plh-proccessbar { background-image: none !important; border-top-style: dotted; border-top-width: 4px; display: none !important; }
+/* ######## shownews v2 ####################### */
+a.pl-category {  }
+a.pl-title { }
+ul.pl_handles li a { margin-top: -10px !important; }
+/* ######## dropdown module ####################### */
+.plus-toggler { color: #59595a; font-size: 85% !important; font-weight: bold; text-transform: uppercase; }
+.plus-element h4 { font-size: 90% !important; }

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>Toolbar</name>
+	<author>Yanis Christodoulou (www.joomla357.com)</author>
+	<version>2.0.2</version>
+	<description><![CDATA[<p>A clean, quick and nice display of a bottom fixed Toolbar which shows a solid bar at the bottom of your Joomla Template with 1, 2, 3 up to 10 shortcut icons with link.</p><p>- You can change the width, color and align.<br />- You can add up to 10 images in the toolbar.<br />- You can also insert html code in the toolbar.</p><p>P.S. You have to publish the module in "debug" position of your template.</p>]]></description>
+	<creationDate>15 Jan 2014</creationDate>
+	<copyright>Copyright (©) 2013 Joomla357.com. All rights reserved.</copyright>
+	<license>GNU/GPLv3, http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<authorEmail>support@joomla357.com</authorEmail>
+	<authorUrl>http://www.joomla357.com/</authorUrl>
+
+	<files>
+		<filename module="mod_toolbar">mod_toolbar.php</filename>
+		<filename module="mod_toolbar">index.html</filename>
+	</files>
+	
+<config>
+	<fields name="params">
+		<fieldset name="basic">
+			<field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"	description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+			<field name="background" type="text" default="#e5e5e5" label="Background" description="Example: #e5e5e5 or red" />
+			<field name="border_color" type="text" default="#b5b5b5" label="Border Color" description="Example: #b5b5b5 or yellow" />		
+			<field name="border_pixels" type="text" default="1" label="Border Pixels" description="Example: 1" />		
+			<field name="align" type="radio" default="center" label="Align" description="Add Align to toolbar">
+				<option value="left">Left</option>
+				<option value="center">Center</option>
+				<option value="right">Right</option>
+			</field>
+			<field name="html" type="textarea" default="" cols="30" rows="10" label="Add Html To Toolbar" description="Add HTML to toolbar like menu or icons." filter="raw" />
+	
+			<field name="target" type="radio" default="_blank" label="Link Target" description="">
+				<option value="_blank">Blank</option>
+				<option value="_parent">Parent</option>
+			</field>
+			
+			<field name="images_space" type="text" default="20" label="Space between images" description="The space between images, Example: 20" />
+			
+			<field name="img1" size="90" type="text" default="" label="Image 1" description="The image link" />		
+			<field name="link1" size="90" type="text" default="" label="Link 1" description="The link for image" />		
+			
+			<field name="img2" size="90" type="text" default="" label="Image 2" description="The image link" />		
+			<field name="link2" size="90" type="text" default="" label="Link 2" description="The link for image" />		
+			
+			<field name="img3" size="90" type="text" default="" label="Image 3" description="The image link" />		
+			<field name="link3" size="90" type="text" default="" label="Link 3" description="The link for image" />		
+			
+			<field name="img4" size="90" type="text" default="" label="Image 4" description="The image link" />		
+			<field name="link4" size="90" type="text" default="" label="Link 4" description="The link for image" />		
+			
+			<field name="img5" size="90" type="text" default="" label="Image 5" description="The image link" />		
+			<field name="link5" size="90" type="text" default="" label="Link 5" description="The link for image" />
+			
+			<field name="img6" size="90" type="text" default="" label="Image 6" description="The image link" />		
+			<field name="link6" size="90" type="text" default="" label="Link 6" description="The link for image" />		
+			
+			<field name="img7" size="90" type="text" default="" label="Image 7" description="The image link" />		
+			<field name="link7" size="90" type="text" default="" label="Link 7" description="The link for image" />		
+			
+			<field name="img8" size="90" type="text" default="" label="Image 8" description="The image link" />		
+			<field name="link8" size="90" type="text" default="" label="Link 8" description="The link for image" />		
+			
+			<field name="img9" size="90" type="text" default="" label="Image 9" description="The image link" />		
+			<field name="link9" size="90" type="text" default="" label="Link 9" description="The link for image" />		
+			
+			<field name="img10" size="90" type="text" default="" label="Image 10" description="The image link" />		
+			<field name="link10" size="90" type="text" default="" label="Link 10" description="The link for image" />				
+				
+		</fieldset>
+		<fieldset name="advanced">
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="itemid">
+					<option
+						value="itemid"></option>
+				</field>
+			</fieldset>
+	</fields>	
+</config>
+
+</extension>
