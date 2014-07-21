@@ -1,0 +1,45 @@
+A
+{
+	color: #cd2122;
+}
+#hor_nav LI.active A
+{
+	background: #0092C0;
+}
+#hor_nav LI A:hover, #hor_nav LI:hover A, #hor_nav LI.sfHover A
+{
+	background: rgba(9, 197, 182, 0.75);
+}
+#hor_nav LI LI A, #hor_nav LI LI.active A, #hor_nav LI LI A:hover
+{
+	background: rgba(9, 197, 182, 0.75);
+}
+
+.slim-caption
+{
+	color: #cd2122;
+}
+.site-title
+{
+	color: #cd2122;
+}
+.site-description
+{
+	color: #cd2122;
+}
+#hor_nav
+{
+	background-color: #cd2122;
+}
+.well
+{
+	background-color: rgba(216, 63, 15, 0.36);
+}
+.header .inputbox
+{
+border: 1px solid #cd2122;
+}
+#footer_inner #page_header_h3
+{
+border-bottom: 4px solid #cd2122;
+}

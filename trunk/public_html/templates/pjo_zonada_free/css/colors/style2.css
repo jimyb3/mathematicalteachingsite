@@ -1,0 +1,54 @@
+A
+{
+	color: #FBAF5D;
+}
+#hor_nav LI.active A
+{
+	background: #FBAF5D;
+}
+#hor_nav LI A:hover, #hor_nav LI:hover A, #hor_nav LI.sfHover A
+{
+	background: #FBAF5D;
+}
+#hor_nav LI LI A, #hor_nav LI LI.active A, #hor_nav LI LI A:hover
+{
+	background: #FBAF5D;
+}
+
+.slim-caption
+{
+	color: #FBAF5D;
+}
+.site-title
+{
+	color: #FBAF5D;
+}
+.site-description
+{
+	color: #FBAF5D;
+}
+#hor_nav
+{
+	background-color: #FBAF5D;
+}
+.well
+{
+	background-color: #FFFFFF;
+}
+.header .inputbox
+{
+border: 1px solid #FBAF5D;
+}
+#footer_inner #page_header_h3
+{
+border-bottom: 4px solid #FBAF5D;
+}
+
+#header-top
+{
+border-bottom: 4px solid #FBAF5D;
+}
+#hor_nav
+{
+border-bottom: 4px solid #FBAF5D;
+}
