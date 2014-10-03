@@ -374,7 +374,7 @@ function closeEditButtons() {
 
 function saveTableToTxt(tableId) {
     if (get_browser() === "Chrome") {
-        downloadWithName('data:text;charset=utf-8,' + escape(cnvtTableToData(tableId)), tableId + '.txt');
+        downloadWithName('data:text/html;charset=UTF-8,' + escape(cnvtTableToData(tableId)), tableId + '.txt');
     } else {
         alert("H λειτουργία αυτή είναι δεν είναι διαθέσιμη για " + get_browser() + ".");
     }
@@ -402,7 +402,7 @@ function saveTableToExcell(tableId) {
         var blobObject = new Blob([cnvtTableToData(tableId)]);
         window.navigator.msSaveOrOpenBlob(blobObject, tableId + '.xls');
     } else if (get_browser() === "Chrome") {
-        downloadWithName('data:application/,' + escape(cnvtTableToData(tableId)), tableId + '.xls');
+        downloadWithName('data:text/plain;charset=UTF-8,' + escape(cnvtTableToData(tableId)), tableId + '.xls');
     } else {
         alert("Δεν είναι δυνατή αυτή η λειτουργία στον " + get_browser() + ".");
     }
