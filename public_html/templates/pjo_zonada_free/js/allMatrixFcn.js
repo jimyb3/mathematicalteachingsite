@@ -1,4 +1,4 @@
-/* 
+ο»Ώ/* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -212,16 +212,18 @@ function multiplyMatrices(matrix1, matrix2) {
 function tableCreate(newTableId, rows, cells) {
     if (tbl = document.getElementById(newTableId))
     {
-        alert('Υπάρχει ήδη πίνακας με αυτό το όνομα!');
+        alert('Ξ¥Ο€Ξ¬ΟΟ‡ΞµΞΉ Ξ®Ξ΄Ξ· Ο€Ξ―Ξ½Ξ±ΞΊΞ±Ο‚ ΞΌΞµ Ξ±Ο…Ο„Ο Ο„ΞΏ ΟΞ½ΞΏΞΌΞ±!');
     }
     else {
         var body = document.body;
+        container = document.createElement('div');
+        container.id = newTableId+"div";
         tbl = document.createElement('table');
         tbl.id = newTableId;
         tbl.style.width = '100%';
         tbl.border = "1px solid black";
         tbl.setAttribute("contenteditable", true);
-        
+
         for (var i = 0; i < rows; i++) {
             var tr = tbl.insertRow();
             tr.id = "row" + i;
@@ -231,7 +233,7 @@ function tableCreate(newTableId, rows, cells) {
                 td.id = "cell_" + i + "_" + j;
                 if (get_browser() === "IE") {
                     td.setAttribute("contenteditable", true);
-                    //td.setAttribute("onclick", "alert('Η επεξεργτασία των κελιών, \\n δεν ειναι δυνατή στον "+get_browser()+".')");
+                    //td.setAttribute("onclick", "alert('Ξ— ΞµΟ€ΞµΞΎΞµΟΞ³Ο„Ξ±ΟƒΞ―Ξ± Ο„Ο‰Ξ½ ΞΊΞµΞ»ΞΉΟΞ½, \\n Ξ΄ΞµΞ½ ΞµΞΉΞ½Ξ±ΞΉ Ξ΄Ο…Ξ½Ξ±Ο„Ξ® ΟƒΟ„ΞΏΞ½ "+get_browser()+".')");
                 } else {
                     td.setAttribute("contenteditable", true);
                 }
@@ -239,8 +241,12 @@ function tableCreate(newTableId, rows, cells) {
                 td.appendChild(document.createTextNode('\u0020'));
             }
         }
-        body.appendChild(tbl);
+        container.appendChild(tbl);
+        body.appendChild(container);
         addEditButton(newTableId);
+
+        
+
     }
 }
 
@@ -256,8 +262,8 @@ function insertZeros(tableId) {
 function makeOneRightLeft(tableId) {
     var tbl = document.getElementById(tableId);
     if (tbl.rows.length !== tbl.rows[0].cells.length) {
-        alert('Ο πίνακας δεν ειναι τετραγωνικός \n\
-μονο τετραγωνικοί πινακες μπορούν να γίνουν μοναδιαίοι!');
+        alert('Ξ Ο€Ξ―Ξ½Ξ±ΞΊΞ±Ο‚ Ξ΄ΞµΞ½ ΞµΞΉΞ½Ξ±ΞΉ Ο„ΞµΟ„ΟΞ±Ξ³Ο‰Ξ½ΞΉΞΊΟΟ‚ \n\
+ΞΌΞΏΞ½ΞΏ Ο„ΞµΟ„ΟΞ±Ξ³Ο‰Ξ½ΞΉΞΊΞΏΞ― Ο€ΞΉΞ½Ξ±ΞΊΞµΟ‚ ΞΌΟ€ΞΏΟΞΏΟΞ½ Ξ½Ξ± Ξ³Ξ―Ξ½ΞΏΟ…Ξ½ ΞΌΞΏΞ½Ξ±Ξ΄ΞΉΞ±Ξ―ΞΏΞΉ!');
     } else {
         for (var i = 0; i < tbl.rows.length; i++) {
             for (var j = 0; j < tbl.rows[i].cells.length; j++) {
@@ -276,8 +282,8 @@ function makeOneLeftRight(tableId) {
     var tbl = document.getElementById(tableId);
     var count = 1;
     if (tbl.rows.length !== tbl.rows[0].cells.length) {
-        alert('Ο πίνακας δεν ειναι τετραγωνικός \n\
-μονο τετραγωνικοί πινακες μπορούν να γίνουν μοναδιαίοι!');
+        alert('Ξ Ο€Ξ―Ξ½Ξ±ΞΊΞ±Ο‚ Ξ΄ΞµΞ½ ΞµΞΉΞ½Ξ±ΞΉ Ο„ΞµΟ„ΟΞ±Ξ³Ο‰Ξ½ΞΉΞΊΟΟ‚ \n\
+ΞΌΞΏΞ½ΞΏ Ο„ΞµΟ„ΟΞ±Ξ³Ο‰Ξ½ΞΉΞΊΞΏΞ― Ο€ΞΉΞ½Ξ±ΞΊΞµΟ‚ ΞΌΟ€ΞΏΟΞΏΟΞ½ Ξ½Ξ± Ξ³Ξ―Ξ½ΞΏΟ…Ξ½ ΞΌΞΏΞ½Ξ±Ξ΄ΞΉΞ±Ξ―ΞΏΞΉ!');
     } else {
         for (var i = 0; i < tbl.rows.length; i++) {
             for (var j = 0; j < tbl.rows[i].cells.length; j++) {
@@ -294,70 +300,70 @@ function makeOneLeftRight(tableId) {
 }
 
 function addEditButton(tableId) {
-    var body = document.body;
+    container=document.getElementById(tableId+"div");
     button = document.createElement('input');
     button.type = "button";
-    button.value = "Επεξεργασία " + tableId;
+    button.value = "Ξ•Ο€ΞµΞΎΞµΟΞ³Ξ±ΟƒΞ―Ξ± " + tableId;
     button.id = "editButton";
     button.setAttribute("onclick", "addAllButtons('" + tableId + "')");
-    body.appendChild(button);
+    container.appendChild(button);
 }
 
 function addAllButtons(tableId) {
     document.getElementById('editButton').disabled = true;
-    var body = document.body;
+    container=document.getElementById(tableId+"div");
 
     zeroButton = document.createElement('input');
     zeroButton.type = "button";
-    //zeroButton.value = "Μηδένισε τον "+tableId;
-    zeroButton.value = "Μηδένισε";
+    //zeroButton.value = "ΞΞ·Ξ΄Ξ­Ξ½ΞΉΟƒΞµ Ο„ΞΏΞ½ "+tableId;
+    zeroButton.value = "ΞΞ·Ξ΄Ξ­Ξ½ΞΉΟƒΞµ";
     zeroButton.setAttribute("onclick", "insertZeros('" + tableId + "')");
 
     oneButtonRightLeft = document.createElement('input');
     oneButtonRightLeft.type = "button";
-    //oneButtonRightLeft.value = "Μοναδιαίο\ τον "+tableId;
-    oneButtonRightLeft.value = "Μοναδιαίο\\ ";
+    //oneButtonRightLeft.value = "ΞΞΏΞ½Ξ±Ξ΄ΞΉΞ±Ξ―ΞΏ\ Ο„ΞΏΞ½ "+tableId;
+    oneButtonRightLeft.value = "ΞΞΏΞ½Ξ±Ξ΄ΞΉΞ±Ξ―ΞΏ\\ ";
     oneButtonRightLeft.setAttribute("onclick", "makeOneRightLeft('" + tableId + "')");
 
     oneButtonLeftRight = document.createElement('input');
     oneButtonLeftRight.type = "button";
-    //oneButtonLeftRight.value = "Μοναδιαίο/ τον "+tableId;
-    oneButtonLeftRight.value = "Μοναδιαίο/ ";
+    //oneButtonLeftRight.value = "ΞΞΏΞ½Ξ±Ξ΄ΞΉΞ±Ξ―ΞΏ/ Ο„ΞΏΞ½ "+tableId;
+    oneButtonLeftRight.value = "ΞΞΏΞ½Ξ±Ξ΄ΞΉΞ±Ξ―ΞΏ/ ";
     oneButtonLeftRight.setAttribute("onclick", "makeOneLeftRight('" + tableId + "')");
 
     changeTableName = document.createElement('input');
     changeTableName.type = "button";
-    changeTableName.value = "Μετονομασία";
+    changeTableName.value = "ΞΞµΟ„ΞΏΞ½ΞΏΞΌΞ±ΟƒΞ―Ξ±";
     changeTableName.setAttribute("onclick", "");
 
     saveTableTxt = document.createElement('input');
     saveTableTxt.type = "button";
-    saveTableTxt.value = "Αποθηκευση σε .txt";
+    saveTableTxt.value = "Ξ‘Ο€ΞΏΞΈΞ·ΞΊΞµΟ…ΟƒΞ· ΟƒΞµ .txt";
     saveTableTxt.setAttribute("onclick", "saveTableToTxt('" + tableId + "')");
 
     saveTableExcell = document.createElement('input');
     saveTableExcell.type = "button";
-    saveTableExcell.value = "Αποθηκευση σε Excell";
+    saveTableExcell.value = "Ξ‘Ο€ΞΏΞΈΞ·ΞΊΞµΟ…ΟƒΞ· ΟƒΞµ Excell";
     saveTableExcell.setAttribute("onclick", "saveTableToExcell('" + tableId + "')");
 
     saveTableNumbers = document.createElement('input');
     saveTableNumbers.type = "button";
-    saveTableNumbers.value = "Αποθηκευση σε Numbers";
+    saveTableNumbers.value = "Ξ‘Ο€ΞΏΞΈΞ·ΞΊΞµΟ…ΟƒΞ· ΟƒΞµ Numbers";
     saveTableNumbers.setAttribute("onclick", "saveTableToNumbers('" + tableId + "')");
 
     closeAll = document.createElement('input');
     closeAll.type = "button";
-    closeAll.value = "Τέλος Επεξεργασίας";
+    closeAll.value = "Ξ¤Ξ­Ξ»ΞΏΟ‚ Ξ•Ο€ΞµΞΎΞµΟΞ³Ξ±ΟƒΞ―Ξ±Ο‚";
     closeAll.setAttribute("onclick", "closeEditButtons()");
 
-    body.appendChild(zeroButton);
-    body.appendChild(oneButtonRightLeft);
-    body.appendChild(oneButtonLeftRight);
-    body.appendChild(changeTableName);
-    body.appendChild(saveTableTxt);
-    body.appendChild(saveTableExcell);
-    body.appendChild(saveTableNumbers);
-    body.appendChild(closeAll);
+    container.appendChild(zeroButton);
+    container.appendChild(oneButtonRightLeft);
+    container.appendChild(oneButtonLeftRight);
+    container.appendChild(changeTableName);
+    container.appendChild(saveTableTxt);
+    container.appendChild(saveTableExcell);
+    container.appendChild(saveTableNumbers);
+    container.appendChild(closeAll);
 }
 
 function closeEditButtons() {
@@ -373,13 +379,31 @@ function closeEditButtons() {
 }
 
 function saveTableToTxt(tableId) {
-    if (get_browser() === "Chrome") {
-        downloadWithName('data:text/html;charset=UTF-8,' + escape(cnvtTableToData(tableId)), tableId + '.txt');
+    alert("ΞΞ± ΞΎΞµΞΊΞΉΞ½Ξ®ΟƒΞµΞΉ Ο„ΞΏ ΟƒΟΟƒΞΉΞΌΞΏ ΟƒΞµ txt ΟƒΟΞ½Ο„ΞΏΞΌΞ±!");
+    if (get_browser() === "IE") {
+        var blobObject = new Blob([cnvtTableToData(tableId)]);
+        window.navigator.msSaveOrOpenBlob(blobObject, tableId + '.txt');
+    } else if (get_browser() === "Chrome") {
+        saveAs('data:text/html;charset=UTF-8,' + escape(cnvtTableToData(tableId)), tableId + '.txt');
     } else {
-        alert("H λειτουργία αυτή είναι δεν είναι διαθέσιμη για " + get_browser() + ".");
+        alert("H Ξ»ΞµΞΉΟ„ΞΏΟ…ΟΞ³Ξ―Ξ± Ξ±Ο…Ο„Ξ® ΞµΞ―Ξ½Ξ±ΞΉ Ξ΄ΞµΞ½ ΞµΞ―Ξ½Ξ±ΞΉ Ξ΄ΞΉΞ±ΞΈΞ­ΟƒΞΉΞΌΞ· Ξ³ΞΉΞ± " + get_browser() + ".");
     }
 }
-//Έτοιμη συνάρτηση από http://stackoverflow.com/
+
+function saveAs(uri, filename) {
+    var link = document.createElement('a');
+    if (typeof link.download === 'string') {
+        document.body.appendChild(link); //Firefox requires the link to be in the body
+        link.download = filename;
+        link.href = uri;
+        link.click();
+        document.body.removeChild(link); //remove the link when done
+    } else {
+        location.replace(uri);
+    }
+}
+
+//ΞΟ„ΞΏΞΉΞΌΞ· ΟƒΟ…Ξ½Ξ¬ΟΟ„Ξ·ΟƒΞ· Ξ±Ο€Ο http://stackoverflow.com/
 function downloadWithName(uri, name) {
     function eventFire(el, etype) {
         if (el.fireEvent) {
@@ -397,27 +421,30 @@ function downloadWithName(uri, name) {
 }
 
 function saveTableToExcell(tableId) {
-    //alert("Έχετε τον Microsoft Internet Explorer " + get_browser() + ". Η λειτουργία αυτή υποστηρίζεται από τον Microsoft Internet Explorer 10 και πάνω!");
+    alert("ΞΞ± ΞΎΞµΞΊΞΉΞ½Ξ®ΟƒΞµΞΉ Ο„ΞΏ ΟƒΟΟƒΞΉΞΌΞΏ ΟƒΞµ excell ΟƒΟΞ½Ο„ΞΏΞΌΞ±!");
+    //alert("ΞΟ‡ΞµΟ„Ξµ Ο„ΞΏΞ½ Microsoft Internet Explorer " + get_browser() + ". Ξ— Ξ»ΞµΞΉΟ„ΞΏΟ…ΟΞ³Ξ―Ξ± Ξ±Ο…Ο„Ξ® Ο…Ο€ΞΏΟƒΟ„Ξ·ΟΞ―Ξ¶ΞµΟ„Ξ±ΞΉ Ξ±Ο€Ο Ο„ΞΏΞ½ Microsoft Internet Explorer 10 ΞΊΞ±ΞΉ Ο€Ξ¬Ξ½Ο‰!");
+
     if (get_browser() === "IE") {
         var blobObject = new Blob([cnvtTableToData(tableId)]);
         window.navigator.msSaveOrOpenBlob(blobObject, tableId + '.xls');
     } else if (get_browser() === "Chrome") {
-        downloadWithName('data:text/plain;charset=UTF-8,' + escape(cnvtTableToData(tableId)), tableId + '.xls');
+        saveAs('data:text/csv;charset=UTF-8,' + escape(cnvtTableToData(tableId)), tableId + '.xls');
     } else {
-        alert("Δεν είναι δυνατή αυτή η λειτουργία στον " + get_browser() + ".");
+        alert("Ξ”ΞµΞ½ ΞµΞ―Ξ½Ξ±ΞΉ Ξ΄Ο…Ξ½Ξ±Ο„Ξ® Ξ±Ο…Ο„Ξ® Ξ· Ξ»ΞµΞΉΟ„ΞΏΟ…ΟΞ³Ξ―Ξ± ΟƒΟ„ΞΏΞ½ " + get_browser() + ".");
     }
 }
 
 function saveTableToNumbers(tableId) {
+    alert("ΞΞ± ΞΎΞµΞΊΞΉΞ½Ξ®ΟƒΞµΞΉ Ο„ΞΏ ΟƒΟΟƒΞΉΞΌΞΏ ΟƒΞµ numbers ΟƒΟΞ½Ο„ΞΏΞΌΞ±!");
     if (navigator.appVersion.indexOf("Mac") !== -1) {
-        downloadWithName('data:application/,' + escape(cnvtTableToData(tableId)), tableId + '.numbers');
+        saveAs('data:application/,' + escape(cnvtTableToData(tableId)), tableId + '.numbers');
     } else {
-        alert("Αυτή η λειτουργία είναι μόνο για υπολογιστές με Mac λειτουργικό!");
+        alert("Ξ‘Ο…Ο„Ξ® Ξ· Ξ»ΞµΞΉΟ„ΞΏΟ…ΟΞ³Ξ―Ξ± ΞµΞ―Ξ½Ξ±ΞΉ ΞΌΟΞ½ΞΏ Ξ³ΞΉΞ± Ο…Ο€ΞΏΞ»ΞΏΞ³ΞΉΟƒΟ„Ξ­Ο‚ ΞΌΞµ Mac Ξ»ΞµΞΉΟ„ΞΏΟ…ΟΞ³ΞΉΞΊΟ!");
     }
 
 }
 
-//Έτοιμη συνάρτηση από http://stackoverflow.com/
+//ΞΟ„ΞΏΞΉΞΌΞ· ΟƒΟ…Ξ½Ξ¬ΟΟ„Ξ·ΟƒΞ· Ξ±Ο€Ο http://stackoverflow.com/
 function get_browser_version() {
     var ua = navigator.userAgent, tem, M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
     if (/trident/i.test(M[1])) {
@@ -431,13 +458,14 @@ function get_browser_version() {
         }
     }
     M = M[2] ? [M[1], M[2]] : [navigator.appName, navigator.appVersion, '-?'];
-    if ((tem = ua.match(/version\/(\d+)/i)) !== null) {
+    tem = ua.match(/version\/(\d+)/i);
+    if (tem !== null) {
         M.splice(1, 1, tem[1]);
     }
     return M[1];
 }
 
-//Έτοιμη συνάρτηση από http://stackoverflow.com/
+//ΞΟ„ΞΏΞΉΞΌΞ· ΟƒΟ…Ξ½Ξ¬ΟΟ„Ξ·ΟƒΞ· Ξ±Ο€Ο http://stackoverflow.com/
 function get_browser() {
     var ua = navigator.userAgent, tem, M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
     if (/trident/i.test(M[1])) {
@@ -451,7 +479,8 @@ function get_browser() {
         }
     }
     M = M[2] ? [M[1], M[2]] : [navigator.appName, navigator.appVersion, '-?'];
-    if ((tem = ua.match(/version\/(\d+)/i)) !== null) {
+    tem = ua.match(/version\/(\d+)/i);
+    if (tem !== null) {
         M.splice(1, 1, tem[1]);
     }
     return M[0];
