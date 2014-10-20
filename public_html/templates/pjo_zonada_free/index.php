@@ -30,7 +30,7 @@ require(YOURBASEPATH . DS . "includes/css_style.php");
 require(YOURBASEPATH . DS . "includes/css3_style.php");
 ?>
 <script
-src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"
 type="text/javascript">
 </script>
 <link rel="stylesheet" type="text/css" href="templates/pjo_zonada_free/css/jsxgraph.css" />
