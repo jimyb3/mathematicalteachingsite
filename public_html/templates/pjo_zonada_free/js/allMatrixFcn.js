@@ -3,8 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-//transposed matrix=A matrix which is formed by turning all the rows of a given matrix into columns and vice-versa.
+//transposed matrix--anastrofos=A matrix which is formed by turning all the rows of a given matrix into columns and vice-versa.
 function matrixTranspose(matrix1) {
+	 if (tbl = document.getElementById(newTableId))
+    {
+        alert('Υπάρχει ήδη πίνακας με αυτό το όνομα!');
+    }
+    else {
     var tableRowLength = document.getElementById(matrix1).rows.length;
     var tableCellsLength = document.getElementById(matrix1).rows[0].cells.length;
     var myTable = new Array(tableRowLength);
@@ -22,8 +27,9 @@ function matrixTranspose(matrix1) {
 
 
 
-    var myTableDiv = document.getElementById("myDynamicTable");
+    var myTableDiv = document.getElementById(matrix1+"div");
     var table = document.createElement('TABLE');
+    table.id = matrix1+"transposed";
     table.border = '1';
 
     var tableBody = document.createElement('TBODY');
@@ -43,6 +49,7 @@ function matrixTranspose(matrix1) {
 
     }
     myTableDiv.appendChild(table);
+}
 
 }
 
@@ -355,6 +362,11 @@ function addAllButtons(tableId) {
     closeAll.type = "button";
     closeAll.value = "Τέλος Επεξεργασίας";
     closeAll.setAttribute("onclick", "closeEditButtons()");
+    
+    transposeMatrix = document.createElement('input');
+    transposeMatrix.type = "button";
+    transposeMatrix.value = "Βρες τον ανάστροφο";
+    transposeMatrix.setAttribute("onclick", "matrixTranspose('" + tableId + "')");
 
     container.appendChild(zeroButton);
     container.appendChild(oneButtonRightLeft);
@@ -364,6 +376,7 @@ function addAllButtons(tableId) {
     container.appendChild(saveTableExcell);
     container.appendChild(saveTableNumbers);
     container.appendChild(closeAll);
+    container.appendChild(transposeMatrix);
 }
 
 function closeEditButtons() {
@@ -376,6 +389,7 @@ function closeEditButtons() {
     saveTableExcell.parentNode.removeChild(saveTableExcell);
     saveTableNumbers.parentNode.removeChild(saveTableNumbers);
     closeAll.parentNode.removeChild(closeAll);
+    transposeMatrix.parentNode.removeChild(transposeMatrix);
 }
 
 function saveTableToTxt(tableId) {
