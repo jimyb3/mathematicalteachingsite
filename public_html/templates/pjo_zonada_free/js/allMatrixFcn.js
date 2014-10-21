@@ -3,13 +3,73 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+ 
+ //inverse matrix=antistrofos pinakas, outo me ta det
+function inverseMatrix(matrix1) {
+    var tableRowLength = document.getElementById(matrix1).rows.length;
+    var tableCellsLength = document.getElementById(matrix1).rows[0].cells.length;
+    if (tableRowLength === tableCellsLength) {
+        var myTable = new Array(tableRowLength);
+        for (var i = 0; i < tableRowLength; i++) {
+            myTable[i] = new Array(tableCellsLength);
+        }
+        for (i = 0; i < tableRowLength; i++) {
+            for (var j = 0; j < tableCellsLength; j++) {
+                myTable[i][j] = parseInt(document.getElementById(matrix1).rows[i].cells[j].innerHTML);
+            }
+        }
+//alert(myTable[1]);
+        if (math.det(myTable) === 0) {
+            alert("o pinakas exei orizousa 0, ara den mporei n exei antistrofo");
+        }
+
+        var inversedMatrix = [];
+        inversedMatrix = math.inv(myTable);
+
+        var inversedMatrixSize = [];
+        inversedMatrixSize = math.size(inversedMatrix);
+
+        var inversedMatrixRows = inversedMatrixSize[0, 0];
+
+
+        var inversedMatrixCols = inversedMatrixSize[0, 1];
+
+        var myTableDiv = document.getElementById(matrix1+"div");
+        var table = document.createElement('TABLE');
+        table.id = matrix1+"inverted";
+        table.border = '1';
+
+        var tableBody = document.createElement('TBODY');
+        table.appendChild(tableBody);
+
+        for (i = 0; i < inversedMatrixRows; i++) {
+            var tr = document.createElement('TR');
+            tableBody.appendChild(tr);
+
+            for (var j = 0; j < inversedMatrixCols; j++) {
+                var td = document.createElement('TD');
+                td.width = '75';
+                var timh = inversedMatrix[i][j];
+                td.appendChild(document.createTextNode(timh));
+                tr.appendChild(td);
+            }
+
+        }
+        myTableDiv.appendChild(table);
+
+
+    }
+
+    else {
+        alert("prepei o pinakas na einai tetragonikos gia exei antistrofo");
+    }
+
+}
+ 
+ 
 //transposed matrix--anastrofos=A matrix which is formed by turning all the rows of a given matrix into columns and vice-versa.
 function matrixTranspose(matrix1) {
-	 if (tbl = document.getElementById(newTableId))
-    {
-        alert('Υπάρχει ήδη πίνακας με αυτό το όνομα!');
-    }
-    else {
+	
     var tableRowLength = document.getElementById(matrix1).rows.length;
     var tableCellsLength = document.getElementById(matrix1).rows[0].cells.length;
     var myTable = new Array(tableRowLength);
@@ -51,7 +111,7 @@ function matrixTranspose(matrix1) {
     myTableDiv.appendChild(table);
 }
 
-}
+
 
 /* 
  * To change this license header, choose License Headers in Project Properties.
@@ -63,7 +123,7 @@ function deleteMatrix(matrixName){
     // for(var i=0;i<length;i++){
     //     document.getElementById(matrixName).deleteRow(0);
    //  }
-      var elem = document.getElementById(matrixName);
+      var elem = document.getElementById(matrixName+"div");
     elem.parentNode.removeChild(elem);
     return false;
 }
@@ -367,6 +427,16 @@ function addAllButtons(tableId) {
     transposeMatrix.type = "button";
     transposeMatrix.value = "Βρες τον ανάστροφο";
     transposeMatrix.setAttribute("onclick", "matrixTranspose('" + tableId + "')");
+    
+    matrixInverse = document.createElement('input');
+    matrixInverse.type = "button";
+    matrixInverse.value = "Βρες τον αντιστροφο";
+    matrixInverse.setAttribute("onclick", "inverseMatrix('" + tableId + "')");
+    
+    matrixDelete = document.createElement('input');
+    matrixDelete.type = "button";
+    matrixDelete.value = "διέγραψε πίνακα";
+    matrixDelete.setAttribute("onclick", "deleteMatrix('" + tableId + "')");
 
     container.appendChild(zeroButton);
     container.appendChild(oneButtonRightLeft);
@@ -377,6 +447,8 @@ function addAllButtons(tableId) {
     container.appendChild(saveTableNumbers);
     container.appendChild(closeAll);
     container.appendChild(transposeMatrix);
+    container.appendChild(matrixDelete);
+    container.appendChild(matrixInverse);
 }
 
 function closeEditButtons() {
@@ -390,6 +462,8 @@ function closeEditButtons() {
     saveTableNumbers.parentNode.removeChild(saveTableNumbers);
     closeAll.parentNode.removeChild(closeAll);
     transposeMatrix.parentNode.removeChild(transposeMatrix);
+    matrixDelete.parentNode.removeChild(matrixDelete);
+    matrixInverse.parentNode.removeChild(matrixDelete);
 }
 
 function saveTableToTxt(tableId) {
