@@ -6,6 +6,11 @@
  
  //inverse matrix=antistrofos pinakas, outo me ta det
 function inverseMatrix(matrix1) {
+	if (tbl = document.getElementById(matrix1+"inverted"))
+    {
+        alert('Υπάρχει ήδη ο αντίστροφος πίνακας!');
+    }
+    else{
     var tableRowLength = document.getElementById(matrix1).rows.length;
     var tableCellsLength = document.getElementById(matrix1).rows[0].cells.length;
     if (tableRowLength === tableCellsLength) {
@@ -20,7 +25,7 @@ function inverseMatrix(matrix1) {
         }
 //alert(myTable[1]);
         if (math.det(myTable) === 0) {
-            alert("o pinakas exei orizousa 0, ara den mporei n exei antistrofo");
+            alert("Ο πίνακας έχει ορίζουσα 0, άρα δεν μπορεί να έχει αντίστροφο!");
         }
 
         var inversedMatrix = [];
@@ -61,15 +66,20 @@ function inverseMatrix(matrix1) {
     }
 
     else {
-        alert("prepei o pinakas na einai tetragonikos gia exei antistrofo");
+        alert("Πρέπει ο πίνακας να είναι τετραγωνικός για να έχει αντίστροφο!");
     }
+}
 
 }
  
  
 //transposed matrix--anastrofos=A matrix which is formed by turning all the rows of a given matrix into columns and vice-versa.
 function matrixTranspose(matrix1) {
-	
+	if (tbl = document.getElementById(matrix1+"transposed"))
+    {
+        alert('Υπάρχει ήδη ο ανάστροφος πίνακας!');
+    }
+    else{
     var tableRowLength = document.getElementById(matrix1).rows.length;
     var tableCellsLength = document.getElementById(matrix1).rows[0].cells.length;
     var myTable = new Array(tableRowLength);
@@ -109,6 +119,7 @@ function matrixTranspose(matrix1) {
 
     }
     myTableDiv.appendChild(table);
+}
 }
 
 
@@ -212,7 +223,7 @@ function matrixArithmeticOperations(matrix1, matrix2, operation) {
     }
 
     else {
-        alert("oi pinakes prepei na exoun idies diastaseis");
+        alert("Οι πίνακες πρέπει να έχουν τις ίδιες διαστάσεις!");
     }
 }
 
@@ -265,7 +276,7 @@ function multiplyMatrices(matrix1, matrix2) {
 
     }
     else {
-        alert("gia na ginei pollaplasiasmos prepei o ari8mos sthlwn tou prwtou pinaka na einai idios me ton ari8mo grammwn tou deuterou");
+        alert("Για να γίνει πολλαπλασιασμός πρέπει ο αριθμός των στηλών του πρώτου πίνακα να είναι ίδιος με τον αριθμό των γραμμών του δεύτερου!");
     }
 }
 
@@ -310,7 +321,7 @@ function tableCreate(newTableId, rows, cells) {
         }
         container.appendChild(tbl);
         body.appendChild(container);
-        addEditButton(newTableId);
+        addEditButtonsFor(newTableId);
 
         
 
@@ -366,104 +377,116 @@ function makeOneLeftRight(tableId) {
     }
 }
 
-function addEditButton(tableId) {
+function addEditButtonsFor(tableId) {
     container=document.getElementById(tableId+"div");
-    button = document.createElement('input');
-    button.type = "button";
-    button.value = "Επεξεργασία " + tableId;
-    button.id = "editButton";
-    button.setAttribute("onclick", "addAllButtons('" + tableId + "')");
-    container.appendChild(button);
+    editBtn = document.createElement('input');
+    editBtn.type = "button";
+    editBtn.value = "Επεξεργασία " + tableId;
+    editBtn.id = "editBtn"+tableId;
+    editBtn.setAttribute("onclick", "addAllButtons('" + tableId + "')");
+    container.appendChild(editBtn);
 }
 
 function addAllButtons(tableId) {
-    document.getElementById('editButton').disabled = true;
+    document.getElementById('editBtn'+tableId).disabled = true;
     container=document.getElementById(tableId+"div");
 
-    zeroButton = document.createElement('input');
-    zeroButton.type = "button";
+    zeroBtn = document.createElement('input');
+    zeroBtn.type = "button";
+    zeroBtn.id = "zeroBtn"+tableId;
     //zeroButton.value = "Μηδένισε τον "+tableId;
-    zeroButton.value = "Μηδένισε";
-    zeroButton.setAttribute("onclick", "insertZeros('" + tableId + "')");
+    zeroBtn.value = "Μηδένισε";
+    zeroBtn.setAttribute("onclick", "insertZeros('" + tableId + "')");
 
-    oneButtonRightLeft = document.createElement('input');
-    oneButtonRightLeft.type = "button";
+    oneBtnRightLeft = document.createElement('input');
+    oneBtnRightLeft.type = "button";
+    oneBtnRightLeft.id = "oneBtnRightLeft"+tableId;
     //oneButtonRightLeft.value = "Μοναδιαίο\ τον "+tableId;
-    oneButtonRightLeft.value = "Μοναδιαίο\\ ";
-    oneButtonRightLeft.setAttribute("onclick", "makeOneRightLeft('" + tableId + "')");
+    oneBtnRightLeft.value = "Μοναδιαίο\\ ";
+    oneBtnRightLeft.setAttribute("onclick", "makeOneRightLeft('" + tableId + "')");
 
-    oneButtonLeftRight = document.createElement('input');
-    oneButtonLeftRight.type = "button";
+    oneBtnLeftRight = document.createElement('input');
+    oneBtnLeftRight.type = "button";
+    oneBtnLeftRight.id = "oneBtnLeftRight"+tableId;
     //oneButtonLeftRight.value = "Μοναδιαίο/ τον "+tableId;
-    oneButtonLeftRight.value = "Μοναδιαίο/ ";
-    oneButtonLeftRight.setAttribute("onclick", "makeOneLeftRight('" + tableId + "')");
+    oneBtnLeftRight.value = "Μοναδιαίο/ ";
+    oneBtnLeftRight.setAttribute("onclick", "makeOneLeftRight('" + tableId + "')");
 
-    changeTableName = document.createElement('input');
-    changeTableName.type = "button";
-    changeTableName.value = "Μετονομασία";
-    changeTableName.setAttribute("onclick", "");
+    changeTableNameBtn = document.createElement('input');
+    changeTableNameBtn.type = "button";
+    changeTableNameBtn.id = "changeTableNameBtn"+tableId;
+    changeTableNameBtn.value = "Μετονομασία";
+    changeTableNameBtn.setAttribute("onclick", "");
 
-    saveTableTxt = document.createElement('input');
-    saveTableTxt.type = "button";
-    saveTableTxt.value = "Αποθηκευση σε .txt";
-    saveTableTxt.setAttribute("onclick", "saveTableToTxt('" + tableId + "')");
+    saveTableTxtBtn = document.createElement('input');
+    saveTableTxtBtn.type = "button";
+    saveTableTxtBtn.id = "saveTableTxtBtn"+tableId;
+    saveTableTxtBtn.value = "Αποθηκευση σε .txt";
+    saveTableTxtBtn.setAttribute("onclick", "saveTableToTxt('" + tableId + "')");
 
-    saveTableExcell = document.createElement('input');
-    saveTableExcell.type = "button";
-    saveTableExcell.value = "Αποθηκευση σε Excell";
-    saveTableExcell.setAttribute("onclick", "saveTableToExcell('" + tableId + "')");
+    saveTableExcellBtn = document.createElement('input');
+    saveTableExcellBtn.type = "button";
+    saveTableExcellBtn.id = "saveTableExcellBtn"+tableId;
+    saveTableExcellBtn.value = "Αποθηκευση σε Excell";
+    saveTableExcellBtn.setAttribute("onclick", "saveTableToExcell('" + tableId + "')");
 
-    saveTableNumbers = document.createElement('input');
-    saveTableNumbers.type = "button";
-    saveTableNumbers.value = "Αποθηκευση σε Numbers";
-    saveTableNumbers.setAttribute("onclick", "saveTableToNumbers('" + tableId + "')");
+    saveTableNumbersBtn = document.createElement('input');
+    saveTableNumbersBtn.type = "button";
+    saveTableNumbersBtn.id = "saveTableNumbersBtn"+tableId;
+    saveTableNumbersBtn.value = "Αποθηκευση σε Numbers";
+    saveTableNumbersBtn.setAttribute("onclick", "saveTableToNumbers('" + tableId + "')");
 
-    closeAll = document.createElement('input');
-    closeAll.type = "button";
-    closeAll.value = "Τέλος Επεξεργασίας";
-    closeAll.setAttribute("onclick", "closeEditButtons()");
+    closeAllBtn = document.createElement('input');
+    closeAllBtn.type = "button";
+    closeAllBtn.id = "closeAllBtn"+tableId;
+    closeAllBtn.value = "Τέλος Επεξεργασίας";
+    closeAllBtn.setAttribute("onclick", "closeEditButtons('" + tableId + "')");
     
-    transposeMatrix = document.createElement('input');
-    transposeMatrix.type = "button";
-    transposeMatrix.value = "Βρες τον ανάστροφο";
-    transposeMatrix.setAttribute("onclick", "matrixTranspose('" + tableId + "')");
+    transposeMatrixBtn = document.createElement('input');
+    transposeMatrixBtn.type = "button";
+    transposeMatrixBtn.id = "transposeMatrixBtn"+tableId;
+    transposeMatrixBtn.value = "Βρες τον ανάστροφο";
+    transposeMatrixBtn.setAttribute("onclick", "matrixTranspose('" + tableId + "')");
     
-    matrixInverse = document.createElement('input');
-    matrixInverse.type = "button";
-    matrixInverse.value = "Βρες τον αντιστροφο";
-    matrixInverse.setAttribute("onclick", "inverseMatrix('" + tableId + "')");
+    matrixInverseBtn = document.createElement('input');
+    matrixInverseBtn.type = "button";
+    matrixInverseBtn.id = "matrixInverseBtn"+tableId;
+    matrixInverseBtn.value = "Βρες τον αντιστροφο";
+    matrixInverseBtn.setAttribute("onclick", "inverseMatrix('" + tableId + "')");
     
-    matrixDelete = document.createElement('input');
-    matrixDelete.type = "button";
-    matrixDelete.value = "διέγραψε πίνακα";
-    matrixDelete.setAttribute("onclick", "deleteMatrix('" + tableId + "')");
+    matrixDeleteBtn = document.createElement('input');
+    matrixDeleteBtn.type = "button";
+    matrixDeleteBtn.id = "matrixDeleteBtn"+tableId;
+    matrixDeleteBtn.value = "διέγραψε πίνακα";
+    matrixDeleteBtn.setAttribute("onclick", "deleteMatrix('" + tableId + "')");
 
-    container.appendChild(zeroButton);
-    container.appendChild(oneButtonRightLeft);
-    container.appendChild(oneButtonLeftRight);
-    container.appendChild(changeTableName);
-    container.appendChild(saveTableTxt);
-    container.appendChild(saveTableExcell);
-    container.appendChild(saveTableNumbers);
-    container.appendChild(closeAll);
-    container.appendChild(transposeMatrix);
-    container.appendChild(matrixDelete);
-    container.appendChild(matrixInverse);
+    container.appendChild(zeroBtn);
+    container.appendChild(oneBtnRightLeft);
+    container.appendChild(oneBtnLeftRight);
+    container.appendChild(changeTableNameBtn);
+    container.appendChild(saveTableTxtBtn);
+    container.appendChild(saveTableExcellBtn);
+    container.appendChild(saveTableNumbersBtn);
+    container.appendChild(transposeMatrixBtn);
+    container.appendChild(matrixDeleteBtn);
+    container.appendChild(matrixInverseBtn);
+    container.appendChild(closeAllBtn);
+    
 }
 
-function closeEditButtons() {
-    document.getElementById('editButton').disabled = false;
-    zeroButton.parentNode.removeChild(zeroButton);
-    oneButtonLeftRight.parentNode.removeChild(oneButtonLeftRight);
-    oneButtonRightLeft.parentNode.removeChild(oneButtonRightLeft);
-    changeTableName.parentNode.removeChild(changeTableName);
-    saveTableTxt.parentNode.removeChild(saveTableTxt);
-    saveTableExcell.parentNode.removeChild(saveTableExcell);
-    saveTableNumbers.parentNode.removeChild(saveTableNumbers);
-    closeAll.parentNode.removeChild(closeAll);
-    transposeMatrix.parentNode.removeChild(transposeMatrix);
-    matrixDelete.parentNode.removeChild(matrixDelete);
-    matrixInverse.parentNode.removeChild(matrixDelete);
+function closeEditButtons(tableId) {
+    document.getElementById('editBtn'+tableId).disabled = false;
+    document.getElementById('zeroBtn'+tableId).parentNode.removeChild(document.getElementById('zeroBtn'+tableId));
+    document.getElementById('oneBtnRightLeft'+tableId).parentNode.removeChild(document.getElementById('oneBtnRightLeft'+tableId));
+    document.getElementById('oneBtnLeftRight'+tableId).parentNode.removeChild(document.getElementById('oneBtnLeftRight'+tableId));
+    document.getElementById('changeTableNameBtn'+tableId).parentNode.removeChild(document.getElementById('changeTableNameBtn'+tableId));
+    document.getElementById('saveTableTxtBtn'+tableId).parentNode.removeChild(document.getElementById('saveTableTxtBtn'+tableId));
+    document.getElementById('saveTableExcellBtn'+tableId).parentNode.removeChild(document.getElementById('saveTableExcellBtn'+tableId));
+    document.getElementById('saveTableNumbersBtn'+tableId).parentNode.removeChild(document.getElementById('saveTableNumbersBtn'+tableId));
+    document.getElementById('transposeMatrixBtn'+tableId).parentNode.removeChild(document.getElementById('transposeMatrixBtn'+tableId));
+    document.getElementById('matrixDeleteBtn'+tableId).parentNode.removeChild(document.getElementById('matrixDeleteBtn'+tableId));
+    document.getElementById('matrixInverseBtn'+tableId).parentNode.removeChild(document.getElementById('matrixInverseBtn'+tableId));
+    document.getElementById('closeAllBtn'+tableId).parentNode.removeChild(document.getElementById('closeAllBtn'+tableId));
 }
 
 function saveTableToTxt(tableId) {
