@@ -60,6 +60,10 @@ function inverseMatrix(matrix1) {
             }
 
         }
+        tblInvertedNameHeader=document.createElement('h3');
+        tblInvertedNameHeader.id=matrix1+"invertedHeader";
+        tblInvertedNameHeader.innerHTML=matrix1+" inverted";
+        myTableDiv.appendChild(tblInvertedNameHeader);
         myTableDiv.appendChild(table);
 
 
@@ -118,6 +122,10 @@ function matrixTranspose(matrix1) {
         }
 
     }
+    tblTransposedNameHeader=document.createElement('h3');
+    tblTransposedNameHeader.id=matrix1+"transposedHeader";
+    tblTransposedNameHeader.innerHTML=matrix1+" transposed";
+    myTableDiv.appendChild(tblTransposedNameHeader);
     myTableDiv.appendChild(table);
 }
 }
@@ -296,6 +304,9 @@ function tableCreate(newTableId, rows, cells) {
         var body = document.body;
         container = document.createElement('div');
         container.id = newTableId+"div";
+        tblNameHeader=document.createElement('h1');
+        tblNameHeader.id=newTableId+"Header";
+        tblNameHeader.innerHTML=newTableId;
         tbl = document.createElement('table');
         tbl.id = newTableId;
         tbl.style.width = '100%';
@@ -319,6 +330,7 @@ function tableCreate(newTableId, rows, cells) {
                 td.appendChild(document.createTextNode('\u0020'));
             }
         }
+        container.appendChild(tblNameHeader);
         container.appendChild(tbl);
         body.appendChild(container);
         addEditButtonsFor(newTableId);
