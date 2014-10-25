@@ -855,7 +855,7 @@ SELECT, TEXTAREA, INPUT[type="text"], INPUT[type="password"], INPUT[type="dateti
 	margin-bottom: 9px;
 	font-size: 13px;
 	line-height: 18px;
-	color:rgba(252, 247, 247, 0.51);
+	color:rgba(0, 0, 0, 1);
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 16px;
@@ -897,7 +897,7 @@ INPUT[type="radio"], INPUT[type="checkbox"]
 	cursor: pointer;
 }
 INPUT[type="image"]{
-	margin-left: 10px;
+	margin-left: 0px;
 	margin-bottom: 9px;
 }
 INPUT[type="file"], INPUT[type="submit"], INPUT[type="reset"], INPUT[type="button"], INPUT[type="radio"], INPUT[type="checkbox"]
