@@ -31,9 +31,28 @@ echo '<div class="toolbar_fixed">
 					</tr>
 				</tbody></table>
 				<div class="toolbar_fixed_content">
+				<script>
+					function myFunction() {
+						if(document.getElementById("'.lightsOff.'")){
+    						document.getElementById("'.lightsOff.'").src = "http://test1forprojectmatimaticasite.comule.com/images/joomla_black.gif";
+    						document.getElementById("'.lightsOff.'").id="lightsOn";
+    						document.getElementById("'.container_inner.'").style.boxShadow="0px 0px 450px rgba(255, 255, 255, 1)";
+    						document.getElementById("'.container_inner.'").style.backgroundColor="rgba(255, 255, 255, 0.44)";
+    						document.body.style.color="black";
+    						
+						}else{
+							document.getElementById("'.lightsOn.'").src="http://test1forprojectmatimaticasite.comule.com/images/ligths_off.png";
+							document.getElementById("'.lightsOn.'").id="lightsOff";	
+							document.getElementById("'.container_inner.'").style.boxShadow="0px 0px 450px rgba(0, 255, 235, 1)";
+    						document.getElementById("'.container_inner.'").style.backgroundColor="rgba(82, 82, 82, 0.69)";
+    						document.body.style.color="#E2E2E2";
+						}
+					}
+				</script>
 				';
 				if ($params->get('img1')){
-					echo '<a href="'.$params->get('link1').'" target="'.$params->get('target').'"><img src="'.$params->get('img1').'" <img src="http://test1forprojectmatimaticasite.comule.com/images/ligths_off.png" <img src="http://test1forprojectmatimaticasite.comule.com/images/ligths_off.png" style="position: fixed;top:1px"/></a>';
+					echo'<img id="lightsOff" onclick="myFunction()" src="http://test1forprojectmatimaticasite.comule.com/images/ligths_off.png" style="position: fixed;top:1px"/>';
+					
 				}
 				if ($params->get('img2')){
 					echo '<a href="'.$params->get('link2').'" target="'.$params->get('target').'"><img src="'.$params->get('img2').'" /></a>';
