@@ -23,6 +23,7 @@ require(YOURBASEPATH . DS . "includes/var.php");
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 
 <head>
+<script type="text/javascript" src="http://test1forprojectmatimaticasite.comule.com/templates/pjo_zonada_free/MathJax/MathJax.js?config=default"></script>
 <jdoc:include type="head" />
 <?php
 require(YOURBASEPATH . DS . "includes/ict_slide_load.php");
@@ -31,10 +32,11 @@ require(YOURBASEPATH . DS . "includes/css3_style.php");
 ?>
 
 <link rel="stylesheet" type="text/css" href="templates/pjo_zonada_free/css/jsxgraph.css" />
+
 <script type="text/javascript" src="templates/pjo_zonada_free/jsxgraphcore.js"></script>
 <script type="text/javascript" src="d3.v2.min.js"></script>
 <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/mathjs/1.0.1/math.min.js"></script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
 </head>
 
 <body class="site <?php echo $option . " view-" . $view . " layout-" . $layout . " task-" . $task . " itemid-" . $itemid . " ";?> <?php if ($this->params->get('fluidContainer')) { echo "fluid"; } ?>">
