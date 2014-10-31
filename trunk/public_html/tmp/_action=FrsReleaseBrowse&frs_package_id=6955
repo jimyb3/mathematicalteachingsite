@@ -1,0 +1,387 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en   ">
+
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="-1" />
+	<meta http-equiv="Cache-Control" content="max-age=0" />
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-544070-8', 'joomla.org');
+  ga('send', 'pageview');
+
+</script>
+		
+	<title>JoomlaCode > Projects > Joomla! >  Releases > Browse Frs Release</title>
+	<link rel="shortcut icon" href="/themes/gforge5/favicon.ico" />
+	<link rel="alternate" type="application/rss+xml" title="JoomlaCode - Joomla! - Activity" href="http://joomlacode.org/gf/?action=Rss&amp;section=activity&amp;project_id=5" />
+
+<script type="text/javascript" src="http://partner.googleadservices.com/gampad/google_service.js">
+</script>
+<script type="text/javascript">
+ GS_googleAddAdSenseService("ca-pub-1189370408998555");
+ GS_googleEnableAllServices();
+</script>
+<script type="text/javascript">
+ GA_googleAddSlot("ca-pub-1189370408998555", "Joomla_Joomlacode");
+ GA_googleAddSlot("ca-pub-1189370408998555", "Joomla_JoomlacodeSide");
+ GA_googleAddSlot("ca-pub-1189370408998555", "Joomla_JoomlacodeFooter");
+</script>
+<script type="text/javascript">
+ GA_googleFetchAds();
+</script>
+		<link href="/combine.php?type=css&files=/themes/joomla/GFTheme.css,/themes/joomla/jquery-ui-theme/jquery-ui.css,/themes/joomla/viewvc.css,/themes/joomla/textwiki.css,/themes/joomla/dialog.css,/themes/joomla/jquery.meow.css,/themes/joomla/ddsmoothmenu.css,/themes/joomla/ddsmoothmenu-v.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="/combine.php?type=javascript&files=/json2.js,/js/gf-common.js,/js/tooltip.js,/tabber.js,/mktree.js,/dialog.js,/jquery.js,/jquery-ui.js,/ddsmoothmenu.js,/ddaccordion.js,/jquery.meow.js,/jcfbtooltip.js,/jquery.tmpl.min.js,/js/gforge5.js,/html5.uploader.main.js,/jquery.checkboxtree.js,/jquery.slidePanel.min.js,/spin.js,/jquery.tablesorter.js,/jquery.history.js"></script>
+
+<script type="text/javascript">
+ddaccordion.init({
+	headerclass: "expandable", //Shared CSS class name of headers group
+	contentclass: "submenu", //Shared CSS class name of contents group
+	collapseprev: true, //Collapse previous content (so only one open at any time)? true/false 
+	defaultexpanded: [], //index of content(s) open by default [index1, index2, etc] [] denotes no content
+	animatedefault: false, //Should contents open by default be animated into view?
+	persiststate: false, //persist state of opened contents within browser session?
+	toggleclass: ["", "openheader"], //Two CSS classes to be applied to the header when it's collapsed and expanded, respectively ["class1", "class2"]
+	togglehtml: ["suffix", "", ""], //Additional HTML added to the header when it's collapsed and expanded, respectively  ["position", "html1", "html2"] (see docs)
+	animatespeed: "normal" //speed of animation: "fast", "normal", or "slow"
+})
+
+oldload = window.onload;
+function expandableExpandItem(){};
+function docmanExpandTree(){};
+window.onload=function() {
+		if (typeof customonload == 'function') {
+			customonload();
+		}	
+		oldload();convertTrees();window.setTimeout('expandableExpandItem()',100);docmanExpandTree();
+	BrowserDetect.init();
+}
+
+// Localized JS messages
+window.locale = {
+    "fileupload": {
+        "errors": {
+            "maxFileSize": "File is too big.  Maximum allowed size: 262144000 bytes",
+            "minFileSize": "File is too small",
+            "acceptFileTypes": "File type not allowed",
+            "maxNumberOfFiles": "Max number of files exceeded",
+            "uploadedBytes": "Uploaded bytes exceed file size",
+            "emptyResult": "Empty file upload result. Make sure you don't exceed the maximum allowed size: 262144000 bytes"
+        },
+        "error": "Error",
+        "start": "Start",
+        "cancel": "Delete",
+        "destroy": "Empty",
+        "empty": "Empty",
+        "uploadHint": "Hint: Drag files from your computer into this page to attach them.",
+        "uploadHint2": "Hint: This browser does not support drag and drop uploads. To attach files, please use the Attach files button",
+        "attachedFilesTitle": "Attached files",
+        "attachFiles": "Attach files...",
+        "noFiles": "No attached files"
+    }
+};
+
+_ENABLE_UPLOADS = false;
+</script>
+
+</head>
+
+<body>
+<div class="topheader">
+    <ul class="topmenu">
+      <li class="item122"><a href="http://www.joomla.org/"><span>Home</span></a></li><div class="sep">|</div>
+      <li class="item153"><a href="http://www.joomla.org/about-joomla.html"><span>About Joomla</span></a></li><div class="sep">|</div>
+      <li class="item123"><a href="http://community.joomla.org"><span>Community</span></a></li><div class="sep">|</div>
+      <li class="item124"><a href="http://forum.joomla.org"><span>Forum</span></a></li><div class="sep">|</div>
+      <li class="item125"><a href="http://extensions.joomla.org"><span>Extensions</span></a></li><div class="sep">|</div>
+      <li class="item126"><a href="http://docs.joomla.org"><span>Documentation</span></a></li><div class="sep">|</div>
+      <li class="item127"><a href="http://developer.joomla.org"><span>Developer</span></a></li><div class="sep">|</div>
+      <li class="item149"><a href="http://shop.joomla.org"><span>Shop</span></a></li>
+    </ul>
+    <div class="toplogo">
+      <a href="http://www.joomla.org/"><img src="/themes/joomla/images/joomla_logo.png" alt="Joomla!"></a> <!-- end logo -->
+</div><!-- end header -->
+  </div>
+<script>
+	function getPos(obj, direction) {	/*		direction == 0 ---> Top		direction != 0 ---> Left	*/
+		var cur = 0;
+		if (obj.offsetParent) {
+			do {
+				if (direction == 0)
+					cur += obj.offsetTop;
+				else
+					cur += obj.offsetLeft;
+			} while (obj = obj.offsetParent);
+		}
+		return cur;
+	}
+	function expandFloatingMenu(id, icon) {
+		var menu = document.getElementById(id);
+		var icon = document.getElementById(icon);		
+		var t = getPos(icon, 0);
+		var l = getPos(icon, 1);
+		menu.style.top = ((t + parseInt(icon.height)) + "px");
+		menu.style.left = (l + "px");
+		if (menu.style.visibility == "visible")
+			menu.style.visibility = "hidden";
+		else
+			menu.style.visibility = "visible";
+	}
+	
+</script>
+
+
+
+<div id="header" style="min-width:803px;">
+
+<script type="text/javascript">
+		</script>
+
+<script>
+	$(document).ready(function(){
+	 	$("#notificationssummary").jcfbtooltip({position:'bottom', 'width':'350px' ,method: getPastNotifications});
+		$("#quickjumpmenupopup").jcfbtooltip({position:'bottom', 'width': '180px'});
+		$("#searchmenuicon").jcfbtooltip({position:'bottom', 'width': '250px'});
+
+		$( "#notificationsTemplate" ).template( "notificationtemplate" );
+		$( "#nonotificationsTemplate" ).template( "nonotificationtemplate" );
+		$( "#notificationsAreaTemplate" ).template( "tooltiptemplate" );
+		$( "#quickJumpMenuTemplate" ).template( "jumpmenutemplate" );
+		$( "#searchMenuTemplate" ).template( "searchmenutemplate" );
+
+		var data = {};
+		$.tmpl( "tooltiptemplate", data ).appendTo( $('#jcapp-notificationssummary') );
+		$.tmpl( "jumpmenutemplate", data ).appendTo( $('#jcapp-quickjumpmenupopup') );
+		$.tmpl( "searchmenutemplate", data ).appendTo( $('#jcapp-searchmenuicon') );
+		
+
+		$(document).on('click', '.sound-toggle', function(e) {
+			submitSystemSoundSetting(this);	
+			return false;
+		});
+
+		$(document).on('click', '.my-message-wall"', function(e) {
+			window.location = '/gf/my/messagewall';
+			return false;
+		});
+
+		$(':not(#jcapp-notificationssummary)').click(function(ev) {
+			var str_class = '';
+			if ($(this).attr("class")) {
+				str_class = $(this).attr("class");
+			}
+
+			if ($(this).parents('#jcapp-notificationssummary').length == 0 && str_class.indexOf("notifications") == -1 && str_class.indexOf('sound-toggle') == -1) {
+		    $('#jcapp-notificationssummary').hide();
+		    $('#jcapp-notificationssummary').attr('visibility-status', 'hidden');
+			}
+
+			if ($(this).parents('#jcapp-notificationssummary').length > 0) {
+				ev.stopPropagation();
+				if (str_class.indexOf('sound-toggle') != -1) {
+					submitSystemSoundSetting(this);
+				}
+			}
+		});
+	
+	
+		$(':not(#jcapp-quickjumpmenupopup)').click(function(ev) {
+			var str_class = '';
+			if ($(this).attr("class")) {
+				str_class = $(this).attr("class");
+			}
+
+			if ($(this).parents('#jcapp-notificationssummary').length == 0 && str_class.indexOf("quickjumpmenuicon") == -1) {
+		    $('#jcapp-quickjumpmenupopup').hide();
+		    $('#jcapp-quickjumpmenupopup').attr('visibility-status', 'hidden');
+			}
+
+			if ($(this).parents('#jcapp-notificationssummary').length > 0) {
+				ev.stopPropagation();
+			}
+
+		});
+
+
+		$(':not(#jcapp-searchmenuicon)').click(function(ev) {
+			var str_class = '';
+			if ($(this).attr("class")) {
+				str_class = $(this).attr("class");
+			}
+
+			if ($(this).parents('#jcapp-searchmenuicon').length == 0 && $(this).parents('.tooltip-content').length == 0 && str_class.indexOf("SearchByIDMenu") == -1) {
+		    $('#jcapp-searchmenuicon').hide();
+		    $('#jcapp-searchmenuicon').attr('visibility-status', 'hidden');
+			}
+			
+			if ($(this).parents('#jcapp-searchmenuicon').length > 0) {
+				ev.stopPropagation();
+			}
+
+		});
+	
+		
+	});  
+</script>
+
+	
+
+	<h1 id="logo"><a href="/">MyGforge Home</a></h1>
+	<ul id="mainNav"><li class="start"></li>
+				<li><a  href="/gf/">Home</a></li>
+				<li><a  href="/gf/my/">My Stuff</a></li>
+				<li><a  href="/gf/user/">Users</a></li>
+				<li><a  href="/gf/search/">Search</a></li>
+				<li class="selected"><a class="selected" href="/gf/project/">Projects</a></li><li class="selectedBar"><img src="/themes/joomla/images/clear.png" width="1" height="1" alt="clear" /></li>
+				<li class="end"><a  href="/gf/snippet/">Snippets</a></li>
+	</ul>
+<div id="quickjumpmenuarea" style="display: none;">
+</div>
+
+
+<script id="quickJumpMenuTemplate" type="text/x-jquery-tmpl">
+
+	<div class="tooltip-title">
+		Quick Jump	</div>
+	
+	<div class="tooltip-settings">
+	</div>
+
+	<div class="tooltip-content">
+			</div>
+
+</script>
+
+
+<script id="searchMenuTemplate" type="text/x-jquery-tmpl">
+
+	<div class="tooltip-title">
+		Search By Id	</div>
+	
+	<div class="tooltip-settings">
+	</div>
+
+	<div class="tooltip-content">
+			<form id="searchbyid" name="searchbyid" class="SearchByIDMenu" action="/gf/search/?action=SearchById" method="POST">
+			<table class="SearchByIDMenu" summary="" style="width: 100%">
+				<tr>
+					<td class="SearchByIDMenu">
+						<select name="searchtype" class="SearchByIDMenu">
+							<option value="forummessage">Forum Message</option><option value="trackeritem" selected>Tracker Item</option><option value="frsrelease">FRS Release</option>						</select>
+					</td>
+					<td class="SearchByIDMenu">
+						<strong>Item Id:&nbsp;</strong><input type="text" size="4" name="searchid" id="quicksearchid" value="" />
+					</td>
+				</tr>
+				<tr style="text-align: center;">
+					<td colspan="2">
+						<div class="buttondiv"><div class="button"><a href="javascript:;" style="color: #FFFFFF;" onclick="document.getElementById('searchbyidsubmit').click();">Search</a><span></span></div><span style="display:none;"><input type="submit" id="searchbyidsubmit" name="searchbyidsubmit" onclick="" /></span></div>					</td>
+				</tr>
+			</table>
+			</form>
+	</div>
+
+</script>
+
+<img title="Search by ID" alt="Search by ID" class="SearchByIDMenu" id="searchmenuicon" src="/themes/joomla/images/blue/searchbyid_off.gif" style="float:left; position:relative; top:0px;" onmouseover="this.src='/themes/joomla/images/blue/searchbyid_on.gif';" onmouseout="this.src='/themes/joomla/images/blue/searchbyid_off.gif';" onclick="$('#jcapp-searchmenuicon').toggle(); $('#quicksearchid').focus(); window.scrollTo(0, 0);" /><a href="http://gforgegroup.com/es/help.php?section=project-frs" target="_blank" style='float:left; position:relative; top:0px;'><img title='Help' alt='Help' class='HelpMenu' id='helpIcon' src='/themes/joomla/images/blue/help_off.gif' style='float:left; position:relative; top:0px;' onmouseover='this.src="/themes/joomla/images/blue/help_on.gif";' onmouseout='this.src="/themes/joomla/images/blue/help_off.gif";'/></a>
+
+		<div id="login" nowrap="nowrap"><a href="/gf/account/?action=Login&amp;redirect=%2Fgf%2Fproject%2Fjoomla%2Ffrs%2F%3Faction%3DFrsReleaseBrowse%26frs_package_id%3D6955">Log in</a> | <a href="/gf/account/?action=UserAdd">Register new account</a>		</div>
+		
+		<div class="clear"></div>		
+</div>
+<div id="container">
+	<div id="left">
+		
+<h1 class='navLabel'>Project Menu </h1>
+<div class='expandableMenu' ><a class="menuitem regular"  href="/gf/project/joomla/">Summary</a>
+<a class="menuitem regular"  href="/gf/project/joomla/reporting/">Reporting</a>
+<a class="menuitem regular"  href="/gf/project/joomla/search/">Search</a>
+<a class="menuitem regular"  href="/gf/project/joomla/messagewall/">Message Wall</a>
+<a class="menuitem regular"  href="/gf/project/joomla/tracker/">Tracker</a>
+<a class="menuitem regular"  href="/gf/project/joomla/news/">Blog</a>
+<a class="menuitem selected"  href="/gf/project/joomla/frs/">Releases</a>
+<a class="menuitem regular"  href="/gf/project/joomla/mailman/">Lists</a>
+<a class="menuitem regular"  href="/gf/project/joomla/scmsvn/">SVN</a>
+<h1 class="navLabel_bottom">&nbsp;</h1></div>		<div class="clear"></div>
+		
+		<div class="rochenleft">
+			<a href="http://www.rochenhost.com" target="_blank"><img src="/themes/joomla/images/rochen_logo_joomlacode_leftcol.jpg" alt="Joomla Hosting by Rochen"></a>
+		</div>
+		
+		<div class="clear"></div>
+	
+		<div style="padding: 30px 0 0 15px;">
+		<script type="text/javascript">
+ GA_googleFillSlot("Joomla_JoomlacodeSide");
+</script>
+
+
+</div>
+<div class="clear"></div>
+	</div>
+	<div id="right">
+	
+		<div class="contentNav">
+			<p id="crumbs"><a href="/">Home</a> » <a href="/gf/project/">Projects</a> » <a href="/gf/project/joomla/">Joomla!</a> » <a href="/gf/project/joomla/frs/?action=index">Releases</a> » <a href="/gf/project/joomla/frs/?action=FrsReleaseBrowse&amp;frs_package_id=6955">Joomla2.5.27</a> » Browse Frs Release</p>
+			<div class="clear"></div>
+		</div>
+		<div class="main">
+						<h1 class="project-title">Joomla!</h1>
+        <p>
+			<table width="100%" class="tabular" summary="" cellpadding="5" cellspacing="1" ><tr class="th"  >
+				<th nowrap="nowrap"><map id='br_pkgrlsrelease_name_map' name='br_pkgrlsrelease_name_map'><area shape='rect' coords='0,1,7,6' onMouseOver='document["br_pkgrlsrelease_name_img"].src="/themes/joomla/images/arrow_up.gif"' onMouseOut='document["br_pkgrlsrelease_name_img"].src="/themes/joomla/images/arrow_down.gif"' href='/gf/project/joomla/frs/?action=FrsReleaseBrowse&amp;frs_package_id=6955&amp;br_pkgrlssort_by=release_name&amp;br_pkgrlssort_order=asc' /></map><table cellspacing='0' cellpadding='0' style='padding:0px;margin:0px;height:14px;max-height:14px;line-height:14px;' ><th style='padding-right:3px;margin:0px;font-size: 1em; border: none;' nowrap='nowrap' >Release Name</th><th style='padding:0px;margin:0px; border: none;' nowrap='nowrap'><div style='height:14px;padding-top:2px;'><img src="/themes/joomla/images/arrow_down.gif" border="0" usemap="#br_pkgrlsrelease_name_map" name="br_pkgrlsrelease_name_img" alt = "alternative text"/></div></th></table></th>
+				<th nowrap="nowrap"><map id='br_pkgrlsrelease_date_map' name='br_pkgrlsrelease_date_map' style='border: none;'><area shape='rect' coords='0,1,7,6' onMouseOver='document["br_pkgrlsrelease_date_img"].src="/themes/joomla/images/arrow_up.gif"' onMouseOut='document["br_pkgrlsrelease_date_img"].src="/themes/joomla/images/arrow.gif"' href='/gf/project/joomla/frs/?action=FrsReleaseBrowse&amp;frs_package_id=6955&amp;br_pkgrlssort_by=release_date&amp;br_pkgrlssort_order=asc' /><area shape='rect' coords='0,5,7,10' onMouseOver='document["br_pkgrlsrelease_date_img"].src="/themes/joomla/images/arrow_down.gif"' onMouseOut='document["br_pkgrlsrelease_date_img"].src="/themes/joomla/images/arrow.gif"' href='/gf/project/joomla/frs/?action=FrsReleaseBrowse&amp;frs_package_id=6955&amp;br_pkgrlssort_by=release_date&amp;br_pkgrlssort_order=desc' /></map><table cellspacing='0' cellpadding='0' style='padding:0px;margin:0px;height:14px;max-height:14px;line-height:14px;' ><th style='padding-right:3px;margin:0px;font-size: 1em; border: none;' nowrap='nowrap' >Release Date</th><th style='padding:0px;margin:0px; border: none;' nowrap='nowrap'><div style='height:14px;padding-top:2px;'><img src="/themes/joomla/images/arrow.gif" border="0" usemap="#br_pkgrlsrelease_date_map" name="br_pkgrlsrelease_date_img" alt = "alternative text"/></div></th></table></th>
+				<th nowrap="nowrap"><map id='br_pkgrlsfile_name_map' name='br_pkgrlsfile_name_map' style='border: none;'><area shape='rect' coords='0,1,7,6' onMouseOver='document["br_pkgrlsfile_name_img"].src="/themes/joomla/images/arrow_up.gif"' onMouseOut='document["br_pkgrlsfile_name_img"].src="/themes/joomla/images/arrow.gif"' href='/gf/project/joomla/frs/?action=FrsReleaseBrowse&amp;frs_package_id=6955&amp;br_pkgrlssort_by=file_name&amp;br_pkgrlssort_order=asc' /><area shape='rect' coords='0,5,7,10' onMouseOver='document["br_pkgrlsfile_name_img"].src="/themes/joomla/images/arrow_down.gif"' onMouseOut='document["br_pkgrlsfile_name_img"].src="/themes/joomla/images/arrow.gif"' href='/gf/project/joomla/frs/?action=FrsReleaseBrowse&amp;frs_package_id=6955&amp;br_pkgrlssort_by=file_name&amp;br_pkgrlssort_order=desc' /></map><table cellspacing='0' cellpadding='0' style='padding:0px;margin:0px;height:14px;max-height:14px;line-height:14px;' ><th style='padding-right:3px;margin:0px;font-size: 1em; border: none;' nowrap='nowrap' >Filename</th><th style='padding:0px;margin:0px; border: none;' nowrap='nowrap'><div style='height:14px;padding-top:2px;'><img src="/themes/joomla/images/arrow.gif" border="0" usemap="#br_pkgrlsfile_name_map" name="br_pkgrlsfile_name_img" alt = "alternative text"/></div></th></table></th>
+				<th nowrap="nowrap"><map id='br_pkgrlsfile_size_map' name='br_pkgrlsfile_size_map' style='border: none;'><area shape='rect' coords='0,1,7,6' onMouseOver='document["br_pkgrlsfile_size_img"].src="/themes/joomla/images/arrow_up.gif"' onMouseOut='document["br_pkgrlsfile_size_img"].src="/themes/joomla/images/arrow.gif"' href='/gf/project/joomla/frs/?action=FrsReleaseBrowse&amp;frs_package_id=6955&amp;br_pkgrlssort_by=file_size&amp;br_pkgrlssort_order=asc' /><area shape='rect' coords='0,5,7,10' onMouseOver='document["br_pkgrlsfile_size_img"].src="/themes/joomla/images/arrow_down.gif"' onMouseOut='document["br_pkgrlsfile_size_img"].src="/themes/joomla/images/arrow.gif"' href='/gf/project/joomla/frs/?action=FrsReleaseBrowse&amp;frs_package_id=6955&amp;br_pkgrlssort_by=file_size&amp;br_pkgrlssort_order=desc' /></map><table cellspacing='0' cellpadding='0' style='padding:0px;margin:0px;height:14px;max-height:14px;line-height:14px;' ><th style='padding-right:3px;margin:0px;font-size: 1em; border: none;' nowrap='nowrap' >File Size</th><th style='padding:0px;margin:0px; border: none;' nowrap='nowrap'><div style='height:14px;padding-top:2px;'><img src="/themes/joomla/images/arrow.gif" border="0" usemap="#br_pkgrlsfile_size_map" name="br_pkgrlsfile_size_img" alt = "alternative text"/></div></th></table></th>
+				<th nowrap="nowrap"><table class="tabular2" width="100%" cellpadding="0" cellspacing="0"><tr class="th"><th style="text-align:left;" valign="center" class="tabular2"><map id='br_pkgrlsdownload_count_map' name='br_pkgrlsdownload_count_map' style='border: none;'><area shape='rect' coords='0,1,7,6' onMouseOver='document["br_pkgrlsdownload_count_img"].src="/themes/joomla/images/arrow_up.gif"' onMouseOut='document["br_pkgrlsdownload_count_img"].src="/themes/joomla/images/arrow.gif"' href='/gf/project/joomla/frs/?action=FrsReleaseBrowse&amp;frs_package_id=6955&amp;br_pkgrlssort_by=download_count&amp;br_pkgrlssort_order=asc' /><area shape='rect' coords='0,5,7,10' onMouseOver='document["br_pkgrlsdownload_count_img"].src="/themes/joomla/images/arrow_down.gif"' onMouseOut='document["br_pkgrlsdownload_count_img"].src="/themes/joomla/images/arrow.gif"' href='/gf/project/joomla/frs/?action=FrsReleaseBrowse&amp;frs_package_id=6955&amp;br_pkgrlssort_by=download_count&amp;br_pkgrlssort_order=desc' /></map><table cellspacing='0' cellpadding='0' style='padding:0px;margin:0px;height:14px;max-height:14px;line-height:14px;' ><th style='padding-right:3px;margin:0px;font-size: 1em; border: none;' nowrap='nowrap' >Download Count</th><th style='padding:0px;margin:0px; border: none;' nowrap='nowrap'><div style='height:14px;padding-top:2px;'><img src="/themes/joomla/images/arrow.gif" border="0" usemap="#br_pkgrlsdownload_count_map" name="br_pkgrlsdownload_count_img" alt = "alternative text"/></div></th></table></th><th valign="center" style="text-align:right;" class="tabular2"><div style='height:14px;padding-bottom:1px;'><img id='br_pkgrlsIcon' src='/themes/joomla/images/row_selector.gif' onclick="expandFloatingMenu('br_pkgrlsDiv','br_pkgrlsIcon');" /></div></th></tr></table><div id='br_pkgrlsDiv' class="quickJumpMenu" style="visibility:hidden; position:absolute; z-index:2; max-height: 60%; overflow:auto;"><table class="quickJumpMenu" cellpadding="0" cellspacing="0"><tr><td class="quickJumpMenu" style="text-align:right;line-height:100%;padding:1px;white-space:nowrap;"><a class="quickJumpMenu" href="/gf/project/joomla/frs/?action=FrsReleaseBrowse&amp;frs_package_id=6955&amp;br_pkgrls_limit=5">5</a></td></tr><tr><td class="quickJumpMenu" style="text-align:right;line-height:100%;padding:1px;white-space:nowrap;"><a class="quickJumpMenu" href="/gf/project/joomla/frs/?action=FrsReleaseBrowse&amp;frs_package_id=6955&amp;br_pkgrls_limit=25">25</a></td></tr><tr><td class="quickJumpMenu" style="text-align:right;line-height:100%;padding:1px;white-space:nowrap;"><a class="quickJumpMenu" href="/gf/project/joomla/frs/?action=FrsReleaseBrowse&amp;frs_package_id=6955&amp;br_pkgrls_limit=50">(*) 50</a></td></tr><tr><td class="quickJumpMenu" style="text-align:right;line-height:100%;padding:1px;white-space:nowrap;"><a class="quickJumpMenu" href="/gf/project/joomla/frs/?action=FrsReleaseBrowse&amp;frs_package_id=6955&amp;br_pkgrls_limit=75">75</a></td></tr><tr><td class="quickJumpMenu" style="text-align:right;line-height:100%;padding:1px;white-space:nowrap;"><a class="quickJumpMenu" href="/gf/project/joomla/frs/?action=FrsReleaseBrowse&amp;frs_package_id=6955&amp;br_pkgrls_limit=100">100</a></td></tr></table></div></th></tr>
+			<tr class="l "   ><td rowspan="9" bgcolor="#FFFFFF" valign="middle"><strong><a href="/gf/project/joomla/frs/?action=FrsReleaseView&amp;release_id=19817">Joomla2.5.27-Updates</a></strong></td><td rowspan="9" bgcolor="#FFFFFF" valign="middle">2014-09-30 00:00:00-05</td><td  valign="middle"><a href="/gf/download/frsrelease/19817/161194/Joomla_2.5.x_to_2.5.27-Stable-Patch_Package.zip">Joomla_2.5.x_to_2.5.27-Stable-Patch_Package.zip</a><br /></td><td  valign="middle">3.43 MB</td><td  valign="middle">253107</td>
+			</tr>
+			<tr class="d "   ><td  valign="middle"><a href="/gf/download/frsrelease/19817/161193/Joomla_2.5.27-Stable-Update_Package.zip">Joomla_2.5.27-Stable-Update_Package.zip</a><br /></td><td  valign="middle">6.39 MB</td><td  valign="middle">2486</td>
+			</tr>
+			<tr class="l "   ><td  valign="middle"><a href="/gf/download/frsrelease/19817/161200/Joomla_2.5.27-Stable-Update_Package.tar.gz">Joomla_2.5.27-Stable-Update_Package.tar.gz</a><br /></td><td  valign="middle">4.2 MB</td><td  valign="middle">444</td>
+			</tr>
+			<tr class="d "   ><td  valign="middle"><a href="/gf/download/frsrelease/19817/161195/Joomla_2.5.x_to_2.5.27-Stable-Patch_Package.tar.bz2">Joomla_2.5.x_to_2.5.27-Stable-Patch_Package.tar.bz2</a><br /></td><td  valign="middle">1.5 MB</td><td  valign="middle">890</td>
+			</tr>
+			<tr class="l "   ><td  valign="middle"><a href="/gf/download/frsrelease/19817/161196/Joomla_2.5.x_to_2.5.27-Stable-Patch_Package.tar.gz">Joomla_2.5.x_to_2.5.27-Stable-Patch_Package.tar.gz</a><br /></td><td  valign="middle">2 MB</td><td  valign="middle">1700</td>
+			</tr>
+			<tr class="d "   ><td  valign="middle"><a href="/gf/download/frsrelease/19817/161197/Joomla_2.5.26_to_2.5.27-Stable-Patch_Package.zip">Joomla_2.5.26_to_2.5.27-Stable-Patch_Package.zip</a><br /></td><td  valign="middle">63.7 KB</td><td  valign="middle">2753</td>
+			</tr>
+			<tr class="l "   ><td  valign="middle"><a href="/gf/download/frsrelease/19817/161201/Joomla_2.5.26_to_2.5.27-Stable-Patch_Package.tar.bz2">Joomla_2.5.26_to_2.5.27-Stable-Patch_Package.tar.bz2</a><br /></td><td  valign="middle">51.91 KB</td><td  valign="middle">265</td>
+			</tr>
+			<tr class="d "   ><td  valign="middle"><a href="/gf/download/frsrelease/19817/161198/Joomla_2.5.26_to_2.5.27-Stable-Patch_Package.tar.gz">Joomla_2.5.26_to_2.5.27-Stable-Patch_Package.tar.gz</a><br /></td><td  valign="middle">57.17 KB</td><td  valign="middle">276</td>
+			</tr>
+			<tr class="l "   ><td  valign="middle"><a href="/gf/download/frsrelease/19817/161199/Joomla_2.5.27-Stable-Update_Package.tar.bz2">Joomla_2.5.27-Stable-Update_Package.tar.bz2</a><br /></td><td  valign="middle">3.54 MB</td><td  valign="middle">253</td>
+			</tr>
+			<tr class="d "   ><td rowspan="3" bgcolor="#FFFFFF" valign="middle"><strong><a href="/gf/project/joomla/frs/?action=FrsReleaseView&amp;release_id=19816">Joomla2.5.27</a></strong></td><td rowspan="3" bgcolor="#FFFFFF" valign="middle">2014-09-30 00:00:00-05</td><td  valign="middle"><a href="/gf/download/frsrelease/19816/161190/Joomla_2.5.27-Stable-Full_Package.zip">Joomla_2.5.27-Stable-Full_Package.zip</a><br /></td><td  valign="middle">7.59 MB</td><td  valign="middle">91730</td>
+			</tr>
+			<tr class="l "   ><td  valign="middle"><a href="/gf/download/frsrelease/19816/161192/Joomla_2.5.27-Stable-Full_Package.tar.gz">Joomla_2.5.27-Stable-Full_Package.tar.gz</a><br /></td><td  valign="middle">5.19 MB</td><td  valign="middle">4790</td>
+			</tr>
+			<tr class="d "   ><td  valign="middle"><a href="/gf/download/frsrelease/19816/161191/Joomla_2.5.27-Stable-Full_Package.tar.bz2">Joomla_2.5.27-Stable-Full_Package.tar.bz2</a><br /></td><td  valign="middle">4.31 MB</td><td  valign="middle">400</td>
+			</tr><tr  ><td class="footer" colspan="5" ><div class="buttonLink"><div class="buttondiv"><div class="button btn_disabled"><a href="javascript:;">Manage Package</a><span></span></div></div></div></td></tr></table></p><tr  style="margin-top:0; margin-bottom:0; padding-top:0; padding-bottom:0"><td style="margin-top:0; margin-bottom:0; padding-top:0; padding-bottom:0" class="tFooter" valign="top" colspan="5" align="right">&nbsp;</td></tr></table></p><div class="paginator"></div><br />  <div style="padding-top: 20px; margin: 0 auto; text-align:center;">	
+    <script type="text/javascript">
+    GA_googleFillSlot("Joomla_JoomlacodeFooter");
+    </script>
+    </div>
+    <br /><br />
+    <div id="site-footerInfo">&copy;2005-2013 <a href="http://www.opensourcematters.org">Open Source Matters, Inc.</a> All rights reserved. <a href="http://www.rochenhost.com" target="_blank">Joomla Hosting</a> by Rochen Ltd.&nbsp;&nbsp;&nbsp;
+
+          <a href="http://www.joomla.org/accessibility-statement.html">Accessibility Statement</a>&nbsp;&nbsp;&nbsp;
+          <a href="http://www.joomla.org/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;
+          <a href="http://gforgegroup.com/">Gforge</a>
+        <!-- end #site-footerInfo --></div>
+
+    </div>
+    <div class="clear"></div>		<div class="clear"></div>
+  </div>
+
+
+</body>
+</html>

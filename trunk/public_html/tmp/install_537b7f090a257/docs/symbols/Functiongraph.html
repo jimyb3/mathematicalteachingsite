@@ -663,7 +663,7 @@ However, it seems JavaScript is either disabled or not supported by your browser
 
 <!-- ============================== class summary ========================== -->
 			<p class="description">
-				This element is used to provide a constructor for functiongraph, which is just a wrapper for element <a href="../symbols/Curve.html">Curve</a> with JXG.Curve#X()set to x. The graph is drawn for x in the interval [a,b].
+				This element is used to provide a constructor for functiongraph, which is just a wrapper for element <a href="../symbols/Curve.html">Curve</a> with JXG.Curve#X()set to x. The graph is drawn for x in the interval [a,b].
 				
 				
 					<br /><br /><i>Defined in: </i> <a href="../symbols/src/src_base_curve.js.html">curve.js</a>.
@@ -770,7 +770,7 @@ However, it seems JavaScript is either disabled or not supported by your browser
                                     <br />
                                 
 							</dt>
-								<dd>Parent elements are a function term f(x) describing the function graph.        <p>        Further, an optional number or function for the left interval border a,        and an optional number or function for the right interval border b.        <p>        Default values are a=-10 and b=10.</dd><br /><br />
+								<dd>Parent elements are a function term f(x) describing the function graph.        <p>        Further, an optional number or function for the left interval border a,        and an optional number or function for the right interval border b.        <p>        Default values are a=-10 and b=10.</dd><br /><br />
 						
 						</dl>
 					
@@ -791,9 +791,9 @@ However, it seems JavaScript is either disabled or not supported by your browser
 				
                 <dl class="detailList"><dt class="heading">Examples:</dt>
 				
-				<pre class="code">// Create a function graph for f(x) = 0.5*x*x-2*x  var graph = board.create('functiongraph',                       [function(x){ return 0.5*x*x-2*x;}, -2, 4]                    );</pre><div id="efd432b5-23a3-4846-ac5b-b471e668b437" style="width: 300px; height: 300px;"></div><script type="text/javascript">  var alex1_board = JXG.JSXGraph.initBoard('efd432b5-23a3-4846-ac5b-b471e668b437', {boundingbox: [-3, 7, 5, -3], axis: true, showcopyright: false, shownavigation: false});  var graph = alex1_board.create('functiongraph', [function(x){ return 0.5*x*x-2*x;}, -2, 4]);</script><pre></pre>
+				<pre class="code">// Create a function graph for f(x) = 0.5*x*x-2*x  var graph = board.create('functiongraph',                       [function(x){ return 0.5*x*x-2*x;}, -2, 4]                    );</pre><div id="efd432b5-23a3-4846-ac5b-b471e668b437" style="width: 300px; height: 300px;"></div><script type="text/javascript">  var alex1_board = JXG.JSXGraph.initBoard('efd432b5-23a3-4846-ac5b-b471e668b437', {boundingbox: [-3, 7, 5, -3], axis: true, showcopyright: false, shownavigation: false});  var graph = alex1_board.create('functiongraph', [function(x){ return 0.5*x*x-2*x;}, -2, 4]);</script><pre></pre>
 				
-				<pre class="code">// Create a function graph for f(x) = 0.5*x*x-2*x with variable interval  var s = board.create('slider',[[0,4],[3,4],[-2,4,5]]);  var graph = board.create('functiongraph',                       [function(x){ return 0.5*x*x-2*x;},                        -2,                        function(){return s.Value();}]                    );</pre><div id="4a203a84-bde5-4371-ad56-44619690bb50" style="width: 300px; height: 300px;"></div><script type="text/javascript">  var alex2_board = JXG.JSXGraph.initBoard('4a203a84-bde5-4371-ad56-44619690bb50', {boundingbox: [-3, 7, 5, -3], axis: true, showcopyright: false, shownavigation: false});  var s = alex2_board.create('slider',[[0,4],[3,4],[-2,4,5]]);  var graph = alex2_board.create('functiongraph', [function(x){ return 0.5*x*x-2*x;}, -2, function(){return s.Value();}]);</script><pre></pre>
+				<pre class="code">// Create a function graph for f(x) = 0.5*x*x-2*x with variable interval  var s = board.create('slider',[[0,4],[3,4],[-2,4,5]]);  var graph = board.create('functiongraph',                       [function(x){ return 0.5*x*x-2*x;},                        -2,                        function(){return s.Value();}]                    );</pre><div id="4a203a84-bde5-4371-ad56-44619690bb50" style="width: 300px; height: 300px;"></div><script type="text/javascript">  var alex2_board = JXG.JSXGraph.initBoard('4a203a84-bde5-4371-ad56-44619690bb50', {boundingbox: [-3, 7, 5, -3], axis: true, showcopyright: false, shownavigation: false});  var s = alex2_board.create('slider',[[0,4],[3,4],[-2,4,5]]);  var graph = alex2_board.create('functiongraph', [function(x){ return 0.5*x*x-2*x;}, -2, function(){return s.Value();}]);</script><pre></pre>
 				
                 </dl>
 				

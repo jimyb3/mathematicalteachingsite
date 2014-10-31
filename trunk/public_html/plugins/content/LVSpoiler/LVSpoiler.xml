@@ -1,265 +1,265 @@
-<?xml version="1.0" encoding="utf-8"?>
-<install version="1.5" type="plugin" group="content" method="upgrade">
-    <name>Content - LVSpoiler</name>
-    <author>Arkadiy</author>
-    <creationDate>06.10.2011</creationDate>
-    <copyright>Copyright (C) 2005 - 2008 Open Source Matters. All rights reserved.</copyright>
-    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
-    <authorEmail></authorEmail>
-    <authorUrl>http://joomlaforum.ru/index.php/topic,173513.msg936214.html</authorUrl>
-    <version>1.0.8</version>
-    <description>PBSP_DESC</description>
-    <files>
-        <filename plugin="LVSpoiler">LVSpoiler.php</filename>
-        <filename>index.html</filename>
-        <folder>LVSpoiler</folder>
-    </files>
-    <languages>
-        <language tag="en-GB">language/en-GB.plg_content_LVSpoiler.ini</language>
-        <language tag="en-GB">language/en-GB.plg_content_LVSpoiler.sys.ini</language>
-        <language tag="ru-RU">language/ru-RU.plg_content_LVSpoiler.ini</language>
-        <language tag="ru-RU">language/ru-RU.plg_content_LVSpoiler.sys.ini</language>
-    </languages>
-    <config>
-        <fields name="params">
-            <fieldset name="PBSP_GENERAL_SETTINGS">
-                <field name="jstype" type="list" default="1" label="PBSP_LIB" description="PBSP_LIB_DESC">
-                    <option value="1">mootools</option>
-                    <option value="2">jquery</option>
-                </field>
-                <field name="jsjquery" type="radio" default="0" label="PBSP_JQ_LOAD" description="PBSP_JQ_LOAD_DESC">
-                    <option value="0">JNO</option>
-                    <option value="1">JYES</option>
-                </field>
-                <field name="cssload" type="radio" default="1" label="PBSP_CSS_LOAD" description="PBSP_CSS_LOAD_DESC">
-                    <option value="0">JNO</option>
-                    <option value="1">JYES</option>
-                </field>
-            </fieldset>
-            <fieldset name="PBSP_SPOILER_SETTINGS">
-                <field name="animatespeed" type="text" default="400" label="PBSP_SPEED_ANIMATION" description="PBSP_SPEED_ANIMATION_DESC" />
-                <field name="load_img" type="radio" default="0" label="PBSP_LOAD_IMAGES" description="PBSP_LOAD_IMAGES_DESC">
-                    <option value="0">JNO</option>
-                    <option value="1">JYES</option>
-                </field>
-                <field name="collapseprev" type="radio" default="0" label="PBSP_COLLAPSE_PREV" description="PBSP_COLLAPSE_PREV_DESC">
-                    <option value="0">JNO</option>
-                    <option value="1">JYES</option>
-                </field>
-                <field name="onemustopen" type="radio" default="0" label="PBSP_ONE_OPENED" description="PBSP_ONE_OPENED_DESC">
-                    <option value="0">JNO</option>
-                    <option value="1">JYES</option>
-                </field>
-                <field name="animatedefault" type="radio" default="0" label="PBSP_ANIMATION_OPENED" description="PBSP_ANIMATION_OPENED_DESC=">
-                    <option value="0">JNO</option>
-                    <option value="1">JYES</option>
-                </field>
-                <field name="revealtype" type="list" default="click" label="PBSP_SHOW_TO" description="PBSP_SHOW_TO_DESC">
-                    <option value="click">PBSP_SHOW_TO_CLICK</option>
-                    <option value="mouseover">PBSP_SHOW_TO_MOUSEOVER</option>
-                    <option value="clickgo">PBSP_SHOW_TO_CLICKGO</option>
-                </field>
-                <field name="mouseoverdelay" type="text" default="200" label="PBSP_DELAY" description="PBSP_DELAY_DESC" />
-            </fieldset>
-            <fieldset name="PBSP_JQ_SETTINGS_DECOR">
-                <field name="togglehtml" type="list" default="none" label="PBSP_DECOR_TYPE" description="PBSP_DECOR_TYPE_DESC">
-                    <option value="none">PBSP_DECOR_TYPE_DESC_NO</option>
-                    <option value="prefix">PBSP_DECOR_TYPE_DESC_PREF</option>
-                    <option value="suffix">PBSP_DECOR_TYPE_DESC_SUFF</option>
-                </field>
-                <field name="togglehtml1" type="text" default="" label="PBSP_DECOR_TYPE_FIRST" description="PBSP_DECOR_TYPE_FIRST_DESC" />
-                <field name="togglehtml2" type="text" default="" label="PBSP_DECOR_TYPE_SECOND" description="PBSP_DECOR_TYPE_SECOND_DESC" />
-	
-            </fieldset>
-            <fieldset name="PBSP_CSS_SETTINGS_DECOR">
-                <field name="fontfamily" type="text" default="" label="PBSP_TTL_FONT_FAMILY" description="" />
-                <field name="titlesize" type="text" default="18" label="PBSP_TTL_SIZE" description="" />
-                <field name="titlecolor" type="text" default="ffffff" label="PBSP_TTL_COLOR" description="" />
-                <field name="titlebgcolor" type="text" default="ff5c00" label="PBSP_TTL_BGCOLOR" description="" />
-                <field name="titlestyle" type="list" default="normal" label="PBSP_TTL_STYLE" description="">
-                    <option value="normal">normal</option>
-                    <option value="italic">italic</option>
-                    <option value="oblique">oblique</option>
-                    <option value="inherit">inherit</option>
-                </field>
-                <field name="textshadow" type="list" default="1" label="PBSP_TEXT_SHADOW" description="PBSP_TEXT_SHADOW_DESC">
-                    <option value="1">JYES</option>
-                    <option value="0">JNO</option>
-                </field>
-                <field name="texthadowvalue" type="text" default="0 -1px 1px rgba(0,0,0,0.25)" label="PBSP_TEXT_SHADOW_VAL" description="PBSP_TEXT_SHADOW_VAL_DESC" />
-                <field name="boxshadow" type="list" default="1" label="PBSP_BOX_SHADOW" description="PBSP_BOX_SHADOW_DESC">
-                    <option value="1">JYES</option>
-                    <option value="0">JNO</option>
-                </field>
-                <field name="boxshadowvalue" type="text" default="0 0 5px rgba(0,0,0,0.6)" label="PBSP_BOX_SHADOW_VAL" description="PBSP_BOX_SHADOW_VAL_DESC" />
-                <field name="titlebordersize" type="text" default="0" label="PBSP_TTL_BORDERSIZE" description="PBSP_TTL_DESC" />
-                <field name="titlebordercolor" type="text" default="ccc" label="PBSP_TTL_BORDERCOLOR" description="" />		   
-                <field name="titleborderradius" type="text" default="8" label="PBSP_TTL_BORDERRADIUS" description="" />
-                <field name="titleborderstyle" type="list" default="solid" label="PBSP_TTL_BORDERSTYLE" description="">
-                    <option value="none">none</option>
-                    <option value="hidden">hidden</option>
-                    <option value="dotted">dotted</option>
-                    <option value="dashed">dashed</option>
-                    <option value="solid">solid</option>
-                    <option value="double">double</option>
-                    <option value="groove">groove</option>
-                    <option value="ridge">ridge</option>
-                    <option value="inset">inset</option>
-                    <option value="outset">outset</option>
-                </field>
-                <field name="titlewidth" type="text" default="95%" label="PBSP_TTL_WIDTH" description="" /> 
-                <field name="spoilerfontsize" type="text" default="11" label="PBSP_SPL_FONTSIZE" description="" />		
-                <field name="spoilerfontweight" type="list" default="normal" label="PBSP_SPL_FONTWEIGHT" description="">
-                    <option value="bold">bold</option>
-                    <option value="bolder">bolder</option>
-                    <option value="lighter">lighter</option>
-                    <option value="normal">normal</option>
-                </field>
-                <field name="spoilerstyle" type="list" default="italic" label="PBSP_SPL_STYLE" description="">
-                    <option value="normal">normal</option>
-                    <option value="italic">italic</option>
-                    <option value="oblique">oblique</option>
-                    <option value="inherit">inherit</option>
-                </field>
-                <field name="spoilerbg" type="text" default="FFFDDD" label="PBSP_SPL_BG" description="PBSP_TTL_DESC" />				
-                <field name="spoilerbordersize" type="text" default="1" label="PBSP_SPL_BORDERSIZE" description="PBSP_TTL_DESC" />		
-                <field name="spoilerbordercolor" type="text" default="ccc" label="PBSP_SPL_BORDERCOLOR" description="" />		 
-                <field name="spoilerborderstyle" type="list" default="solid" label="PBSP_SPL_BORDERSTYLE" description="">
-                    <option value="none">none</option>
-                    <option value="hidden">hidden</option>
-                    <option value="dotted">dotted</option>
-                    <option value="dashed">dashed</option>
-                    <option value="solid">solid</option>
-                    <option value="double">double</option>
-                    <option value="groove">groove</option>
-                    <option value="ridge">ridge</option>
-                    <option value="inset">inset</option>
-                    <option value="outset">outset</option>
-                </field>
-                <field name="spoilerborderradius" type="text" default="7" label="PBSP_SPL_BORDERRADIUS" description="" />				
-                <field name="spoilerwidth" type="text" default="95%" label="PBSP_SPL_WIDTH" description="" /> 
-                <field name="spoilerpadding" type="text" default="10" label="PBSP_SPL_PADDING" description="" />
-            </fieldset>
-        </fields>
-    </config>
-	
-	<params>
-        <param name="jstype" type="list" default="1" label="PBSP_LIB" description="PBSP_LIB_DESC">
-            <option value="1">mootools</option>
-            <option value="2">jquery</option>
-        </param>
-        <param name="jsjquery" type="radio" default="0" label="PBSP_JQ_LOAD" description="PBSP_JQ_LOAD_DESC">
-            <option value="0">NO</option>
-            <option value="1">YES</option>
-        </param>
-        <param name="cssload" type="radio" default="1" label="PBSP_CSS_LOAD" description="PBSP_CSS_LOAD_DESC">
-            <option value="0">NO</option>
-            <option value="1">YES</option>
-        </param>
-		
-        <param name="@spacer1" type="spacer" default="PBSP_GENERAL_SETTINGS" label="" description="" />
-        <param name="animatespeed" type="text" default="400" label="PBSP_SPEED_ANIMATION" description="PBSP_SPEED_ANIMATION_DESC" />
-		
-        <param name="load_img" type="radio" default="0" label="PBSP_LOAD_IMAGES" description="PBSP_LOAD_IMAGES_DESC">
-            <option value="0">NO</option>
-            <option value="1">YES</option>
-        </param>
-		
-        <param name="collapseprev" type="radio" default="0" label="PBSP_COLLAPSE_PREV" description="PBSP_COLLAPSE_PREV_DESC">
-            <option value="0">NO</option>
-            <option value="1">YES</option>
-        </param>
-        <param name="onemustopen" type="radio" default="0" label="PBSP_ONE_OPENED" description="PBSP_ONE_OPENED_DESC">
-            <option value="0">NO</option>
-            <option value="1">YES</option>
-        </param>
-        <param name="animatedefault" type="radio" default="0" label="PBSP_ANIMATION_OPENED" description="PBSP_ANIMATION_OPENED_DESC=">
-            <option value="0">NO</option>
-            <option value="1">YES</option>
-        </param>
-        <param name="revealtype" type="list" default="click" label="PBSP_SHOW_TO" description="PBSP_SHOW_TO_DESC">
-            <option value="click">PBSP_SHOW_TO_CLICK</option>
-            <option value="mouseover">PBSP_SHOW_TO_MOUSEOVER</option>
-            <option value="clickgo">PBSP_SHOW_TO_CLICKGO</option>
-        </param>
-        <param name="mouseoverdelay" type="text" default="200" label="PBSP_DELAY" description="PBSP_DELAY_DESC" />
-        <param name="@spacer3" type="spacer" default="PBSP_JQ_SETTINGS_DECOR" label="" description="" />
-        <param name="togglehtml" type="list" default="none" label="PBSP_DECOR_TYPE" description="PBSP_DECOR_TYPE_DESC">
-            <option value="none">PBSP_DECOR_TYPE_DESC_NO</option>
-            <option value="prefix">PBSP_DECOR_TYPE_DESC_PREF</option>
-            <option value="suffix">PBSP_DECOR_TYPE_DESC_SUFF</option>
-        </param>
-        <param name="togglehtml1" type="text" default="" label="PBSP_DECOR_TYPE_FIRST" description="PBSP_DECOR_TYPE_FIRST_DESC" />
-        <param name="togglehtml2" type="text" default="" label="PBSP_DECOR_TYPE_SECOND" description="PBSP_DECOR_TYPE_SECOND_DESC" />
-        <param name="@spacer" type="spacer" default="" label="" description="" />
-        <param name="@spacer3" type="spacer" default="PBSP_CSS_SETTINGS_DECOR" label="" description="" />		
-		
-        <param name="fontfamily" type="text" default="" label="PBSP_TTL_FONT_FAMILY" description="" />
-        <param name="titlesize" type="text" default="18" label="PBSP_TTL_SIZE" description="" />
-        <param name="titlecolor" type="text" default="ffffff" label="PBSP_TTL_COLOR" description="" />
-        <param name="titlebgcolor" type="text" default="ff5c00" label="PBSP_TTL_BGCOLOR" description="" />
-        <param name="titlestyle" type="list" default="normal" label="PBSP_TTL_STYLE" description="">
-            <option value="normal">normal</option>
-            <option value="italic">italic</option>
-            <option value="oblique">oblique</option>
-            <option value="inherit">inherit</option>
-        </param>
-        <param name="textshadow" type="list" default="1" label="PBSP_TEXT_SHADOW" description="PBSP_TEXT_SHADOW_DESC">
-            <option value="1">YES</option>
-            <option value="0">NO</option>
-        </param>
-        <param name="texthadowvalue" type="text" default="0 -1px 1px rgba(0,0,0,0.25)" label="PBSP_TEXT_SHADOW_VAL" description="PBSP_TEXT_SHADOW_VAL_DESC" />
-        <param name="boxshadow" type="list" default="1" label="PBSP_BOX_SHADOW" description="PBSP_BOX_SHADOW_DESC">
-            <option value="1">YES</option>
-            <option value="0">NO</option>
-        </param>
-        <param name="boxshadowvalue" type="text" default="0 0 5px rgba(0,0,0,0.6)" label="PBSP_BOX_SHADOW_VAL" description="PBSP_BOX_SHADOW_VAL_DESC" />
-        <param name="titlebordersize" type="text" default="0" label="PBSP_TTL_BORDERSIZE" description="PBSP_TTL_DESC" />
-        <param name="titlebordercolor" type="text" default="ccc" label="PBSP_TTL_BORDERCOLOR" description="" />		   
-        <param name="titleborderradius" type="text" default="8" label="PBSP_TTL_BORDERRADIUS" description="" />
-        <param name="titleborderstyle" type="list" default="solid" label="PBSP_TTL_BORDERSTYLE" description="">
-            <option value="none">none</option>
-            <option value="hidden">hidden</option>
-            <option value="dotted">dotted</option>
-            <option value="dashed">dashed</option>
-            <option value="solid">solid</option>
-            <option value="double">double</option>
-            <option value="groove">groove</option>
-            <option value="ridge">ridge</option>
-            <option value="inset">inset</option>
-            <option value="outset">outset</option>
-        </param>
-        <param name="titlewidth" type="text" default="95%" label="PBSP_TTL_WIDTH" description="" /> 
-        <param name="spoilerfontsize" type="text" default="11" label="PBSP_SPL_FONTSIZE" description="" />		
-        <param name="spoilerfontweight" type="list" default="normal" label="PBSP_SPL_FONTWEIGHT" description="">
-            <option value="bold">bold</option>
-            <option value="bolder">bolder</option>
-            <option value="lighter">lighter</option>
-            <option value="normal">normal</option>
-        </param>
-        <param name="spoilerstyle" type="list" default="italic" label="PBSP_SPL_STYLE" description="">
-            <option value="normal">normal</option>
-            <option value="italic">italic</option>
-            <option value="oblique">oblique</option>
-            <option value="inherit">inherit</option>
-        </param>
-        <param name="spoilerbg" type="text" default="FFFDDD" label="PBSP_SPL_BG" description="PBSP_TTL_DESC" />				
-        <param name="spoilerbordersize" type="text" default="1" label="PBSP_SPL_BORDERSIZE" description="PBSP_TTL_DESC" />		
-        <param name="spoilerbordercolor" type="text" default="ccc" label="PBSP_SPL_BORDERCOLOR" description="" />		 
-        <param name="spoilerborderstyle" type="list" default="solid" label="PBSP_SPL_BORDERSTYLE" description="">
-            <option value="none">none</option>
-            <option value="hidden">hidden</option>
-            <option value="dotted">dotted</option>
-            <option value="dashed">dashed</option>
-            <option value="solid">solid</option>
-            <option value="double">double</option>
-            <option value="groove">groove</option>
-            <option value="ridge">ridge</option>
-            <option value="inset">inset</option>
-            <option value="outset">outset</option>
-        </param>
-        <param name="spoilerborderradius" type="text" default="7" label="PBSP_SPL_BORDERRADIUS" description="" />				
-        <param name="spoilerwidth" type="text" default="95%" label="PBSP_SPL_WIDTH" description="" /> 
-        <param name="spoilerpadding" type="text" default="10" label="PBSP_SPL_PADDING" description="" />	
-    </params>
-</install>
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="content" method="upgrade">
+    <name>Content - LVSpoiler</name>
+    <author>Arkadiy</author>
+    <creationDate>06.10.2011</creationDate>
+    <copyright>Copyright (C) 2005 - 2008 Open Source Matters. All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <authorEmail></authorEmail>
+    <authorUrl>http://joomlaforum.ru/index.php/topic,173513.msg936214.html</authorUrl>
+    <version>1.0.8</version>
+    <description>PBSP_DESC</description>
+    <files>
+        <filename plugin="LVSpoiler">LVSpoiler.php</filename>
+        <filename>index.html</filename>
+        <folder>LVSpoiler</folder>
+    </files>
+    <languages>
+        <language tag="en-GB">language/en-GB.plg_content_LVSpoiler.ini</language>
+        <language tag="en-GB">language/en-GB.plg_content_LVSpoiler.sys.ini</language>
+        <language tag="ru-RU">language/ru-RU.plg_content_LVSpoiler.ini</language>
+        <language tag="ru-RU">language/ru-RU.plg_content_LVSpoiler.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="PBSP_GENERAL_SETTINGS">
+                <field name="jstype" type="list" default="1" label="PBSP_LIB" description="PBSP_LIB_DESC">
+                    <option value="1">mootools</option>
+                    <option value="2">jquery</option>
+                </field>
+                <field name="jsjquery" type="radio" default="0" label="PBSP_JQ_LOAD" description="PBSP_JQ_LOAD_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="cssload" type="radio" default="1" label="PBSP_CSS_LOAD" description="PBSP_CSS_LOAD_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+            </fieldset>
+            <fieldset name="PBSP_SPOILER_SETTINGS">
+                <field name="animatespeed" type="text" default="400" label="PBSP_SPEED_ANIMATION" description="PBSP_SPEED_ANIMATION_DESC" />
+                <field name="load_img" type="radio" default="0" label="PBSP_LOAD_IMAGES" description="PBSP_LOAD_IMAGES_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="collapseprev" type="radio" default="0" label="PBSP_COLLAPSE_PREV" description="PBSP_COLLAPSE_PREV_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="onemustopen" type="radio" default="0" label="PBSP_ONE_OPENED" description="PBSP_ONE_OPENED_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="animatedefault" type="radio" default="0" label="PBSP_ANIMATION_OPENED" description="PBSP_ANIMATION_OPENED_DESC=">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="revealtype" type="list" default="click" label="PBSP_SHOW_TO" description="PBSP_SHOW_TO_DESC">
+                    <option value="click">PBSP_SHOW_TO_CLICK</option>
+                    <option value="mouseover">PBSP_SHOW_TO_MOUSEOVER</option>
+                    <option value="clickgo">PBSP_SHOW_TO_CLICKGO</option>
+                </field>
+                <field name="mouseoverdelay" type="text" default="200" label="PBSP_DELAY" description="PBSP_DELAY_DESC" />
+            </fieldset>
+            <fieldset name="PBSP_JQ_SETTINGS_DECOR">
+                <field name="togglehtml" type="list" default="none" label="PBSP_DECOR_TYPE" description="PBSP_DECOR_TYPE_DESC">
+                    <option value="none">PBSP_DECOR_TYPE_DESC_NO</option>
+                    <option value="prefix">PBSP_DECOR_TYPE_DESC_PREF</option>
+                    <option value="suffix">PBSP_DECOR_TYPE_DESC_SUFF</option>
+                </field>
+                <field name="togglehtml1" type="text" default="" label="PBSP_DECOR_TYPE_FIRST" description="PBSP_DECOR_TYPE_FIRST_DESC" />
+                <field name="togglehtml2" type="text" default="" label="PBSP_DECOR_TYPE_SECOND" description="PBSP_DECOR_TYPE_SECOND_DESC" />
+	
+            </fieldset>
+            <fieldset name="PBSP_CSS_SETTINGS_DECOR">
+                <field name="fontfamily" type="text" default="" label="PBSP_TTL_FONT_FAMILY" description="" />
+                <field name="titlesize" type="text" default="18" label="PBSP_TTL_SIZE" description="" />
+                <field name="titlecolor" type="text" default="ffffff" label="PBSP_TTL_COLOR" description="" />
+                <field name="titlebgcolor" type="text" default="ff5c00" label="PBSP_TTL_BGCOLOR" description="" />
+                <field name="titlestyle" type="list" default="normal" label="PBSP_TTL_STYLE" description="">
+                    <option value="normal">normal</option>
+                    <option value="italic">italic</option>
+                    <option value="oblique">oblique</option>
+                    <option value="inherit">inherit</option>
+                </field>
+                <field name="textshadow" type="list" default="1" label="PBSP_TEXT_SHADOW" description="PBSP_TEXT_SHADOW_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="texthadowvalue" type="text" default="0 -1px 1px rgba(0,0,0,0.25)" label="PBSP_TEXT_SHADOW_VAL" description="PBSP_TEXT_SHADOW_VAL_DESC" />
+                <field name="boxshadow" type="list" default="1" label="PBSP_BOX_SHADOW" description="PBSP_BOX_SHADOW_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="boxshadowvalue" type="text" default="0 0 5px rgba(0,0,0,0.6)" label="PBSP_BOX_SHADOW_VAL" description="PBSP_BOX_SHADOW_VAL_DESC" />
+                <field name="titlebordersize" type="text" default="0" label="PBSP_TTL_BORDERSIZE" description="PBSP_TTL_DESC" />
+                <field name="titlebordercolor" type="text" default="ccc" label="PBSP_TTL_BORDERCOLOR" description="" />		   
+                <field name="titleborderradius" type="text" default="8" label="PBSP_TTL_BORDERRADIUS" description="" />
+                <field name="titleborderstyle" type="list" default="solid" label="PBSP_TTL_BORDERSTYLE" description="">
+                    <option value="none">none</option>
+                    <option value="hidden">hidden</option>
+                    <option value="dotted">dotted</option>
+                    <option value="dashed">dashed</option>
+                    <option value="solid">solid</option>
+                    <option value="double">double</option>
+                    <option value="groove">groove</option>
+                    <option value="ridge">ridge</option>
+                    <option value="inset">inset</option>
+                    <option value="outset">outset</option>
+                </field>
+                <field name="titlewidth" type="text" default="95%" label="PBSP_TTL_WIDTH" description="" /> 
+                <field name="spoilerfontsize" type="text" default="11" label="PBSP_SPL_FONTSIZE" description="" />		
+                <field name="spoilerfontweight" type="list" default="normal" label="PBSP_SPL_FONTWEIGHT" description="">
+                    <option value="bold">bold</option>
+                    <option value="bolder">bolder</option>
+                    <option value="lighter">lighter</option>
+                    <option value="normal">normal</option>
+                </field>
+                <field name="spoilerstyle" type="list" default="italic" label="PBSP_SPL_STYLE" description="">
+                    <option value="normal">normal</option>
+                    <option value="italic">italic</option>
+                    <option value="oblique">oblique</option>
+                    <option value="inherit">inherit</option>
+                </field>
+                <field name="spoilerbg" type="text" default="FFFDDD" label="PBSP_SPL_BG" description="PBSP_TTL_DESC" />				
+                <field name="spoilerbordersize" type="text" default="1" label="PBSP_SPL_BORDERSIZE" description="PBSP_TTL_DESC" />		
+                <field name="spoilerbordercolor" type="text" default="ccc" label="PBSP_SPL_BORDERCOLOR" description="" />		 
+                <field name="spoilerborderstyle" type="list" default="solid" label="PBSP_SPL_BORDERSTYLE" description="">
+                    <option value="none">none</option>
+                    <option value="hidden">hidden</option>
+                    <option value="dotted">dotted</option>
+                    <option value="dashed">dashed</option>
+                    <option value="solid">solid</option>
+                    <option value="double">double</option>
+                    <option value="groove">groove</option>
+                    <option value="ridge">ridge</option>
+                    <option value="inset">inset</option>
+                    <option value="outset">outset</option>
+                </field>
+                <field name="spoilerborderradius" type="text" default="7" label="PBSP_SPL_BORDERRADIUS" description="" />				
+                <field name="spoilerwidth" type="text" default="95%" label="PBSP_SPL_WIDTH" description="" /> 
+                <field name="spoilerpadding" type="text" default="10" label="PBSP_SPL_PADDING" description="" />
+            </fieldset>
+        </fields>
+    </config>
+	
+	<params>
+        <param name="jstype" type="list" default="1" label="PBSP_LIB" description="PBSP_LIB_DESC">
+            <option value="1">mootools</option>
+            <option value="2">jquery</option>
+        </param>
+        <param name="jsjquery" type="radio" default="0" label="PBSP_JQ_LOAD" description="PBSP_JQ_LOAD_DESC">
+            <option value="0">NO</option>
+            <option value="1">YES</option>
+        </param>
+        <param name="cssload" type="radio" default="1" label="PBSP_CSS_LOAD" description="PBSP_CSS_LOAD_DESC">
+            <option value="0">NO</option>
+            <option value="1">YES</option>
+        </param>
+		
+        <param name="@spacer1" type="spacer" default="PBSP_GENERAL_SETTINGS" label="" description="" />
+        <param name="animatespeed" type="text" default="400" label="PBSP_SPEED_ANIMATION" description="PBSP_SPEED_ANIMATION_DESC" />
+		
+        <param name="load_img" type="radio" default="0" label="PBSP_LOAD_IMAGES" description="PBSP_LOAD_IMAGES_DESC">
+            <option value="0">NO</option>
+            <option value="1">YES</option>
+        </param>
+		
+        <param name="collapseprev" type="radio" default="0" label="PBSP_COLLAPSE_PREV" description="PBSP_COLLAPSE_PREV_DESC">
+            <option value="0">NO</option>
+            <option value="1">YES</option>
+        </param>
+        <param name="onemustopen" type="radio" default="0" label="PBSP_ONE_OPENED" description="PBSP_ONE_OPENED_DESC">
+            <option value="0">NO</option>
+            <option value="1">YES</option>
+        </param>
+        <param name="animatedefault" type="radio" default="0" label="PBSP_ANIMATION_OPENED" description="PBSP_ANIMATION_OPENED_DESC=">
+            <option value="0">NO</option>
+            <option value="1">YES</option>
+        </param>
+        <param name="revealtype" type="list" default="click" label="PBSP_SHOW_TO" description="PBSP_SHOW_TO_DESC">
+            <option value="click">PBSP_SHOW_TO_CLICK</option>
+            <option value="mouseover">PBSP_SHOW_TO_MOUSEOVER</option>
+            <option value="clickgo">PBSP_SHOW_TO_CLICKGO</option>
+        </param>
+        <param name="mouseoverdelay" type="text" default="200" label="PBSP_DELAY" description="PBSP_DELAY_DESC" />
+        <param name="@spacer3" type="spacer" default="PBSP_JQ_SETTINGS_DECOR" label="" description="" />
+        <param name="togglehtml" type="list" default="none" label="PBSP_DECOR_TYPE" description="PBSP_DECOR_TYPE_DESC">
+            <option value="none">PBSP_DECOR_TYPE_DESC_NO</option>
+            <option value="prefix">PBSP_DECOR_TYPE_DESC_PREF</option>
+            <option value="suffix">PBSP_DECOR_TYPE_DESC_SUFF</option>
+        </param>
+        <param name="togglehtml1" type="text" default="" label="PBSP_DECOR_TYPE_FIRST" description="PBSP_DECOR_TYPE_FIRST_DESC" />
+        <param name="togglehtml2" type="text" default="" label="PBSP_DECOR_TYPE_SECOND" description="PBSP_DECOR_TYPE_SECOND_DESC" />
+        <param name="@spacer" type="spacer" default="" label="" description="" />
+        <param name="@spacer3" type="spacer" default="PBSP_CSS_SETTINGS_DECOR" label="" description="" />		
+		
+        <param name="fontfamily" type="text" default="" label="PBSP_TTL_FONT_FAMILY" description="" />
+        <param name="titlesize" type="text" default="18" label="PBSP_TTL_SIZE" description="" />
+        <param name="titlecolor" type="text" default="ffffff" label="PBSP_TTL_COLOR" description="" />
+        <param name="titlebgcolor" type="text" default="ff5c00" label="PBSP_TTL_BGCOLOR" description="" />
+        <param name="titlestyle" type="list" default="normal" label="PBSP_TTL_STYLE" description="">
+            <option value="normal">normal</option>
+            <option value="italic">italic</option>
+            <option value="oblique">oblique</option>
+            <option value="inherit">inherit</option>
+        </param>
+        <param name="textshadow" type="list" default="1" label="PBSP_TEXT_SHADOW" description="PBSP_TEXT_SHADOW_DESC">
+            <option value="1">YES</option>
+            <option value="0">NO</option>
+        </param>
+        <param name="texthadowvalue" type="text" default="0 -1px 1px rgba(0,0,0,0.25)" label="PBSP_TEXT_SHADOW_VAL" description="PBSP_TEXT_SHADOW_VAL_DESC" />
+        <param name="boxshadow" type="list" default="1" label="PBSP_BOX_SHADOW" description="PBSP_BOX_SHADOW_DESC">
+            <option value="1">YES</option>
+            <option value="0">NO</option>
+        </param>
+        <param name="boxshadowvalue" type="text" default="0 0 5px rgba(0,0,0,0.6)" label="PBSP_BOX_SHADOW_VAL" description="PBSP_BOX_SHADOW_VAL_DESC" />
+        <param name="titlebordersize" type="text" default="0" label="PBSP_TTL_BORDERSIZE" description="PBSP_TTL_DESC" />
+        <param name="titlebordercolor" type="text" default="ccc" label="PBSP_TTL_BORDERCOLOR" description="" />		   
+        <param name="titleborderradius" type="text" default="8" label="PBSP_TTL_BORDERRADIUS" description="" />
+        <param name="titleborderstyle" type="list" default="solid" label="PBSP_TTL_BORDERSTYLE" description="">
+            <option value="none">none</option>
+            <option value="hidden">hidden</option>
+            <option value="dotted">dotted</option>
+            <option value="dashed">dashed</option>
+            <option value="solid">solid</option>
+            <option value="double">double</option>
+            <option value="groove">groove</option>
+            <option value="ridge">ridge</option>
+            <option value="inset">inset</option>
+            <option value="outset">outset</option>
+        </param>
+        <param name="titlewidth" type="text" default="95%" label="PBSP_TTL_WIDTH" description="" /> 
+        <param name="spoilerfontsize" type="text" default="11" label="PBSP_SPL_FONTSIZE" description="" />		
+        <param name="spoilerfontweight" type="list" default="normal" label="PBSP_SPL_FONTWEIGHT" description="">
+            <option value="bold">bold</option>
+            <option value="bolder">bolder</option>
+            <option value="lighter">lighter</option>
+            <option value="normal">normal</option>
+        </param>
+        <param name="spoilerstyle" type="list" default="italic" label="PBSP_SPL_STYLE" description="">
+            <option value="normal">normal</option>
+            <option value="italic">italic</option>
+            <option value="oblique">oblique</option>
+            <option value="inherit">inherit</option>
+        </param>
+        <param name="spoilerbg" type="text" default="FFFDDD" label="PBSP_SPL_BG" description="PBSP_TTL_DESC" />				
+        <param name="spoilerbordersize" type="text" default="1" label="PBSP_SPL_BORDERSIZE" description="PBSP_TTL_DESC" />		
+        <param name="spoilerbordercolor" type="text" default="ccc" label="PBSP_SPL_BORDERCOLOR" description="" />		 
+        <param name="spoilerborderstyle" type="list" default="solid" label="PBSP_SPL_BORDERSTYLE" description="">
+            <option value="none">none</option>
+            <option value="hidden">hidden</option>
+            <option value="dotted">dotted</option>
+            <option value="dashed">dashed</option>
+            <option value="solid">solid</option>
+            <option value="double">double</option>
+            <option value="groove">groove</option>
+            <option value="ridge">ridge</option>
+            <option value="inset">inset</option>
+            <option value="outset">outset</option>
+        </param>
+        <param name="spoilerborderradius" type="text" default="7" label="PBSP_SPL_BORDERRADIUS" description="" />				
+        <param name="spoilerwidth" type="text" default="95%" label="PBSP_SPL_WIDTH" description="" /> 
+        <param name="spoilerpadding" type="text" default="10" label="PBSP_SPL_PADDING" description="" />	
+    </params>
+</install>
