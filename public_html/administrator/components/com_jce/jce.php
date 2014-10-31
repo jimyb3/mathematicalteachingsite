@@ -2,7 +2,7 @@
 
 /**
  * @package   	JCE
- * @copyright 	Copyright (c) 2009-2013 Ryan Demmer. All rights reserved.
+ * @copyright 	Copyright (c) 2009-2014 Ryan Demmer. All rights reserved.
  * @license   	GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
@@ -18,6 +18,10 @@ require_once(dirname(__FILE__) . '/includes/base.php');
 $view = JRequest::getCmd('view');
 // get task
 $task = JRequest::getCmd('task');
+
+if ($task === "plugin") {
+    throw new Exception('RESTRICTED', 403);
+}
 
 // legacy conversion
 if ($task == 'popup') {
@@ -40,13 +44,13 @@ if (file_exists($controllerPath)) {
 
     $controllerClass = 'WFController' . ucfirst($view);
     $controller = new $controllerClass(array(
-                'base_path' => WF_ADMINISTRATOR
-            ));
+        'base_path' => WF_ADMINISTRATOR
+    ));
 // load default controller
 } else {
     $controller = new WFController(array(
-                'base_path' => WF_ADMINISTRATOR
-            ));
+        'base_path' => WF_ADMINISTRATOR
+    ));
 }
 
 // check Authorisations

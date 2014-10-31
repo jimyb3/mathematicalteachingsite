@@ -2,7 +2,7 @@
 
 /**
  * @package   	JCE
- * @copyright 	Copyright (c) 2009-2013 Ryan Demmer. All rights reserved.
+ * @copyright 	Copyright (c) 2009-2014 Ryan Demmer. All rights reserved.
  * @license   	GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
@@ -13,11 +13,14 @@ defined('_JEXEC') or die('RESTRICTED');
 
 class WFPacker extends JObject {
 
+    const IMPORT_RX = '#@import([^;]+);#i';
+
     protected $files = array();
     protected $type = 'javascript';
     protected $text = '';
     protected $start = '';
     protected $end = '';
+    protected static $imports = array();
 
     /**
      * Constructor activating the default information of the class
@@ -89,11 +92,6 @@ class WFPacker extends JObject {
     public function pack($minify = true, $gzip = false) {
         $type = $this->getType();
 
-        /* $encoding = self::getEncoding();
-
-          $zlib = extension_loaded('zlib') && !ini_get('zlib.output_compression');
-          $gzip = $gzip && !empty($encoding) && $zlib && function_exists('gzencode'); */
-
         ob_start();
 
         // Headers
@@ -105,6 +103,7 @@ class WFPacker extends JObject {
             header("Content-type: text/css; charset: UTF-8");
         }
 
+        // encoding
         header("Vary: Accept-Encoding");
 
         // expires after 48 hours
@@ -119,8 +118,8 @@ class WFPacker extends JObject {
 
         $encoding = self::getEncoding();
 
-        $zlib = extension_loaded('zlib') && ini_get('zlib.output_compression');
-        $gzip = $gzip && !empty($encoding) && $zlib && function_exists('gzencode');
+        $zlib = function_exists('ini_get') && extension_loaded('zlib') && ini_get('zlib.output_compression');
+        $gzip = $gzip && !empty($encoding) && !$zlib && function_exists('gzencode');
 
         $content = $this->getContentStart();
 
@@ -132,22 +131,28 @@ class WFPacker extends JObject {
             }
         }
 
+        if ($this->getType() == 'css') {
+            // move external import rules to top
+            foreach (array_unique(self::$imports) as $import) {
+                if (strpos($import, '//') !== false) {
+                    $content = '@import url("' . $import . '");' . $content;
+                }
+            }
+        }
+
         $content .= $this->getContentEnd();
+
+        // get content hash
+        $hash = md5($content);
+
+        // set etag header
+        header("ETag: \"{$hash}\"");
 
         // Generate GZIP'd content
         if ($gzip) {
             header("Content-Encoding: " . $encoding);
             $content = gzencode($content, 4, FORCE_GZIP);
         }
-
-        // get content hash
-        $hash = hash('md5', $content);
-
-        // set etag header
-        header("ETag: \"{$hash}\"");
-
-        // set content length
-        header("Content-Length: " . strlen($content));
 
         // stream to client
         echo $content;
@@ -162,18 +167,33 @@ class WFPacker extends JObject {
 
     /**
      * Simple CSS Minifier
+     * https://github.com/GaryJones/Simple-PHP-CSS-Minification
      * @param $data Data string to minify
      */
-    protected function cssmin($data) {
-        $data = str_replace('\r\n', '\n', $data);
+    protected function cssmin($css) {
+        // Normalize whitespace
+        //$css = preg_replace('/\s+/', ' ', $css);
+        // Remove comment blocks, everything between /* and */, unless
+        // preserved with /*! ... */
+        //$css = preg_replace('/\/\*[^\!](.*?)\*\//', '', $css);
+        // Remove space after , : ; { }
+        //$css = preg_replace('/(,|:|;|\{|}) /', '$1', $css);
+        // Remove space before , ; { }
+        //$css = preg_replace('/ (,|;|\{|})/', '$1', $css);
+        // Strips leading 0 on decimal values (converts 0.5px into .5px)
+        //$css = preg_replace('/(:| )0\.([0-9]+)(%|em|ex|px|in|cm|mm|pt|pc)/i', '${1}.${2}${3}', $css);
+        // Strips units if value is 0 (converts 0px to 0)
+        //$css = preg_replace('/(:| )(\.?)0(%|em|ex|px|in|cm|mm|pt|pc)/i', '${1}0', $css);
+        // Converts all zeros value into short-hand
+        //$css = preg_replace('/0 0 0 0/', '0', $css);
+        // Shortern 6-character hex color codes to 3-character where possible
+        //$css = preg_replace('/#([a-f0-9])\\1([a-f0-9])\\2([a-f0-9])\\3/i', '#\1\2\3', $css);
 
-        $data = preg_replace('#\s+#', ' ', $data);
-        $data = preg_replace('#/\*.*?\*/#s', '', $data);
-        $data = preg_replace('#\s?([:\{\};,])\s?#', '$1', $data);
+        require_once(dirname(__FILE__) . '/cssmin.php');
+        $min = new CSSmin();
+        $css = $min->run($css);
 
-        $data = str_replace(';}', '}', $data);
-
-        return trim($data);
+        return trim($css);
     }
 
     /**
@@ -181,23 +201,44 @@ class WFPacker extends JObject {
      * @param file File path where data comes from
      * @param $data Data from file
      */
-    protected function importCss($data) {
-        if (preg_match_all('#@import url\([\'"]?([^\'"\)]+)[\'"]?\);#i', $data, $matches)) {
+    protected function importCss($data, $file) {
+        if (preg_match_all(self::IMPORT_RX, $data, $matches)) {
 
             $data = '';
 
             foreach ($matches[1] as $match) {
-                // url has a query, remove
-                if (strpos($match, '?') !== false) {
-                    $match = substr($match, 0, strpos($match, '?'));
-                }
-                
-                if (strpos($match, '&') !== false) {
-                    $match = substr($match, 0, strpos($match, '&'));
-                }
+                // clean up url
+                $match = str_replace(array('url', '"', "'", '(', ')'), '', $match);
+                // trim
+                $match = trim($match);
 
                 if ($match) {
-                    $data .= $this->getText(realpath($this->get('_cssbase') . '/' . $match));
+                    // external url, skip it
+                    if (strpos($match, '//') !== false) {
+                        // add to imports list
+                        self::$imports[] = $match;
+                        continue;
+                    }
+
+                    // url has a query, remove
+                    if (strpos($match, '?') !== false) {
+                        $match = substr($match, 0, strpos($match, '?'));
+                    }
+
+                    if (strpos($match, '&') !== false) {
+                        $match = substr($match, 0, strpos($match, '&'));
+                    }
+
+                    // get full path
+                    $path = realpath($this->get('_cssbase') . '/' . $match);
+
+                    // already import, don't repeat!
+                    if (in_array($path, self::$imports)) {
+                        continue;
+                    }
+
+                    // get data
+                    $data .= $this->getText($path);
                 }
             }
 
@@ -226,22 +267,30 @@ class WFPacker extends JObject {
     protected function getText($file = null, $minify = true) {
 
         if ($file && is_file($file)) {
-
-            if ($text = file_get_contents($file)) {
+            $text = file_get_contents($file);
+            
+            if ($text) {
                 // process css files
                 if ($this->getType() == 'css') {
-
                     // compile less files
                     if (preg_match('#\.less$#', $file)) {
                         $text = $this->compileLess($text, dirname($file));
                     }
+
+                    if ($minify) {
+                        // minify
+                        $text = $this->cssmin($text, $file);
+                    }
+
+                    // add to imports list
+                    self::$imports[] = $file;
 
                     if (strpos($text, '@import') !== false) {
                         // store the base path of the current file
                         $this->set('_cssbase', dirname($file));
 
                         // process import rules
-                        $text = $this->importCss($text) . preg_replace('#@import url\([\'"]?([^\'"\)]+)[\'"]?\);#i', '', $text);
+                        $text = $this->importCss($text, $file) . preg_replace(self::IMPORT_RX, '', $text);
                     }
 
                     // store the base path of the current file
@@ -249,11 +298,6 @@ class WFPacker extends JObject {
 
                     // process urls
                     $text = preg_replace_callback('#url\s?\([\'"]?([^\'"\))]+)[\'"]?\)#', array('WFPacker', 'processPaths'), $text);
-
-                    if ($minify) {
-                        // minify
-                        $text = $this->cssmin($text);
-                    }
                 }
                 // make sure text ends in a semi-colon;
                 if ($this->getType() == 'javascript') {
@@ -272,13 +316,22 @@ class WFPacker extends JObject {
     }
 
     protected function processPaths($data) {
-        $path = str_replace(JPATH_SITE, '', realpath($this->get('_imgbase') . '/' . $data[1]));
 
-        if ($path) {
-            return "url('" . JURI::root(true) . str_replace('\\', '/', $path) . "')";
+        if (isset($data[1])) {
+            if (strpos($data[1], '//') === false) {
+                $path = str_replace(JPATH_SITE, '', realpath($this->get('_imgbase') . '/' . $data[1]));
+
+                if ($path) {
+                    return "url('" . JURI::root(true) . str_replace('\\', '/', $path) . "')";
+                }
+
+                return "url('" . $data[1] . "')";
+            }
+
+            return $data[1];
         }
 
-        return "url('" . $data[1] . "')";
+        return "";
     }
 
 }

@@ -1,0 +1,2 @@
+[30-Oct-2014 18:13:02 UTC] PHP Notice:  Undefined property: TemplatesTableStyle::$checked_out in /home/imathsit/public_html/libraries/joomla/application/component/modelform.php on line 101
+[30-Oct-2014 18:13:16 UTC] PHP Notice:  Undefined property: TemplatesTableStyle::$checked_out in /home/imathsit/public_html/libraries/joomla/application/component/modelform.php on line 101
