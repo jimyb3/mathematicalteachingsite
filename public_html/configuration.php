@@ -1,6 +1,6 @@
 <?php
 class JConfig {
-	public $offline = '1';
+	public $offline = '0';
 	public $offline_message = 'Εκτός λειτουργίας για τεχνικούς λόγους.<br /> Παρακαλώ, προσπαθήστε αργότερα.';
 	public $display_offline_message = '1';
 	public $offline_image = '';
@@ -12,26 +12,26 @@ class JConfig {
 	public $debug = '0';
 	public $debug_lang = '0';
 	public $dbtype = 'mysql';
-	public $host = 'mysql17.000webhost.com';
-	public $user = 'a6377938_testuse';
-	public $password = '123kodikos';
-	public $db = 'a6377938_kodikos';
-	public $dbprefix = 'test_';
+	public $host = 'localhost';
+	public $user = 'imathsit_imathDB';
+	public $password = 'g.8LSP2d6-';
+	public $db = 'imathsit_imathDB';
+	public $dbprefix = 'jos_';
 	public $live_site = '';
-	public $secret = 'VgZ3zFfdiP9IGuH3';
+	public $secret = 'gnyy12kaswdxteox';
 	public $gzip = '0';
 	public $error_reporting = 'default';
 	public $helpurl = 'http://help.joomla.org/proxy/index.php?option=com_help&keyref=Help{major}{minor}:{keyref}';
 	public $ftp_host = '127.0.0.1';
 	public $ftp_port = '21';
-	public $ftp_user = 'admin';
-	public $ftp_pass = 'admin';
+	public $ftp_user = 'imathsite_Admin';
+	public $ftp_pass = '30FILLOS';
 	public $ftp_root = '';
 	public $ftp_enable = '0';
 	public $offset = 'UTC';
 	public $mailer = 'mail';
-	public $mailfrom = 'psnusa150765@gmail.com';
-	public $fromname = 'http://test1forprojectmatimaticasite.comule.com/';
+	public $mailfrom = 'jimyb3@imathsite.net';
+	public $fromname = 'Μαθηματική Διδακτική ιστοσελίδα';
 	public $sendmail = '/usr/sbin/sendmail';
 	public $smtpauth = '0';
 	public $smtpuser = '';
@@ -42,7 +42,7 @@ class JConfig {
 	public $caching = '0';
 	public $cache_handler = 'file';
 	public $cachetime = '15';
-	public $MetaDesc = '';
+	public $MetaDesc = '&Mu;&alpha;&theta;&eta;&mu;&alpha;&tau;&iota;&kappa;ή &Delta;&iota;&delta;&alpha;&kappa;&tau;&iota;&kappa;ή &iota;&sigma;&tau;&omicron;&sigma;&epsilon;&lambda;ί&delta;&alpha;';
 	public $MetaKeys = '';
 	public $MetaTitle = '1';
 	public $MetaAuthor = '1';
@@ -53,8 +53,8 @@ class JConfig {
 	public $sef_suffix = '0';
 	public $unicodeslugs = '0';
 	public $feed_limit = '10';
-	public $log_path = '/home/a6377938/public_html/logs';
-	public $tmp_path = '/home/a6377938/public_html/tmp';
+	public $log_path = '/home/imathsit/public_html/logs';
+	public $tmp_path = '/home/imathsit/public_html/tmp';
 	public $lifetime = '15';
 	public $session_handler = 'database';
 	public $MetaRights = '';
