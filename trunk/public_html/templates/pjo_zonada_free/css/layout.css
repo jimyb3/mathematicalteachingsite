@@ -1,108 +1,108 @@
-
-/*++++++++++++++  blog  ++++++++++++++*/
-.cols-1
-{
-	display: block;
-	float: none !important;
-	margin: 0 !important;
-}
-.cols-2 .column-1
-{
-	width: 46%;
-	float: left;
-}
-.cols-2 .column-2
-{
-	width: 46%;
-	float: right;
-	margin: 0;
-}
-.cols-3 .column-1
-{
-	float: left;
-	width: 29%;
-	padding: 0px 5px;
-	margin-right: 4%;
-}
-.cols-3 .column-2
-{
-	float: left;
-	width: 29%;
-	margin-left: 0;
-	padding: 0px 5px;
-}
-.cols-3 .column-3
-{
-	float: right;
-	width: 29%;
-	padding: 0px 5px;
-}
-.items-row
-{
-	overflow: hidden;
-	margin-bottom: 10px !important;
-}
-.column-1, .column-2, .column-3
-{
-	padding: 10px 5px;
-}
-.column-2
-{
-	width: 55%;
-	margin-left: 40%;
-}
-.column-3
-{
-	width: 30%;
-}
-.blog-more
-{
-	padding: 10px 5px;
-}
-/*++++++++++++++  columns  ++++++++++++++*/
-.cols-4 .column-1
-{
-	width: 23%;
-	float: left;
-}
-.cols-4 .column-2
-{
-	width: 23%;
-	margin-left: 1%;
-	float: left;
-}
-.cols-4 .column-3
-{
-	width: 23%;
-	margin-left: 1%;
-	float: left;
-}
-.cols-4 .column-4
-{
-	width: 23%;
-	margin-left: 0;
-	float: right;
-}
-/*-----------------------------
-PRINT, EMAIL en EDITOR Button
-------------------------------*/
-UL.actions
-{
-	list-style: none;
-	padding: 0;
-	float: right;
-	text-align: right;
-}
-/*All buttons have same stye*/
-UL.actions LI
-{
-	display: inline;
-}
-UL.actions LI A IMG
-{
-	border: 1px solid #999;
-}
-UL.actions LI A:hover IMG
-{
-	border: 1px solid #333;
-}
+
+/*++++++++++++++  blog  ++++++++++++++*/
+.cols-1
+{
+	display: block;
+	float: none !important;
+	margin: 0 !important;
+}
+.cols-2 .column-1
+{
+	width: 46%;
+	float: left;
+}
+.cols-2 .column-2
+{
+	width: 46%;
+	float: right;
+	margin: 0;
+}
+.cols-3 .column-1
+{
+	float: left;
+	width: 29%;
+	padding: 0px 5px;
+	margin-right: 4%;
+}
+.cols-3 .column-2
+{
+	float: left;
+	width: 29%;
+	margin-left: 0;
+	padding: 0px 5px;
+}
+.cols-3 .column-3
+{
+	float: right;
+	width: 29%;
+	padding: 0px 5px;
+}
+.items-row
+{
+	overflow: hidden;
+	margin-bottom: 10px !important;
+}
+.column-1, .column-2, .column-3
+{
+	padding: 10px 5px;
+}
+.column-2
+{
+	width: 55%;
+	margin-left: 40%;
+}
+.column-3
+{
+	width: 30%;
+}
+.blog-more
+{
+	padding: 10px 5px;
+}
+/*++++++++++++++  columns  ++++++++++++++*/
+.cols-4 .column-1
+{
+	width: 23%;
+	float: left;
+}
+.cols-4 .column-2
+{
+	width: 23%;
+	margin-left: 1%;
+	float: left;
+}
+.cols-4 .column-3
+{
+	width: 23%;
+	margin-left: 1%;
+	float: left;
+}
+.cols-4 .column-4
+{
+	width: 23%;
+	margin-left: 0;
+	float: right;
+}
+/*-----------------------------
+PRINT, EMAIL en EDITOR Button
+------------------------------*/
+UL.actions
+{
+	list-style: none;
+	padding: 0;
+	float: right;
+	text-align: right;
+}
+/*All buttons have same stye*/
+UL.actions LI
+{
+	display: inline;
+}
+UL.actions LI A IMG
+{
+	border: 1px solid #999;
+}
+UL.actions LI A:hover IMG
+{
+	border: 1px solid #333;
+}

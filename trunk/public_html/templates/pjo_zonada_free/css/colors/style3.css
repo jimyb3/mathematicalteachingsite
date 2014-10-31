@@ -1,54 +1,54 @@
-A
-{
-	color: #FF00FF;
-}
-#hor_nav LI.active A
-{
-	background: #FF00FF;
-}
-#hor_nav LI A:hover, #hor_nav LI:hover A, #hor_nav LI.sfHover A
-{
-	background: #FF00FF;
-}
-#hor_nav LI LI A, #hor_nav LI LI.active A, #hor_nav LI LI A:hover
-{
-	background: #FF00FF;
-}
-
-.slim-caption
-{
-	color: #FF00FF;
-}
-.site-title
-{
-	color: #FF00FF;
-}
-.site-description
-{
-	color: #FF00FF;
-}
-#hor_nav
-{
-	background-color: #FF00FF;
-}
-.well
-{
-	background-color: #FFFFFF;
-}
-.header .inputbox
-{
-border: 1px solid #FF00FF;
-}
-#footer_inner #page_header_h3
-{
-border-bottom: 4px solid #FF00FF;
-}
-
-#header-top
-{
-border-bottom: 4px solid #FF00FF;
-}
-#hor_nav
-{
-border-bottom: 4px solid #FF00FF;
+A
+{
+	color: #FF00FF;
+}
+#hor_nav LI.active A
+{
+	background: #FF00FF;
+}
+#hor_nav LI A:hover, #hor_nav LI:hover A, #hor_nav LI.sfHover A
+{
+	background: #FF00FF;
+}
+#hor_nav LI LI A, #hor_nav LI LI.active A, #hor_nav LI LI A:hover
+{
+	background: #FF00FF;
+}
+
+.slim-caption
+{
+	color: #FF00FF;
+}
+.site-title
+{
+	color: #FF00FF;
+}
+.site-description
+{
+	color: #FF00FF;
+}
+#hor_nav
+{
+	background-color: #FF00FF;
+}
+.well
+{
+	background-color: #FFFFFF;
+}
+.header .inputbox
+{
+border: 1px solid #FF00FF;
+}
+#footer_inner #page_header_h3
+{
+border-bottom: 4px solid #FF00FF;
+}
+
+#header-top
+{
+border-bottom: 4px solid #FF00FF;
+}
+#hor_nav
+{
+border-bottom: 4px solid #FF00FF;
 }
