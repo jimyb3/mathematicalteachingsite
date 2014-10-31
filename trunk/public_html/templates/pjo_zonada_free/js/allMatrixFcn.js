@@ -4,6 +4,113 @@
  * and open the template in the editor.
  */
  
+ //allazei tis times tou pinaka se tyxaies pou anhkoun sto pedio [-100,100]
+function randomizeMatrix(matrix1) {
+    var table = document.getElementById(matrix1);
+    for (var i = 0; i < table.rows.length; i++) {
+        for (var j = 0; j < table.rows[i].cells.length; j++) {
+            table.rows[i].cells[j].innerHTML = math.randomInt(-100, 100);
+        }
+    }
+}
+ 
+ 
+ //allazei ta proshma apo ta stoixeia tou pinaka
+
+function oppositeMatrix(matrix1) {
+    var tableRowLength = document.getElementById(matrix1).rows.length;
+    var tableCellsLength = document.getElementById(matrix1).rows[0].cells.length;
+
+    for (i = 0; i < tableRowLength; i++) {
+        for (var j = 0; j < tableCellsLength; j++) {
+            //var timh= parseInt(document.getElementById(matrix1).rows[i].cells[j].innerHTML);
+            //timh=-timh;
+            //document.getElementById(matrix1).rows[i].cells[j].innerHTML =toString(math.unaryMinus(timh)); 
+            document.getElementById(matrix1).rows[i].cells[j].innerHTML =math.unaryMinus(document.getElementById(matrix1).rows[i].cells[j].innerHTML);
+
+        }
+    }
+
+
+
+}
+ 
+ 
+ 
+ //vriskei thn orizousa tou pinaka
+function matrixDeterminant(matrix1) {
+    var tableRowLength = document.getElementById(matrix1).rows.length;
+    var tableCellsLength = document.getElementById(matrix1).rows[0].cells.length;
+    if (tableRowLength === tableCellsLength) {
+        var myTable = new Array(tableRowLength);
+        for (var i = 0; i < tableRowLength; i++) {
+            myTable[i] = new Array(tableCellsLength);
+        }
+        for (i = 0; i < tableRowLength; i++) {
+            for (var j = 0; j < tableCellsLength; j++) {
+                myTable[i][j] = parseInt(document.getElementById(matrix1).rows[i].cells[j].innerHTML);
+            }
+        }
+
+        var para = document.createElement("p");
+        var node = document.createTextNode("orizousa :" + math.det(myTable));
+        para.appendChild(node);
+        var element = document.getElementById(matrix1+"div");
+        element.appendChild(para);
+        
+
+
+
+    }
+    else {
+        alert("o pinakas prepei na einai tetragwnikos!");
+    }
+}
+ 
+ 
+ //elegxei an o pinakas einai tetragwnikos. An nai, ton kanei anw trigwniko 
+//(ola ta stoixeia katw apo thn diagwnio einai mhden). Alliws ektupwnei katallhlo mhnuma
+function upperTriangularMatrix(matrix1) {
+    var tableRowLength = document.getElementById(matrix1).rows.length;
+    var tableCellsLength = document.getElementById(matrix1).rows[0].cells.length;
+    if (tableRowLength === tableCellsLength) {
+        for (i = 0; i < tableRowLength; i++) {
+            for (var j = 0; j < tableCellsLength; j++) {
+                if (i > j) {
+                    document.getElementById(matrix1).rows[i].cells[j].innerHTML = "0";
+                }
+            }
+        }
+    }
+    else {
+        alert("prepei o pinakas na einai tetragonikos gia ginei anw trigwnikos");
+    }
+
+}
+ 
+ 
+ 
+ //elegxei an o pinakas einai tetragwnikos. An nai, ton kanei katw trigwniko 
+//(ola ta stoixeia panw apo thn diagwnio einai mhden). Alliws ektupwnei katallhlo mhnuma
+function lowerTriangularMatrix(matrix1) {
+    var tableRowLength = document.getElementById(matrix1).rows.length;
+    var tableCellsLength = document.getElementById(matrix1).rows[0].cells.length;
+    if (tableRowLength === tableCellsLength) {
+        for (i = 0; i < tableRowLength; i++) {
+            for (var j = 0; j < tableCellsLength; j++) {
+                if (i < j) {
+                    document.getElementById(matrix1).rows[i].cells[j].innerHTML = "0";
+                }
+            }
+        }
+    }
+    else {
+        alert("prepei o pinakas na einai tetragonikos gia ginei anw trigwnikos");
+    }
+
+}
+
+
  //inverse matrix=antistrofos pinakas, outo me ta det
 function inverseMatrix(matrix1) {
 	if (tbl = document.getElementById(matrix1+"inverted"))
@@ -448,11 +555,7 @@ function addAllButtons(tableId) {
     saveTableNumbersBtn.value = "Αποθηκευση σε Numbers";
     saveTableNumbersBtn.setAttribute("onclick", "saveTableToNumbers('" + tableId + "')");
 
-    closeAllBtn = document.createElement('input');
-    closeAllBtn.type = "button";
-    closeAllBtn.id = "closeAllBtn"+tableId;
-    closeAllBtn.value = "Τέλος Επεξεργασίας";
-    closeAllBtn.setAttribute("onclick", "closeEditButtons('" + tableId + "')");
+    
     
     transposeMatrixBtn = document.createElement('input');
     transposeMatrixBtn.type = "button";
@@ -471,6 +574,42 @@ function addAllButtons(tableId) {
     matrixDeleteBtn.id = "matrixDeleteBtn"+tableId;
     matrixDeleteBtn.value = "διέγραψε πίνακα";
     matrixDeleteBtn.setAttribute("onclick", "deleteMatrix('" + tableId + "')");
+    
+    lowerTRmatrixBtn = document.createElement('input');
+    lowerTRmatrixBtn.type = "button";
+    lowerTRmatrixBtn.id = "lowerTRmatrixBtn"+tableId;
+    lowerTRmatrixBtn.value = "κάτω τριγωνικός";
+    lowerTRmatrixBtn.setAttribute("onclick", "lowerTriangularMatrix('" + tableId + "')");
+    
+    upperTRmatrixBtn = document.createElement('input');
+    upperTRmatrixBtn.type = "button";
+    upperTRmatrixBtn.id = "upperTRmatrixBtn"+tableId;
+    upperTRmatrixBtn.value = "άνω τριγωνικός";
+    upperTRmatrixBtn.setAttribute("onclick", "upperTriangularMatrix('" + tableId + "')");
+    
+    matrixDeterminantBtn = document.createElement('input');
+    matrixDeterminantBtn.type = "button";
+    matrixDeterminantBtn.id = "matrixDeterminantBtn"+tableId;
+    matrixDeterminantBtn.value = "υπολόγισε ορίζουσα";
+    matrixDeterminantBtn.setAttribute("onclick", "matrixDeterminant('" + tableId + "')");
+    
+    oppositeMatrixBtn = document.createElement('input');
+    oppositeMatrixBtn.type = "button";
+    oppositeMatrixBtn.id = "oppositeMatrixBtn"+tableId;
+    oppositeMatrixBtn.value = "κάνε αντίθετο";
+    oppositeMatrixBtn.setAttribute("onclick", "oppositeMatrix('" + tableId + "')");
+    
+    randomizeMatrixBtn = document.createElement('input');
+    randomizeMatrixBtn.type = "button";
+    randomizeMatrixBtn.id = "randomizeMatrixBtn"+tableId;
+    randomizeMatrixBtn.value = "δώσε τυχαίες τιμές";
+    randomizeMatrixBtn.setAttribute("onclick", "randomizeMatrix('" + tableId + "')");closeAllBtn = document.createElement('input');
+    
+    
+    closeAllBtn.type = "button";
+    closeAllBtn.id = "closeAllBtn"+tableId;
+    closeAllBtn.value = "Τέλος Επεξεργασίας";
+    closeAllBtn.setAttribute("onclick", "closeEditButtons('" + tableId + "')");
 
     container.appendChild(zeroBtn);
     container.appendChild(oneBtnRightLeft);
@@ -481,9 +620,13 @@ function addAllButtons(tableId) {
     container.appendChild(saveTableNumbersBtn);
     container.appendChild(transposeMatrixBtn);
     container.appendChild(matrixDeleteBtn);
-    container.appendChild(matrixInverseBtn);
+    container.appendChild(matrixInverseBtn);   
+    container.appendChild(lowerTRmatrixBtn);
+    container.appendChild(upperTRmatrixBtn);
+    container.appendChild(matrixDeterminantBtn);
+    container.appendChild(oppositeMatrixBtn);
+    container.appendChild(randomizeMatrixBtn); 
     container.appendChild(closeAllBtn);
-    
 }
 
 function closeEditButtons(tableId) {
@@ -499,6 +642,12 @@ function closeEditButtons(tableId) {
     document.getElementById('matrixDeleteBtn'+tableId).parentNode.removeChild(document.getElementById('matrixDeleteBtn'+tableId));
     document.getElementById('matrixInverseBtn'+tableId).parentNode.removeChild(document.getElementById('matrixInverseBtn'+tableId));
     document.getElementById('closeAllBtn'+tableId).parentNode.removeChild(document.getElementById('closeAllBtn'+tableId));
+    document.getElementById('lowerTRmatrixBtn'+tableId).parentNode.removeChild(document.getElementById('lowerTRmatrixBtn'+tableId));
+    document.getElementById('upperTRmatrixBtn'+tableId).parentNode.removeChild(document.getElementById('upperTRmatrixBtn'+tableId));
+    document.getElementById('matrixDeterminantBtn'+tableId).parentNode.removeChild(document.getElementById('matrixDeterminantBtn'+tableId));
+    document.getElementById('oppositeMatrixBtn'+tableId).parentNode.removeChild(document.getElementById('oppositeMatrixBtn'+tableId));
+    document.getElementById('randomizeMatrixBtn'+tableId).parentNode.removeChild(document.getElementById('randomizeMatrixBtn'+tableId));
+    document.getElementById(tableId+'div').parentNode.removeChild(document.getElementById(tableId+'div'));
 }
 
 function saveTableToTxt(tableId) {
