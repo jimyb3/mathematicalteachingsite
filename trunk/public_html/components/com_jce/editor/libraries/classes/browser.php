@@ -2,7 +2,7 @@
 
 /**
  * @package   	JCE
- * @copyright 	Copyright (c) 2009-2013 Ryan Demmer. All rights reserved.
+ * @copyright 	Copyright (c) 2009-2014 Ryan Demmer. All rights reserved.
  * @license   	GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
@@ -64,8 +64,10 @@ class WFFileBrowser extends JObject {
                     'move' => 1
                 )
             ),
+            'date_format' => '%d/%m/%Y, %H:%M',
             'websafe_mode' => 'utf-8',
-            'websafe_spaces' => 0
+            'websafe_spaces' => 0,
+            'websafe_textcase' => ''
         );
 
         $config = array_merge($default, $config);
@@ -963,6 +965,8 @@ class WFFileBrowser extends JObject {
 
         // HTTP headers for no cache etc
         //header('Content-type: text/plain; charset=UTF-8');
+        
+        header('Content-Type: text/json;charset=UTF-8');
         header("Expires: Wed, 4 Apr 1984 13:00:00 GMT");
         header("Last-Modified: " . gmdate("D, d M_Y H:i:s") . " GMT");
         header("Cache-Control: no-store, no-cache, must-revalidate");
@@ -994,7 +998,7 @@ class WFFileBrowser extends JObject {
         // strip extension
         $name = WFUtility::stripExtension($name);
         // make file name 'web safe'
-        $name = WFUtility::makeSafe($name, $this->get('websafe_mode', 'utf-8'), $this->get('websafe_spaces'));
+        $name = WFUtility::makeSafe($name, $this->get('websafe_mode', 'utf-8'), $this->get('websafe_spaces'), $this->get('websafe_textcase'));
 
         // empty name
         if ($name == '') {
@@ -1158,7 +1162,7 @@ class WFFileBrowser extends JObject {
             }
         }
 
-        $result = $filesystem->rename($source, WFUtility::makeSafe($destination, $this->get('websafe_mode'), $this->get('websafe_spaces')), $args);
+        $result = $filesystem->rename($source, WFUtility::makeSafe($destination, $this->get('websafe_mode'), $this->get('websafe_spaces'), $this->get('websafe_textcase')), $args);
 
         if ($result instanceof WFFileSystemResult) {
             if (!$result->state) {
@@ -1310,7 +1314,7 @@ class WFFileBrowser extends JObject {
 
         $filesystem = $this->getFileSystem();
 
-        $result = $filesystem->createFolder($dir, WFUtility::makeSafe($new, $this->get('websafe_mode'), $this->get('websafe_spaces')), $args);
+        $result = $filesystem->createFolder($dir, WFUtility::makeSafe($new, $this->get('websafe_mode'), $this->get('websafe_spaces'), $this->get('websafe_textcase')), $args);
 
         if ($result instanceof WFFileSystemResult) {
             if (!$result->state) {
@@ -1412,7 +1416,9 @@ class WFFileBrowser extends JObject {
             'folder_tree' => $this->get('folder_tree'),
             'listlimit' => $this->get('list_limit'),
             'websafe_mode' => $this->get('websafe_mode'),
-            'websafe_spaces' => $this->get('websafe_spaces')
+            'websafe_spaces' => $this->get('websafe_spaces'),
+            'websafe_textcase' => $this->get('websafe_textcase'),
+            'date_format' => $this->get('date_format')
         );
 
         $properties = array('base', 'delete', 'rename', 'folder_new', 'copy', 'move');
