@@ -81,6 +81,10 @@ BODY.site
 	padding-left: 10px;
 	padding-right: 10px;
 }
+.article-size
+{
+	font-size: 13px;
+}
 .header
 {
 	background-color: transparent;
