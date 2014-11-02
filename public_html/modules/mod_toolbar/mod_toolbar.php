@@ -16,7 +16,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 $document = JFactory::getDocument();
 $document->addStyleDeclaration('body{margin-bottom:65px!important} 
 .toolbar_fixed{position:fixed;left:1px;top:1px;width:100%} 
-.toolbar_fixed_inner{height:70px;style="height:100%;width:100%;background:url(http://test1forprojectmatimaticasite.comule.com/images/topMenuBody2.png)}
+.toolbar_fixed_inner{height:70px;style="height:100%;width:100%;background:url(http://imathsite.net/images/topMenuBody2.png)}
 .toolbar_fixed_content{text-align:'.$params->get('align').';width:100%;margin-top:0px;padding-bottom:10px;margin-bottom:5px}
 .toolbar_fixed_content a:hover{background:none!important}
 .toolbar_fixed_content img{margin-right:'.$params->get('images_space').'px}
@@ -26,8 +26,8 @@ echo '<div class="toolbar_fixed">
 			<div class="toolbar_fixed_inner">
 				<table width="100%" border="0" cellspacing="0" cellpadding="0">
   					<tbody><tr> 
-    					<td align="left" valign="top"><img src="http://test1forprojectmatimaticasite.comule.com/images/topMenuLeft.png" width="50" height="100" style="border-radius:0px"></td>
-						<td align="right" valign="top"><img src="http://test1forprojectmatimaticasite.comule.com/images/topMenuRight3.png" width="51" height="100" style="border-radius:0px"></td>
+    					<td align="left" valign="top"><img src="http://imathsite.net/images/topMenuLeft.png" width="50" height="100" style="border-radius:0px"></td>
+						<td align="right" valign="top"><img src="http://imathsite.net/images/topMenuRight3.png" width="51" height="100" style="border-radius:0px"></td>
 					</tr>
 				</tbody></table>
 				<div class="toolbar_fixed_content">
@@ -44,14 +44,14 @@ echo '<div class="toolbar_fixed">
 					}
 					function lightsControl() {
 						if(document.getElementById("'.lightsOff.'")){
-    						document.getElementById("'.lightsOff.'").src = "http://test1forprojectmatimaticasite.comule.com/images/joomla_black.gif";
+    						document.getElementById("'.lightsOff.'").src = "http://imathsite.net/images/ligths_off.png";
     						document.getElementById("'.lightsOff.'").id="lightsOn";
     						document.getElementById("'.container_inner.'").style.boxShadow="0px 0px 450px rgba(255, 255, 255, 1)";
     						document.getElementById("'.container_inner.'").style.backgroundColor="rgba(255, 255, 255, 0.44)";
     						document.body.style.color="black";
     						
 						}else{
-							document.getElementById("'.lightsOn.'").src="http://test1forprojectmatimaticasite.comule.com/images/ligths_off.png";
+							document.getElementById("'.lightsOn.'").src="http://imathsite.net/images/ligths_on.png";
 							document.getElementById("'.lightsOn.'").id="lightsOff";	
 							document.getElementById("'.container_inner.'").style.boxShadow="0px 0px 450px rgba(0, 255, 235, 1)";
     						document.getElementById("'.container_inner.'").style.backgroundColor="rgba(82, 82, 82, 0.69)";
@@ -61,7 +61,7 @@ echo '<div class="toolbar_fixed">
 				</script>
 				';
 				if ($params->get('img1')){
-					echo'<img id="lightsOff" onclick="lightsControl()" src="http://test1forprojectmatimaticasite.comule.com/images/ligths_off.png" style="position: fixed;top:1px"/>';
+					echo'<img id="lightsOff" onclick="lightsControl()" src="http://imathsite.net/images/ligths_on.png" style="position: fixed;top:1px"/>';
 					
 				}
 				if ($params->get('img2')){
