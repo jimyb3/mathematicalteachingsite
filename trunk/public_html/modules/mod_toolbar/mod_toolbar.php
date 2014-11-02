@@ -32,7 +32,17 @@ echo '<div class="toolbar_fixed">
 				</tbody></table>
 				<div class="toolbar_fixed_content">
 				<script>
-					function myFunction() {
+				
+					function sizeControl(fontSize){
+						
+						var stoixeia=document.getElementsByClassName("article-size");
+						var i;
+						for(i=0; i<stoixeia.length; i++) {
+    							stoixeia[i].style.fontSize = fontSize+"px";
+						}
+						
+					}
+					function lightsControl() {
 						if(document.getElementById("'.lightsOff.'")){
     						document.getElementById("'.lightsOff.'").src = "http://test1forprojectmatimaticasite.comule.com/images/joomla_black.gif";
     						document.getElementById("'.lightsOff.'").id="lightsOn";
@@ -51,7 +61,7 @@ echo '<div class="toolbar_fixed">
 				</script>
 				';
 				if ($params->get('img1')){
-					echo'<img id="lightsOff" onclick="myFunction()" src="http://test1forprojectmatimaticasite.comule.com/images/ligths_off.png" style="position: fixed;top:1px"/>';
+					echo'<img id="lightsOff" onclick="lightsControl()" src="http://test1forprojectmatimaticasite.comule.com/images/ligths_off.png" style="position: fixed;top:1px"/>';
 					
 				}
 				if ($params->get('img2')){
