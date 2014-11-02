@@ -4,6 +4,21 @@
  * and open the template in the editor.
  */
  
+ //pairnei ws eisodo to id tou pinaka kai anoigei to para8uro gia thn ektupwsh tou pinaka
+function printMatrix(matrix1)
+{
+   var divToPrint=document.getElementById(matrix1+"TableDiv");
+   newWin= window.open("");
+   newWin.document.write(divToPrint.outerHTML);
+   newWin.print();
+   newWin.close();
+}
+
+$('button').on('click',function(){
+printData();
+});
+ 
+ 
  //allazei tis times tou pinaka se tyxaies pou anhkoun sto pedio [-100,100]
 function randomizeMatrix(matrix1) {
     var table = document.getElementById(matrix1);
@@ -55,7 +70,7 @@ function matrixDeterminant(matrix1) {
         var para = document.createElement("p");
         var node = document.createTextNode("orizousa :" + math.det(myTable));
         para.appendChild(node);
-        var element = document.getElementById(matrix1+"div");
+        var element = document.getElementById(matrix1+"TableDiv");
         element.appendChild(para);
         
 
@@ -146,7 +161,7 @@ function inverseMatrix(matrix1) {
 
         var inversedMatrixCols = inversedMatrixSize[0, 1];
 
-        var myTableDiv = document.getElementById(matrix1+"div");
+        var myTableDiv = document.getElementById(matrix1+"TableDiv");
         var table = document.createElement('TABLE');
         table.id = matrix1+"inverted";
         table.border = '1';
@@ -208,7 +223,7 @@ function matrixTranspose(matrix1) {
 
 
 
-    var myTableDiv = document.getElementById(matrix1+"div");
+    var myTableDiv = document.getElementById(matrix1+"TableDiv");
     var table = document.createElement('TABLE');
     table.id = matrix1+"transposed";
     table.border = '1';
@@ -249,7 +264,7 @@ function deleteMatrix(matrixName){
     // for(var i=0;i<length;i++){
     //     document.getElementById(matrixName).deleteRow(0);
    //  }
-      var elem = document.getElementById(matrixName+"div");
+      var elem = document.getElementById(matrixName+"TableDiv");
     elem.parentNode.removeChild(elem);
     return false;
 }
@@ -311,8 +326,9 @@ function matrixArithmeticOperations(matrix1, matrix2, operation) {
     var secondTableCellsLength = document.getElementById(matrix2).rows[0].cells.length;
 
     if (firstTableRowLength === secondTableRowLength && firstTableCellsLength === secondTableCellsLength) {
-
+		//TODO -ALLA3E TO "MYdYNAMICtABLE " DEN UPARXEI TETOIO PRAGMA
         var myTableDiv = document.getElementById("myDynamicTable");
+        
         var table = document.createElement('TABLE');
         table.border = '1';
 
@@ -357,6 +373,7 @@ function multiplyMatrices(matrix1, matrix2) {
     var secondTableCellsLength = document.getElementById(matrix2).rows[0].cells.length;
     var secondTableRowLength = document.getElementById(matrix2).rows.length;
     if (firstTableCellsLength === secondTableRowLength) {
+	    //to do-alla3e to my dynamic table
         var myTableDiv = document.getElementById("myDynamicTable");
         var table = document.createElement('TABLE');
         table.border = '1';
@@ -410,7 +427,12 @@ function tableCreate(newTableId, rows, cells) {
     else {
         var body = document.body;
         container = document.createElement('div');
-        container.id = newTableId+"div";
+        container.id = newTableId+"ContainerDiv";
+        
+        tableContainer = document.createElement('div');
+        tableContainer.id = newTableId+"TableDiv";     
+        
+        
         tblNameHeader=document.createElement('h1');
         tblNameHeader.id=newTableId+"Header";
         tblNameHeader.innerHTML=newTableId;
@@ -437,8 +459,9 @@ function tableCreate(newTableId, rows, cells) {
                 td.appendChild(document.createTextNode('\u0020'));
             }
         }
-        container.appendChild(tblNameHeader);
-        container.appendChild(tbl);
+        tableContainer.appendChild(tblNameHeader);
+        tableContainer.appendChild(tbl);        
+        container.appendChild(tableContainer);
         body.appendChild(container);
         addEditButtonsFor(newTableId);
 
@@ -497,7 +520,7 @@ function makeOneLeftRight(tableId) {
 }
 
 function addEditButtonsFor(tableId) {
-    container=document.getElementById(tableId+"div");
+    container=document.getElementById(tableId+"ContainerDiv");
     editBtn = document.createElement('input');
     editBtn.type = "button";
     editBtn.value = "Επεξεργασία " + tableId;
@@ -508,7 +531,7 @@ function addEditButtonsFor(tableId) {
 
 function addAllButtons(tableId) {
     document.getElementById('editBtn'+tableId).disabled = true;
-    container=document.getElementById(tableId+"div");
+    container=document.getElementById(tableId+"ContainerDiv");
 
     zeroBtn = document.createElement('input');
     zeroBtn.type = "button";
@@ -603,9 +626,16 @@ function addAllButtons(tableId) {
     randomizeMatrixBtn.type = "button";
     randomizeMatrixBtn.id = "randomizeMatrixBtn"+tableId;
     randomizeMatrixBtn.value = "δώσε τυχαίες τιμές";
-    randomizeMatrixBtn.setAttribute("onclick", "randomizeMatrix('" + tableId + "')");closeAllBtn = document.createElement('input');
+    randomizeMatrixBtn.setAttribute("onclick", "randomizeMatrix('" + tableId + "')");
     
     
+    printMatrixBtn = document.createElement('input');
+    printMatrixBtn.type = "button";
+    printMatrixBtn.id = "printMatrixBtn"+tableId;
+    printMatrixBtn.value = "εκτύπωση";
+    printMatrixBtn.setAttribute("onclick", "printMatrix('" + tableId + "')");
+    
+    closeAllBtn = document.createElement('input');
     closeAllBtn.type = "button";
     closeAllBtn.id = "closeAllBtn"+tableId;
     closeAllBtn.value = "Τέλος Επεξεργασίας";
@@ -626,6 +656,7 @@ function addAllButtons(tableId) {
     container.appendChild(matrixDeterminantBtn);
     container.appendChild(oppositeMatrixBtn);
     container.appendChild(randomizeMatrixBtn); 
+    container.appendChild(printMatrixBtn); 
     container.appendChild(closeAllBtn);
 }
 
@@ -647,6 +678,7 @@ function closeEditButtons(tableId) {
     document.getElementById('matrixDeterminantBtn'+tableId).parentNode.removeChild(document.getElementById('matrixDeterminantBtn'+tableId));
     document.getElementById('oppositeMatrixBtn'+tableId).parentNode.removeChild(document.getElementById('oppositeMatrixBtn'+tableId));
     document.getElementById('randomizeMatrixBtn'+tableId).parentNode.removeChild(document.getElementById('randomizeMatrixBtn'+tableId));
+    document.getElementById('printMatrixBtn'+tableId).parentNode.removeChild(document.getElementById('printMatrixBtn'+tableId));
     document.getElementById(tableId+'div').parentNode.removeChild(document.getElementById(tableId+'div'));
 }
 
