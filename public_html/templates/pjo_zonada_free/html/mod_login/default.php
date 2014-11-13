@@ -14,6 +14,16 @@ JHtml::_('behavior.keepalive');
 <form action="index.php" method="post" id="form-login">
 <?php if ($params->get('greeting')) : ?>
 	<div>
+	<?php if($user->get('grade') >= '9'):
+		echo '<img src="http://imathsite.net/images/golden cup.png" />';
+	 elseif($user->get('grade') >='7'):
+		echo '<img src="http://imathsite.net/images/silver cup.png" />';
+	elseif($user->get('grade') >='5'):
+		echo '<img src="http://imathsite.net/images/bronze cup.png" />';
+	 else:
+		echo '<img src="http://imathsite.net/images/none cup.png" />';
+	endif; ?>
+	
 	<?php if($params->get('name') == 0) : {
 		echo JText::sprintf('MOD_LOGIN_HINAME', $user->get('name'));
 	} else : {
