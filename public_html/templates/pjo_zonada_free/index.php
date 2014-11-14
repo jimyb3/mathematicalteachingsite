@@ -12,7 +12,7 @@ if(!defined('DS'))
 define( 'DS', DIRECTORY_SEPARATOR );
 }
 ?>
-
+<meta property="fb:admins" content="100000596641380" />
 <?php
 JLoader::import('joomla.filesystem.file');
 define( 'YOURBASEPATH', dirname(__FILE__) );
