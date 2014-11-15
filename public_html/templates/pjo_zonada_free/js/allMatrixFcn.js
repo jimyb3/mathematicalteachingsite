@@ -4,6 +4,17 @@
  * and open the template in the editor.
  */
  
+ //a function that deletes any existing inversed or transposted tables
+ //it is called when the user tries to change the main matrix 
+ //parameter : the name of the "main" table
+
+ function addEventListenerByClass(className, event, fn) {
+    var list = document.getElementsByClassName(className);
+    for (var i = 0, len = list.length; i < len; i++) {
+        list[i].addEventListener(event, fn, false);
+    }
+}
+ 
  //pairnei ws eisodo to id tou pinaka kai anoigei to para8uro gia thn ektupwsh tou pinaka
 function printMatrix(matrix1)
 {
@@ -68,7 +79,14 @@ function matrixDeterminant(matrix1) {
         }
 
         var para = document.createElement("p");
+        para.id = matrix1+"orizousa";
         var node = document.createTextNode("orizousa :" + math.det(myTable));
+        document.getElementById(matrix1).addEventListener("click", function() {
+    	deleteElement(matrix1+"orizousa");
+	});
+		addEventListenerByClass('ButtonsThatChangeTheMainTable', 'click', function() {
+    	deleteElement(matrix1+"orizousa");      
+	}); 
         para.appendChild(node);
         var element = document.getElementById(matrix1+"TableDiv");
         element.appendChild(para);
@@ -185,6 +203,15 @@ function inverseMatrix(matrix1) {
         tblInvertedNameHeader=document.createElement('h3');
         tblInvertedNameHeader.id=matrix1+"invertedHeader";
         tblInvertedNameHeader.innerHTML=matrix1+" inverted";
+         document.getElementById(matrix1).addEventListener("click", function() {
+    	deleteElement(matrix1+"invertedHeader");
+		deleteElement(matrix1+"inverted");    
+	});
+	
+	    addEventListenerByClass('ButtonsThatChangeTheMainTable', 'click', function() {
+    	deleteElement(matrix1+"invertedHeader");
+		deleteElement(matrix1+"inverted");      
+	}); 
         myTableDiv.appendChild(tblInvertedNameHeader);
         myTableDiv.appendChild(table);
 
@@ -233,11 +260,13 @@ function matrixTranspose(matrix1) {
 
     for (var i = 0; i < tableCellsLength; i++) {
         var tr = document.createElement('TR');
+        
         tableBody.appendChild(tr);
 
         for (var j = 0; j < tableRowLength; j++) {
             var td = document.createElement('TD');
             td.width = '75';
+             
             var timh = myTableTransposed[i][j];
             td.appendChild(document.createTextNode(timh));
             tr.appendChild(td);
@@ -247,6 +276,18 @@ function matrixTranspose(matrix1) {
     tblTransposedNameHeader=document.createElement('h3');
     tblTransposedNameHeader.id=matrix1+"transposedHeader";
     tblTransposedNameHeader.innerHTML=matrix1+" transposed";
+    document.getElementById(matrix1).addEventListener("click", function() {
+    	deleteElement(matrix1+"transposedHeader");
+		deleteElement(matrix1+"transposed");    
+	});
+	/*document.getElementsByClassName("ButtonsThatChangeTheMainTable").addEventListener("click", function() {
+    	deleteElement(matrix1+"transposedHeader");
+		deleteElement(matrix1+"transposed");    
+	});*/
+	addEventListenerByClass('ButtonsThatChangeTheMainTable', 'click', function() {
+    	deleteElement(matrix1+"transposedHeader");
+		deleteElement(matrix1+"transposed");    
+	}); 
     myTableDiv.appendChild(tblTransposedNameHeader);
     myTableDiv.appendChild(table);
 }
@@ -259,14 +300,19 @@ function matrixTranspose(matrix1) {
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-function deleteMatrix(matrixName){
-    // var length = document.getElementById(matrixName).rows.length;
-    // for(var i=0;i<length;i++){
-    //     document.getElementById(matrixName).deleteRow(0);
-   //  }
-      var elem = document.getElementById(matrixName+"TableDiv");
-    elem.parentNode.removeChild(elem);
-    return false;
+ 
+// 
+function deleteElement(element){
+  if (elem = document.getElementById(element))
+    {
+         elem.parentNode.removeChild(elem);
+    	 return false;
+    }
+    else{
+	    return false;
+    }
+     
+   
 }
 
 /* 
@@ -274,44 +320,12 @@ function deleteMatrix(matrixName){
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+ 
+
+ 
+ 
 
 
-//WONT FIX
-function changeDimensions(tableId, newCells) {
-
-
-    var pinakas = document.getElementById(tableId);
-    var cellsLength = pinakas.rows[0].cells.length;
-//alert(pinakas.rows[0].cells.length);
-//alert(pinakas.rows[1].cells.length);
-//alert(pinakas.rows[2].cells.length);
-    for (var i = 0; i < 3; i++) {
-        //alert(cellLength);
-        //alert(rowsLength);
-
-        for (var j = 0; j < 5; j++) {
-            
-            var x = document.getElementById("testT").rows[i].deleteCell(newCells);
-            
-            //var row = pinakas.row[i];
-            //row.deleteCell(newCells);
-            
-            
-            //pinakas.rows[i].deleteCell();
-            //pinakas.removeChild(pinakas.rows[newCells]);
-        }
-        //pinakas.rows[i].cells[j].parentNode.removeChild(pinakas.rows[i].cells[j]);
-        /* if (pinakas.rows[i] === newRows) {
-         // document.getElementById("testT").deleteRow(newRows);
-         pinakas.rows[i].deleteRow(newRows);
-         }
-         var tr = document.getElementById("tableId").getElementsByTagName("tr");
-         //tr[txt].getElementsByTagName("td")[0].innerHTML = "change me"
-         var x = document.getElementById("tableId").rows[0].cells.length;
-         document.getElementById("demo").innerHTML=x;*/
-
-    }
-}
 
 /* 
  * To change this license header, choose License Headers in Project Properties.
@@ -447,14 +461,16 @@ function tableCreate(newTableId, rows, cells) {
             tr.id = "row" + i;
             tr.setAttribute("contenteditable", true);
             for (var j = 0; j < cells; j++) {
-                var td = tr.insertCell(-1);
+                var td = tr.insertCell(-1);                
                 td.id = "cell_" + i + "_" + j;
+                //td.setAttribute("onkeydown", "alert('Η επεξεργτασία των κελιών, \\n δεν ειναι δυνατή στον "+get_browser()+".')");
                 if (get_browser() === "IE") {
                     td.setAttribute("contenteditable", true);
                     //td.setAttribute("onclick", "alert('Η επεξεργτασία των κελιών, \\n δεν ειναι δυνατή στον "+get_browser()+".')");
                 } else {
                     td.setAttribute("contenteditable", true);
                 }
+                
                 td.innerHTML = Math.floor((Math.random() * 100) + 1);
                 td.appendChild(document.createTextNode('\u0020'));
             }
@@ -536,6 +552,7 @@ function addAllButtons(tableId) {
     zeroBtn = document.createElement('input');
     zeroBtn.type = "button";
     zeroBtn.id = "zeroBtn"+tableId;
+    zeroBtn.className = "ButtonsThatChangeTheMainTable";
     //zeroButton.value = "Μηδένισε τον "+tableId;
     zeroBtn.value = "Μηδένισε";
     zeroBtn.setAttribute("onclick", "insertZeros('" + tableId + "')");
@@ -543,6 +560,7 @@ function addAllButtons(tableId) {
     oneBtnRightLeft = document.createElement('input');
     oneBtnRightLeft.type = "button";
     oneBtnRightLeft.id = "oneBtnRightLeft"+tableId;
+    oneBtnRightLeft.className = "ButtonsThatChangeTheMainTable";
     //oneButtonRightLeft.value = "Μοναδιαίο\ τον "+tableId;
     oneBtnRightLeft.value = "Μοναδιαίο\\ ";
     oneBtnRightLeft.setAttribute("onclick", "makeOneRightLeft('" + tableId + "')");
@@ -550,6 +568,7 @@ function addAllButtons(tableId) {
     oneBtnLeftRight = document.createElement('input');
     oneBtnLeftRight.type = "button";
     oneBtnLeftRight.id = "oneBtnLeftRight"+tableId;
+    oneBtnLeftRight.className = "ButtonsThatChangeTheMainTable";
     //oneButtonLeftRight.value = "Μοναδιαίο/ τον "+tableId;
     oneBtnLeftRight.value = "Μοναδιαίο/ ";
     oneBtnLeftRight.setAttribute("onclick", "makeOneLeftRight('" + tableId + "')");
@@ -596,17 +615,19 @@ function addAllButtons(tableId) {
     matrixDeleteBtn.type = "button";
     matrixDeleteBtn.id = "matrixDeleteBtn"+tableId;
     matrixDeleteBtn.value = "διέγραψε πίνακα";
-    matrixDeleteBtn.setAttribute("onclick", "deleteMatrix('" + tableId + "')");
+    matrixDeleteBtn.setAttribute("onclick", "deleteElement('" + tableId +"'+'ContainerDiv')");
     
     lowerTRmatrixBtn = document.createElement('input');
     lowerTRmatrixBtn.type = "button";
     lowerTRmatrixBtn.id = "lowerTRmatrixBtn"+tableId;
+    lowerTRmatrixBtn.className = "ButtonsThatChangeTheMainTable";
     lowerTRmatrixBtn.value = "κάτω τριγωνικός";
     lowerTRmatrixBtn.setAttribute("onclick", "lowerTriangularMatrix('" + tableId + "')");
     
     upperTRmatrixBtn = document.createElement('input');
     upperTRmatrixBtn.type = "button";
     upperTRmatrixBtn.id = "upperTRmatrixBtn"+tableId;
+    upperTRmatrixBtn.className = "ButtonsThatChangeTheMainTable";
     upperTRmatrixBtn.value = "άνω τριγωνικός";
     upperTRmatrixBtn.setAttribute("onclick", "upperTriangularMatrix('" + tableId + "')");
     
@@ -619,12 +640,14 @@ function addAllButtons(tableId) {
     oppositeMatrixBtn = document.createElement('input');
     oppositeMatrixBtn.type = "button";
     oppositeMatrixBtn.id = "oppositeMatrixBtn"+tableId;
+    oppositeMatrixBtn.className = "ButtonsThatChangeTheMainTable";
     oppositeMatrixBtn.value = "κάνε αντίθετο";
     oppositeMatrixBtn.setAttribute("onclick", "oppositeMatrix('" + tableId + "')");
     
     randomizeMatrixBtn = document.createElement('input');
     randomizeMatrixBtn.type = "button";
     randomizeMatrixBtn.id = "randomizeMatrixBtn"+tableId;
+    randomizeMatrixBtn.className = "ButtonsThatChangeTheMainTable";
     randomizeMatrixBtn.value = "δώσε τυχαίες τιμές";
     randomizeMatrixBtn.setAttribute("onclick", "randomizeMatrix('" + tableId + "')");
     
