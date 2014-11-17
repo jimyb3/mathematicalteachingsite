@@ -26,8 +26,10 @@ JHtml::_('behavior.keepalive');
 	
 	<?php if($params->get('name') == 0) : {
 		echo JText::sprintf('MOD_LOGIN_HINAME', $user->get('name'));
+		echo "<p id='nameId' hidden>".$user->get('username')."</p>";
 	} else : {
 		echo JText::sprintf('MOD_LOGIN_HINAME', $user->get('username'));
+		echo "<p id='nameId' hidden>".$user->get('username')."</p>";
 	} endif; ?>
 	</div>
 <?php endif; ?>
