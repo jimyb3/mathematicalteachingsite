@@ -32,6 +32,7 @@ require(YOURBASEPATH . DS . "includes/css3_style.php");
 ?>
 
 <link rel="stylesheet" type="text/css" href="templates/pjo_zonada_free/css/jsxgraph.css" />
+<link rel="stylesheet" type="text/css" href="templates/pjo_zonada_free/css/matrixFunctionsArticle.css" />
 <script type="text/javascript" src="/templates/pjo_zonada_free/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/javascript" src="/templates/pjo_zonada_free/jsxgraphcore.js"></script>
 <script type="text/javascript" src="/templates/pjo_zonada_free/js/d3.v2.min.js"></script>

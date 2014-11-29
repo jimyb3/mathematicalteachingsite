@@ -4,6 +4,38 @@
  * and open the template in the editor.
  */
  
+ 
+ //dexetai to id tou matrix kai mia metadliti pou periexei to ti 8eloume n ginei
+//"line" gia na proste8ei mia grammh sto katw meros tou pinaka
+//"column" gia na proste8ei mia sthlh sto de3i meros tou pinaka
+function resizeMatrix(matrix1, whatToAdd) {
+    var myTable = document.getElementById(matrix1);
+    if (whatToAdd === "line") {
+        var tr = myTable.insertRow();
+        for (var i = 0; i < myTable.rows[0].cells.length; i++) {
+            var td = tr.insertCell(-1);
+            td.innerHTML = "0";
+        }
+    }
+    else if (whatToAdd === "column") {
+
+        for (var i = 0; i < myTable.rows.length; i++) {
+            var tr = myTable.rows[i];
+            var td = tr.insertCell(-1);
+            td.innerHTML = "0";
+        }
+    } else {
+        alert("lathos");
+    }
+    var myTableDiv = document.getElementById("division");
+    myTableDiv.appendChild(myTable);
+
+}
+
+ 
+ 
+ 
+ 
  //a function that deletes any existing inversed or transposted tables
  //it is called when the user tries to change the main matrix 
  //parameter : the name of the "main" table
@@ -25,9 +57,9 @@ function printMatrix(matrix1)
    newWin.close();
 }
 
-$('button').on('click',function(){
+/*$('button').on('click',function(){
 printData();
-});
+});*/
  
  
  //allazei tis times tou pinaka se tyxaies pou anhkoun sto pedio [-100,100]
