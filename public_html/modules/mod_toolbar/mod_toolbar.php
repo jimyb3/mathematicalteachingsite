@@ -15,8 +15,8 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 // Add styles
 $document = JFactory::getDocument();
 $document->addStyleDeclaration('body{margin-bottom:65px!important} 
-.toolbar_fixed{position:fixed;left:1px;top:1px;width:100%} 
-.toolbar_fixed_inner{height:70px;style="height:100%;width:100%;background:url(http://imathsite.net/images/topMenuBody2.png)}
+.toolbar_fixed{position:fixed;left:1px;top:1px;width:100%;height:50px;background-color:rgba(163, 163, 163, 0.6);z-index:1001} 
+.toolbar_fixed_inner{height:70px;style="height:100%;width:100%;"}
 .toolbar_fixed_content{text-align:'.$params->get('align').';width:100%;margin-top:0px;padding-bottom:10px;margin-bottom:5px}
 .toolbar_fixed_content a:hover{background:none!important}
 .toolbar_fixed_content img{margin-right:'.$params->get('images_space').'px}
@@ -24,12 +24,6 @@ $document->addStyleDeclaration('body{margin-bottom:65px!important}
 
 echo '<div class="toolbar_fixed">
 			<div class="toolbar_fixed_inner">
-				<table width="100%" border="0" cellspacing="0" cellpadding="0">
-  					<tbody><tr> 
-    					<td align="left" valign="top"><img src="http://imathsite.net/images/topMenuLeft.png" width="50" height="100" style="border-radius:0px"></td>
-						<td align="right" valign="top"><img src="http://imathsite.net/images/topMenuRight3.png" width="51" height="100" style="border-radius:0px"></td>
-					</tr>
-				</tbody></table>
 				<div class="toolbar_fixed_content">
 				<script>
 				

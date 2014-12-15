@@ -48,8 +48,6 @@ IMG
 	height: auto;
 	vertical-align: middle;
 	border: 0;
-	border-top-left-radius: 25px;
-	border-top-right-radius: 25px;
 	-ms-interpolation-mode: bicubic;
 }
 #map_canvas IMG
@@ -227,7 +225,7 @@ A:hover
 }
 .span3
 {
-	width: 220px;
+	width: 260px;
 }
 .span2
 {
@@ -5424,7 +5422,7 @@ RM for joomla 2.5
 BODY.site
 {
 	padding: 20px;
-	background-color: #000000;
+	background-color: #FFFFFF;
 }
 BODY.site.fluid
 {

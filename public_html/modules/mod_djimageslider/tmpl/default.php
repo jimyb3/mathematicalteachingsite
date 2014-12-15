@@ -27,11 +27,11 @@
 
 // no direct access
 defined('_JEXEC') or die ('Restricted access'); ?>
-<div style="border: 0px !important;">
+<div style="width: 900px;">
 <div id="djslider-loader<?php echo $mid; ?>" class="djslider-loader">
     <div id="djslider<?php echo $mid; ?>" class="djslider">
         <div id="slider-container<?php echo $mid; ?>" class="slider-container">
-        	<ul id="slider<?php echo $mid; ?>">
+        	<ul id="slider<?php echo $mid; ?>" class="slider">
           		<?php foreach ($slides as $slide) { ?>
           			<li>
           				<?php if($slide->image) { 
