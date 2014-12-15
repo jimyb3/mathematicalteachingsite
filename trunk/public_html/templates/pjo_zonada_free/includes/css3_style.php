@@ -5,7 +5,7 @@
 {
 -webkit-box-shadow: 0px 0px 18px rgba(8, 0, 0, 0.47);
 -moz-box-shadow:    0px 0px 18px rgba(8, 0, 0, 0.47);
-box-shadow:         0px 0px 450px rgba(0, 255, 235, 1);
+box-shadow:         0px 0px 450px rgba(0, 0, 0, 1);
 }
 .footer .container
 {

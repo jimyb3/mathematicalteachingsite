@@ -325,11 +325,11 @@ class modDJImageSliderHelper
 		$css = '
 		/* Styles for DJ Image Slider with module id '.$mid.' */
 		#djslider-loader'.$mid.' {
-			margin: 0 auto;
+			//margin: 0 auto;
 			position: relative;
 		}
 		#djslider'.$mid.' {
-			margin: 0 auto;
+			//margin: 0 auto;
 			position: relative;
 			height: '.$slider_height.'px; 
 			width: '.$slider_width.'px;
@@ -343,31 +343,49 @@ class modDJImageSliderHelper
 			height: 100%;
 			width: 100%;
 		}
-		#djslider'.$mid.' ul#slider'.$mid.' {
-			margin: 0 !important;
+		#slider-container'.$mid.' .slider{
+			position: relative;
+			margin-bottom: 0px;
+			margin-left: 0px;
+		}
+		#djslider'.$mid.' ul #slider'.$mid.' {
+			//margin: 0 !important;
 			padding: 0 !important;
 			border: 0 !important;
+			margin-bottom: 0px;
+			margin-left: 0px;
 		}
-		#djslider'.$mid.' ul#slider'.$mid.' li {
+		#djslider'.$mid.' ul #slider'.$mid.' li {
 			list-style: none outside !important;
 			float: left;
-			margin: 0 !important;
+			//margin: 0 !important;
 			border: 0 !important;
 			padding: 0 '.$padding_right.'px '.$padding_bottom.'px 0 !important;
-			position: relative;
+			//position: relative;
 			height: '.$slide_height.'px;
 			width: '.$slide_width.'px;
 			background: none;
 			overflow: hidden;
+			margin-bottom: 0px;
+			margin-left: 0px;
 		}
 		#slider'.$mid.' li img {
 			'.$image_width.';
 			'.$image_height.';
 			border: 0 !important;
-			margin: 0 !important;
+			margin-bottom: 0px;
+			margin-left: 0px;
+			//margin: 0 !important;
+		}
+		#slider'.$mid.' ul {
+			margin-bottom: 0px;
+			margin-left: 0px;
+			//margin: 0 !important;
 		}
 		#slider'.$mid.' li a img, #slider'.$mid.' li a:hover img {
 			border: 0 !important;
+			margin-bottom: 0px;
+			margin-left: 0px;
 		}
 		';
 		if($params->get('slider_source') && ($params->get('show_title') || ($params->get('show_desc')))) $css.= '
@@ -377,10 +395,14 @@ class modDJImageSliderHelper
 			bottom: '.$desc_bottom.'%;
 			left: '.$desc_left.'%;
 			width: '.$desc_width.'%;
+			margin-bottom: 0px;
+			margin-left: 0px;
 		}
 		#slider'.$mid.' .slide-desc-in {
 			position: relative;
-			margin: 0 '.$padding_right.'px '.$padding_bottom.'px 0 !important;
+			margin-bottom: 0px;
+			margin-left: 0px;
+			//margin: 0 '.$padding_right.'px '.$padding_bottom.'px 0 !important;
 		}
 		#slider'.$mid.' .slide-desc-bg {
 			position:absolute;
@@ -388,12 +410,18 @@ class modDJImageSliderHelper
 			left: 0;
 			width: 100%;
 			height: 100%;
+			margin-bottom: 0px;
+			margin-left: 0px;
 		}
 		#slider'.$mid.' .slide-desc-text {
 			position: relative;
+			margin-bottom: 0px;
+			margin-left: 0px;
 		}
 		#slider'.$mid.' .slide-desc-text h3 {
 			display: block !important;
+			margin-bottom: 0px;
+			margin-left: 0px;
 		}
 		';
 		if($params->get('show_buttons') || $params->get('show_arrows')) $css .= '

@@ -13,17 +13,7 @@ JHtml::_('behavior.keepalive');
 <?php if ($type == 'logout') : ?>
 <form action="index.php" method="post" id="form-login">
 <?php if ($params->get('greeting')) : ?>
-	<div>
-	<?php if($user->get('grade') >= '9'):
-		echo '<img src="http://imathsite.net/images/golden cup.png" />';
-	 elseif($user->get('grade') >='7'):
-		echo '<img src="http://imathsite.net/images/silver cup.png" />';
-	elseif($user->get('grade') >='5'):
-		echo '<img src="http://imathsite.net/images/bronze cup.png" />';
-	 else:
-		echo '<img src="http://imathsite.net/images/none cup.png" />';
-	endif; ?>
-	
+	<div style="position: relative;">
 	<?php if($params->get('name') == 0) : {
 		echo JText::sprintf('MOD_LOGIN_HINAME', $user->get('name'));
 		echo "<p id='nameId' hidden>".$user->get('username')."</p>";
@@ -31,6 +21,18 @@ JHtml::_('behavior.keepalive');
 		echo JText::sprintf('MOD_LOGIN_HINAME', $user->get('username'));
 		echo "<p id='nameId' hidden>".$user->get('username')."</p>";
 	} endif; ?>
+	
+	<?php if($user->get('grade') >= '9'):
+		echo '<p style="position: relative;margin-left: auto;margin-right: auto;width: 50%"><img src="http://imathsite.net/images/golden cup.png" style="height: 125px; width: 104px;" /></p>';
+	 elseif($user->get('grade') >='7'):
+		echo '<p style="position: relative;margin-left: auto;margin-right: auto;width: 50%"><img src="http://imathsite.net/images/silver cup.png" style="height: 125px; width: 104px;" /></p>';
+	elseif($user->get('grade') >='5'):
+		echo '<p style="position: relative;margin-left: auto;margin-right: auto;width: 50%"><img src="http://imathsite.net/images/bronze cup.png" style="height: 125px; width: 104px;" /></p>';
+	 else:
+		echo '<p style="position: relative;margin-left: auto;margin-right: auto;width: 50%"><img src="http://imathsite.net/images/none cup.png" style="height: 125px; width: 104px;" /></p>';
+	endif; ?>
+	
+	
 	</div>
 <?php endif; ?>
 	<div class="logout-button">

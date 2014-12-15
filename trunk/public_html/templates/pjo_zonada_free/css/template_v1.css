@@ -64,6 +64,7 @@ BODY
 	padding: 0 !important;
 	margin-top: 0;
 	margin-bottom: 20px;
+	background-color: #fff;
 }
 BODY.site
 {
@@ -72,12 +73,12 @@ BODY.site
 }
 .container
 {
-	max-width: 960px;
-	width: 960px;
+	max-width: 1200px;
+	width: 1200px;
 }
 #container_inner
 {
-	background-color: rgba(82, 82, 82, 0.69);
+	background-color: rgba(203, 203, 203, 1);
 	padding-left: 10px;
 	padding-right: 10px;
 }
