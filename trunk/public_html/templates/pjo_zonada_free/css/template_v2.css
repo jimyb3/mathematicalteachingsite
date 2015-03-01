@@ -1,44 +1,44 @@
-/*/**
-* @author    Pickjoomla.com http://www.pickjoomla.com
-*  Copyright (C) 2007-2013  Pickjoomla.com. All rights reserved.
-* /*/
-#footer_inner .well
-{
-	background-color: #222222;
-}
-#footer_inner #page_header_h3
-{
-	color: #FFFFFF;
-	border-bottom: 4px solid #FFFFFF;
-}
-#footer_inner
-{
-	color: #999999;
-}
-#pathway
-{
-	position: absolute;
-	top: 0;
-	text-transform: uppercase;
-	font-size: 80%;
-	padding-left: 10px;
-	font-weight: bold;
-	color: #999999;
-	height: 30px;
-	margin-top: -15px;
-	padding-bottom: 10px;
-}
-.breadcrumbs IMG
-{
-	margin-left: 0;
-	margin-right: 0;
-	padding-bottom: 4px;
-}
-.breadcrumb
-{
-	background-color: transparent;
-}
-.breadcrumb LI
-{
-	text-shadow: none;
-}
+/*/**
+* @author    Pickjoomla.com http://www.pickjoomla.com
+*  Copyright (C) 2007-2013  Pickjoomla.com. All rights reserved.
+* /*/
+#footer_inner .well
+{
+	background-color: #222222;
+}
+#footer_inner #page_header_h3
+{
+	color: #FFFFFF;
+	border-bottom: 4px solid #FFFFFF;
+}
+#footer_inner
+{
+	color: #999999;
+}
+#pathway
+{
+	position: absolute;
+	top: 0;
+	text-transform: uppercase;
+	font-size: 80%;
+	padding-left: 10px;
+	font-weight: bold;
+	color: #999999;
+	height: 30px;
+	margin-top: -15px;
+	padding-bottom: 10px;
+}
+.breadcrumbs IMG
+{
+	margin-left: 0;
+	margin-right: 0;
+	padding-bottom: 4px;
+}
+.breadcrumb
+{
+	background-color: transparent;
+}
+.breadcrumb LI
+{
+	text-shadow: none;
+}
