@@ -1,337 +1,337 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
-<extension version="2.5" type="template" client="site">
-
-<name>pjo_zonada_free</name>
-<version>1.4</version>
-<creationDate>2013</creationDate>
-<author>pickjoomla</author>
-<authorEmail>info@pickjoomla.com</authorEmail>
-<copyright>pickjoomla.com</copyright>
-
-<description>
-<![CDATA[
-<p>Free Joomla 2.5.x and Joomla 3.x Template from <a href="http://www.pickjoomla.com" target="_blank">pickjoomla.com</a> </p>
-<p>
-Get the full version <a href="http://www.pickjoomla.com/upgrade" target="_blank">Upgrade Here</a><br />
-Click here for <a href="http://dm25.pickjoomla.com/?template=pjo_zonada_free" target="_blank">Demo</a> PRO Version<br />
-</p>
-<img src="../templates/pjo_zonada_free/template_thumbnail.png" border="0" title="" alt=""/>
-
-]]>
-</description>
-
-<files>
-<filename>component.php</filename>
-<filename>favicon.ico</filename>
-<filename>index.php</filename>
-<filename>templateDetails.xml</filename>
-<filename>template_preview.png</filename>
-<filename>template_thumbnail.png</filename>
-<folder>css</folder>
-<folder>html</folder>
-<folder>images</folder>
-<folder>img</folder>
-<folder>js</folder>
-<folder>language</folder>
-<folder>includes</folder>
-<folder>elements</folder>
-<folder>fonts</folder>
-</files>
-
-<positions>
-<position>banner</position>
-<position>pathway</position>
-<position>search</position>
-<position>right</position>
-<position>left</position>
-<position>dropdown</position>
-<position>tabs</position>
-<position>shownews</position>
-<position>bottom1</position>
-<position>bottom2</position>
-<position>bottom3</position>
-<position>bottom4</position>
-<position>footer</position>
-<position>slideshow</position>
-<position>debug</position>
-</positions>
-
-<languages folder="language">
-<language tag="en-GB">en-GB/en-GB.tpl_pjo_zonada_free.ini</language>
-<language tag="en-GB">en-GB/en-GB.tpl_pjo_zonada_free.sys.ini</language>
-</languages>
-
-<config>
-<fields name="params" addfieldpath="/templates/pjo_zonada_free/elements">
-
-<!-- START ADVANCED OPTIONS  -->
-<fieldset name="advanced">
-
-<!-- ENABLE/DISABLE FRONTPAGE -->
-<field name="xml_ict_frontpage" type="radio" default="yes" label="Display frontpage" description="Frontpage">
-<option value="yes">Yes</option>
-<option value="no">No</option>
-</field>
-
-
-<field name="colorStyle" type="list" default="default" label="Choose Color Style" description="Choose Color Style">
-<option value="default">Default</option>
-<option value="style1">Color Style1</option>
-<option value="style2">Color Style2</option>
-<option value="style3">Color Style3</option>
-</field>
-
-<!-- START BODY FONT STYLE -->
-<field name="FONTTYPE_P" type="list" default="Arial" label="Font Style" description="Select the font for description text.">
-<option value="Arial">Arial</option>
-<option value="Carter One">Carter One</option>
-<option value="Helvetica">Helvetica</option>
-<option value="PT Sans Narrow">PT Sans Narrow</option>
-<option value="Tahoma">Tahoma</option>
-<option value="Times New Roman">Times New Roman</option>
-<option value="Trebuchet MS">Trebuchet MS</option>
-<option value="Verdana">Verdana</option>
-</field>
-
-<!-- START BODY FONT SIZE -->
-<field name="body_fontsize" type="list" default="13px" label="Template Font Size" description="Choose Body Font Size">
-<option value="5px">Level1</option>
-<option value="6px">Level2</option>
-<option value="7px">Level3</option>
-<option value="8px">Level3</option>
-<option value="9px">Level4</option>
-<option value="10px">Level5</option>
-<option value="11px">Level6</option>
-<option value="12px">Level7</option>
-<option value="13px">Level8 - Default</option>
-<option value="14px">Level9</option>
-<option value="15px">Level10</option>
-<option value="16px">Level11</option>
-<option value="17px">Level12</option>
-<option value="18px">Level13</option>
-<option value="19px">Level14</option>
-<option value="20px">Level15</option>
-<option value="21px">Level16</option>
-</field>
-
-<!-- BODY BACKGROUND -->
-<field name="body_bg_image_default" type="list" default="body_bg_default" label="Template Background" description="Choose Background Image for template">
-<option value="body_bg_default">Default Background</option>
-<option value="no">No Background</option>
-</field>
-<field name="body_bg_image_file" type="media" default="" label="Template BG Upload" description="Upload your own image" directory="/" filter="" exclude="" stripext="" />
-<!-- BODY BACKGROUND -->
-<field name="templateBackgroundColor" class="" type="color" default="#fafafa" label="TPL_BACKGROUND_COLOR_LABEL" description="TPL_BACKGROUND_COLOR_DESC" />
-<!-- TEMPLATE LOGO -->
-<field name="logoFile" class="" type="media" default="" label="TPL_LOGO_LABEL" description="TPL_LOGO_DESC" />
-<field name="sitetitle"  type="text" default="" label="JGLOBAL_TITLE" description="JFIELD_ALT_PAGE_TITLE_LABEL" filter="string" />
-<field name="sitedescription"  type="text" default="" label="JGLOBAL_DESCRIPTION" description="JGLOBAL_SUBHEADING_DESC" filter="string" />
-</fieldset>
-
-<!-- MENU OPTIONS  -->
-<fieldset name="hor_menu" label="MENU_HORIZONTAL">
-<field name="hornav_menu" type="menu" default="mainmenu" label="Select Hornav menu" description="Select Hornav Menu" />
-<field name="hornav_font_color" type="color" default="#FFFFFF" label="Hornav Text Color" description="Hornav Text Color" />
-<field name="hornav_border_color" type="color" default="#383838" label="Hornav Border Color" description="Hornav Border Color" />
-<field name="hornav_sub_border_color" type="color" default="#db3031" label="Hornav Border Color Submenu" description="Hornav Border Color Submenu" />
-</fieldset>
-
-<!-- SLIDESHOW OPTIONS  -->
-<fieldset name="4" label="SLIDE_SHOW">
-
-<field name="slideshow_use" type="radio" default="1" label="Use Slideshow" description="If you don't use Slideshow, the Header is active">
-<option value="0">No</option>
-<option value="1">Yes</option>
-</field>
-
-<field name="slideshow_image1" type="media" default="" label="Slideshow Image 1" description="Slideshow Image 1" />
-<field name="slideshow_image2" type="media" default="" label="Slideshow Image 2" description="Slideshow Image 2" />
-<field name="slideshow_image3" type="media" default="" label="Slideshow Image 3" description="Slideshow Image 3" />
-<field name="slideshow_image4" type="media" default="" label="Slideshow Image 4" description="Slideshow Image 4" />
-<field name="slideshow_image5" type="media" default="" label="Slideshow Image 5" description="Slideshow Image 5" />
-<field name="slideshow_image6" type="media" default="" label="Slideshow Image 6" description="Slideshow Image 6" />
-<field name="slideshow_image7" type="media" default="" label="Slideshow Image 7" description="Slideshow Image 7" />
-
-<field name="caption1" type="textarea" default="" label="Slideshow Image1 text" description="enter a text"  rows="6" cols="20" />
-<field name="caption2" type="textarea" default="" label="Slideshow Image2 text" description="enter a text"  rows="6" cols="20" />
-<field name="caption3" type="textarea" default="" label="Slideshow Image3 text" description="enter a text"  rows="6" cols="20" />
-<field name="caption4" type="textarea" default="" label="Slideshow Image4 text" description="enter a text"  rows="6" cols="20" />
-<field name="caption5" type="textarea" default="" label="Slideshow Image5 text" description="enter a text"  rows="6" cols="20" />
-<field name="caption6" type="textarea" default="" label="Slideshow Image6 text" description="enter a text"  rows="6" cols="20" />
-<field name="caption7" type="textarea" default="" label="Slideshow Image7 text" description="enter a text"  rows="6" cols="20" />
-
-<field name="slideshow_effect" type="checkboxes" default="fade" label="Slideshow Effect" description="Select the Slideshow Effects, random all Effects.">
-<option value="random">Random</option>
-<option value="sliceDownRight">Down Right</option>
-<option value="sliceDownLeft">Down Left</option>
-<option value="sliceUpRight">Up Right</option>
-<option value="sliceUpLeft">Up Left</option>
-<option value="sliceUpDown">Up Down</option>
-<option value="sliceUpDownLeft">Down Left</option>
-<option value="fold">Fold</option>
-<option value="fade">Fade</option>
-</field>
-
-<field name="slideshow_slices" type="text" default="15" label="Slices *30" description="Slices 2 - 50 make not more *Default 30" />
-<field name="slideshow_animspeed" type="text" default="500" label="Speed *500" description="Speed to next Image *Default 500" />
-<field name="slideshow_pausetime" type="text" default="5000" label="Showtime *5000" description="Showtime Image *Default 5000" />
-
-<field name="slideshow_startslide" type="list" default="0" label="Startimage" description="Select Image to start Slideshow.">
-<option value="0">1</option>
-<option value="1">2</option>
-<option value="2">3</option>
-<option value="3">4</option>
-<option value="4">5</option>
-<option value="5">6</option>
-<option value="6">7</option>
-</field>
-
-<field name="slideshow_controlnav" type="radio" default="0" label="Contol Navigation show" description="Show / hide the Control Navigation.">
-<option value="0">Yes</option>
-<option value="1">No</option>
-</field>
-</fieldset>
-
-<!-- SART SOCIALMEDIA  -->
-<!-- ######################  -->
-<!-- ######################  -->
-<fieldset name="social_media" label="SOCIALMEDIA">
-<field name="enable_disable_social_media" type="radio" class="btn-group" default="0" label="Social Media Links Of/On" description="Enable/Disable Social Media Links">
-<option value="0">No</option>
-<option value="1">Yes</option>
-</field>
-
-<field name="item_twitter_sw" type="radio" class="btn-group" default="0" label="Twitter" description="Enable Twitter Yes/No" value="1">
-<option value="0">No</option>
-<option value="1">Yes</option>
-</field>
-<field name="item_twitter" type="text" size="60" default="https://twitter.com/" label="Your Twitter Url" description="Twitter URL" />
-
-<field name="item_facebook_sw" type="radio" class="btn-group" default="0" label="Facebook" description="Enable Facebook Yes/No" value="1">
-<option value="0">No</option>
-<option value="1">Yes</option>
-</field>
-<field name="item_facebook" type="text" size="60" default="https://www.facebook.com/" label="Your Facebook Url" description="Facebook URL" />
-
-<field name="item_google_sw" type="radio" class="btn-group" default="0" label="Google" description="Enable Google Yes/No" value="1">
-<option value="0">No</option>
-<option value="1">Yes</option>
-</field>
-<field name="item_google" type="text" size="60" default="https://plus.google.com/" label="Your Google Url" description="Google URL" />
-
-<field name="item_myspace_sw" type="radio" class="btn-group" default="0" label="MySpace" description="Enable MySpace Yes/No" value="1">
-<option value="0">No</option>
-<option value="1">Yes</option>
-</field>
-<field name="item_myspace" type="text" size="60" default="http://www.myspace.com/" label="Your MySpace Url" description="MySpace URL" />
-
-<field name="item_linkedin_sw" type="radio" class="btn-group" default="0" label="LinkedIn" description="Enable LinkedIn Yes/No" value="1">
-<option value="0">No</option>
-<option value="1">Yes</option>
-</field>
-<field name="item_linkedin" type="text" size="60" default="http://www.linkedin.com/" label="Your LinkedIn Url" description="LinkedIn URL" />
-
-<field name="item_blogger_sw" type="radio" class="btn-group" default="0" label="Blogger" description="Enable Blogger Yes/No" value="1">
-<option value="0">No</option>
-<option value="1">Yes</option>
-</field>
-<field name="item_blogger" type="text" size="60" default="http://www.blogger.com/" label="Your Blogger Url" description="Blogger URL" />
-
-<field name="item_flickr_sw" type="radio" class="btn-group" default="0" label="Flickr" description="Enable Flickr Yes/No" value="1">
-<option value="0">No</option>
-<option value="1">Yes</option>
-</field>
-<field name="item_flickr" type="text" size="60" default="http://www.flickr.com/" label="Your Flickr Url" description="Flickr URL" />
-
-<field name="item_rssfeed_sw" type="radio" class="btn-group" default="0" label="RSS Feed" description="Enable RSS Feed Yes/No" value="1">
-<option value="0">No</option>
-<option value="1">Yes</option>
-</field>
-<field name="item_rssfeed" type="text" size="60" default="" label="Your RSS Feed Url" description="RSS Feed URL" />
-
-<field name="item_stumble_sw" type="radio" class="btn-group" default="0" label="Stumble" description="Enable Stumble Yes/No" value="1">
-<option value="0">No</option>
-<option value="1">Yes</option>
-</field>
-<field name="item_stumble" type="text" size="60" default="" label="Your Stumble Url" description="StumbleUpon URL" />
-</fieldset>
-<!-- END SOCIAL MEDIA LINKS -->
-<!-- ######################  -->
-<!-- ######################  -->
-
-<!-- MODULE OPTIONS -->
-<fieldset name="modl_opt" label="More Options">
-
-<field type="spacer" default="" label="UPGRADE_LINK" description=""/>
-
-<!-- TEMPLATE WIDTH -->
-<field name="fluidContainer" type="radio" class="btn-group" default="0" label="TPL_FLUID_LABEL" description="Choose between static or fullscreen resolution">
-<option value="0" disabled="true">TPL_STATIC</option>
-<option value="1" disabled="true">TPL_FLUID</option>
-</field>
-
-<field name="templateColor" class="" disabled="true" type="color" default="#3b7bb9" label="TPL_COLOR_LABEL" description="Custom template color at your choice" />
-
-<field name="body_textcolor" class="" disabled="true" type="color" default="#333333" label="Body Text Color" description="Choose Body Text Color" />
-
-<field name="responsv" type="radio" class="btn-group" default="0" label="Enable Responsive" description="Eanable/Disable Responsive Layout">
-<option value="0" disabled="true">No</option>
-<option value="1" disabled="true">Yes</option>
-</field>
-
-<field name="responsive_menu_text" type="text" label="Responsive Menu Text" description="Add here the responsive text menu in your own language, for small devices (e.x by default is (Select a page)) " default="Select a page!" disabled="true" />
-
-<field name="bootstrapfw" type="radio" class="btn-group" default="0" label="Load Bootstrap FW" description="Enable/Disable Bootstrap Framework">
-<option value="0" disabled="true">No</option>
-<option value="1" disabled="true">Yes</option>
-</field>
-
-<field name="column_layout" type="list" default="left-content-right" label="Side Column Layout" description="Side Column Layout">
-<option value="left-content-right" disabled="true">Column A + Component + Column B</option>
-<option value="left-right-content" disabled="true">Column A + Column B + Component</option>
-<option value="content-left-right" disabled="true">Component + Column A + Column B</option>
-</field>
-
-<field name="extens" type="radio" class="btn-group" default="0" label="Enable Extensions" description="Enable Extension Futures">
-<option value="0" disabled="true">No</option>
-<option value="1" disabled="true">Yes</option>
-</field>
-
-<field name="menuopt" type="radio" class="btn-group" default="0" label="Horizontal Menu" description="Extra Menu Options">
-<option value="0" disabled="true">No</option>
-<option value="1" disabled="true">Yes</option>
-</field>
-
-<field name="googlfonts" type="radio" class="btn-group" default="0" label="Google Fonts" description="Load more than 600 different google fonts">
-<option value="0" disabled="true">No</option>
-<option value="1" disabled="true">Yes</option>
-</field>
-
-<field name="typogr" type="radio" class="btn-group" default="0" label="Typography" description="Large typography">
-<option value="0" disabled="true">No</option>
-<option value="1" disabled="true">Yes</option>
-</field>
-
-<field name="modposit" type="radio" class="btn-group" default="0" label="Extra Positions" description="Load more positions">
-<option value="0" disabled="true">No</option>
-<option value="1" disabled="true">Yes</option>
-</field>
-
-<field name="analytcss" type="radio" class="btn-group" default="0" label="Google Analytics" description="Google analytics trackging code">
-<option value="0" disabled="true">No</option>
-<option value="1" disabled="true">Yes</option>
-</field>
-
-
-<field name="copyr_ft" type="radio" class="btn-group" default="0" label="Remove Footer Link" description="Remove footer copyrights">
-<option value="0" disabled="true">No</option>
-<option value="1" disabled="true">Yes</option>
-</field>
-
-</fieldset>
-
-</fields>
-</config>
-
-</extension>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
+<extension version="2.5" type="template" client="site">
+
+<name>pjo_zonada_free</name>
+<version>1.4</version>
+<creationDate>2013</creationDate>
+<author>pickjoomla</author>
+<authorEmail>info@pickjoomla.com</authorEmail>
+<copyright>pickjoomla.com</copyright>
+
+<description>
+<![CDATA[
+<p>Free Joomla 2.5.x and Joomla 3.x Template from <a href="http://www.pickjoomla.com" target="_blank">pickjoomla.com</a> </p>
+<p>
+Get the full version <a href="http://www.pickjoomla.com/upgrade" target="_blank">Upgrade Here</a><br />
+Click here for <a href="http://dm25.pickjoomla.com/?template=pjo_zonada_free" target="_blank">Demo</a> PRO Version<br />
+</p>
+<img src="../templates/pjo_zonada_free/template_thumbnail.png" border="0" title="" alt=""/>
+
+]]>
+</description>
+
+<files>
+<filename>component.php</filename>
+<filename>favicon.ico</filename>
+<filename>index.php</filename>
+<filename>templateDetails.xml</filename>
+<filename>template_preview.png</filename>
+<filename>template_thumbnail.png</filename>
+<folder>css</folder>
+<folder>html</folder>
+<folder>images</folder>
+<folder>img</folder>
+<folder>js</folder>
+<folder>language</folder>
+<folder>includes</folder>
+<folder>elements</folder>
+<folder>fonts</folder>
+</files>
+
+<positions>
+<position>banner</position>
+<position>pathway</position>
+<position>search</position>
+<position>right</position>
+<position>left</position>
+<position>dropdown</position>
+<position>tabs</position>
+<position>shownews</position>
+<position>bottom1</position>
+<position>bottom2</position>
+<position>bottom3</position>
+<position>bottom4</position>
+<position>footer</position>
+<position>slideshow</position>
+<position>debug</position>
+</positions>
+
+<languages folder="language">
+<language tag="en-GB">en-GB/en-GB.tpl_pjo_zonada_free.ini</language>
+<language tag="en-GB">en-GB/en-GB.tpl_pjo_zonada_free.sys.ini</language>
+</languages>
+
+<config>
+<fields name="params" addfieldpath="/templates/pjo_zonada_free/elements">
+
+<!-- START ADVANCED OPTIONS  -->
+<fieldset name="advanced">
+
+<!-- ENABLE/DISABLE FRONTPAGE -->
+<field name="xml_ict_frontpage" type="radio" default="yes" label="Display frontpage" description="Frontpage">
+<option value="yes">Yes</option>
+<option value="no">No</option>
+</field>
+
+
+<field name="colorStyle" type="list" default="default" label="Choose Color Style" description="Choose Color Style">
+<option value="default">Default</option>
+<option value="style1">Color Style1</option>
+<option value="style2">Color Style2</option>
+<option value="style3">Color Style3</option>
+</field>
+
+<!-- START BODY FONT STYLE -->
+<field name="FONTTYPE_P" type="list" default="Arial" label="Font Style" description="Select the font for description text.">
+<option value="Arial">Arial</option>
+<option value="Carter One">Carter One</option>
+<option value="Helvetica">Helvetica</option>
+<option value="PT Sans Narrow">PT Sans Narrow</option>
+<option value="Tahoma">Tahoma</option>
+<option value="Times New Roman">Times New Roman</option>
+<option value="Trebuchet MS">Trebuchet MS</option>
+<option value="Verdana">Verdana</option>
+</field>
+
+<!-- START BODY FONT SIZE -->
+<field name="body_fontsize" type="list" default="13px" label="Template Font Size" description="Choose Body Font Size">
+<option value="5px">Level1</option>
+<option value="6px">Level2</option>
+<option value="7px">Level3</option>
+<option value="8px">Level3</option>
+<option value="9px">Level4</option>
+<option value="10px">Level5</option>
+<option value="11px">Level6</option>
+<option value="12px">Level7</option>
+<option value="13px">Level8 - Default</option>
+<option value="14px">Level9</option>
+<option value="15px">Level10</option>
+<option value="16px">Level11</option>
+<option value="17px">Level12</option>
+<option value="18px">Level13</option>
+<option value="19px">Level14</option>
+<option value="20px">Level15</option>
+<option value="21px">Level16</option>
+</field>
+
+<!-- BODY BACKGROUND -->
+<field name="body_bg_image_default" type="list" default="body_bg_default" label="Template Background" description="Choose Background Image for template">
+<option value="body_bg_default">Default Background</option>
+<option value="no">No Background</option>
+</field>
+<field name="body_bg_image_file" type="media" default="" label="Template BG Upload" description="Upload your own image" directory="/" filter="" exclude="" stripext="" />
+<!-- BODY BACKGROUND -->
+<field name="templateBackgroundColor" class="" type="color" default="#fafafa" label="TPL_BACKGROUND_COLOR_LABEL" description="TPL_BACKGROUND_COLOR_DESC" />
+<!-- TEMPLATE LOGO -->
+<field name="logoFile" class="" type="media" default="" label="TPL_LOGO_LABEL" description="TPL_LOGO_DESC" />
+<field name="sitetitle"  type="text" default="" label="JGLOBAL_TITLE" description="JFIELD_ALT_PAGE_TITLE_LABEL" filter="string" />
+<field name="sitedescription"  type="text" default="" label="JGLOBAL_DESCRIPTION" description="JGLOBAL_SUBHEADING_DESC" filter="string" />
+</fieldset>
+
+<!-- MENU OPTIONS  -->
+<fieldset name="hor_menu" label="MENU_HORIZONTAL">
+<field name="hornav_menu" type="menu" default="mainmenu" label="Select Hornav menu" description="Select Hornav Menu" />
+<field name="hornav_font_color" type="color" default="#FFFFFF" label="Hornav Text Color" description="Hornav Text Color" />
+<field name="hornav_border_color" type="color" default="#383838" label="Hornav Border Color" description="Hornav Border Color" />
+<field name="hornav_sub_border_color" type="color" default="#db3031" label="Hornav Border Color Submenu" description="Hornav Border Color Submenu" />
+</fieldset>
+
+<!-- SLIDESHOW OPTIONS  -->
+<fieldset name="4" label="SLIDE_SHOW">
+
+<field name="slideshow_use" type="radio" default="1" label="Use Slideshow" description="If you don't use Slideshow, the Header is active">
+<option value="0">No</option>
+<option value="1">Yes</option>
+</field>
+
+<field name="slideshow_image1" type="media" default="" label="Slideshow Image 1" description="Slideshow Image 1" />
+<field name="slideshow_image2" type="media" default="" label="Slideshow Image 2" description="Slideshow Image 2" />
+<field name="slideshow_image3" type="media" default="" label="Slideshow Image 3" description="Slideshow Image 3" />
+<field name="slideshow_image4" type="media" default="" label="Slideshow Image 4" description="Slideshow Image 4" />
+<field name="slideshow_image5" type="media" default="" label="Slideshow Image 5" description="Slideshow Image 5" />
+<field name="slideshow_image6" type="media" default="" label="Slideshow Image 6" description="Slideshow Image 6" />
+<field name="slideshow_image7" type="media" default="" label="Slideshow Image 7" description="Slideshow Image 7" />
+
+<field name="caption1" type="textarea" default="" label="Slideshow Image1 text" description="enter a text"  rows="6" cols="20" />
+<field name="caption2" type="textarea" default="" label="Slideshow Image2 text" description="enter a text"  rows="6" cols="20" />
+<field name="caption3" type="textarea" default="" label="Slideshow Image3 text" description="enter a text"  rows="6" cols="20" />
+<field name="caption4" type="textarea" default="" label="Slideshow Image4 text" description="enter a text"  rows="6" cols="20" />
+<field name="caption5" type="textarea" default="" label="Slideshow Image5 text" description="enter a text"  rows="6" cols="20" />
+<field name="caption6" type="textarea" default="" label="Slideshow Image6 text" description="enter a text"  rows="6" cols="20" />
+<field name="caption7" type="textarea" default="" label="Slideshow Image7 text" description="enter a text"  rows="6" cols="20" />
+
+<field name="slideshow_effect" type="checkboxes" default="fade" label="Slideshow Effect" description="Select the Slideshow Effects, random all Effects.">
+<option value="random">Random</option>
+<option value="sliceDownRight">Down Right</option>
+<option value="sliceDownLeft">Down Left</option>
+<option value="sliceUpRight">Up Right</option>
+<option value="sliceUpLeft">Up Left</option>
+<option value="sliceUpDown">Up Down</option>
+<option value="sliceUpDownLeft">Down Left</option>
+<option value="fold">Fold</option>
+<option value="fade">Fade</option>
+</field>
+
+<field name="slideshow_slices" type="text" default="15" label="Slices *30" description="Slices 2 - 50 make not more *Default 30" />
+<field name="slideshow_animspeed" type="text" default="500" label="Speed *500" description="Speed to next Image *Default 500" />
+<field name="slideshow_pausetime" type="text" default="5000" label="Showtime *5000" description="Showtime Image *Default 5000" />
+
+<field name="slideshow_startslide" type="list" default="0" label="Startimage" description="Select Image to start Slideshow.">
+<option value="0">1</option>
+<option value="1">2</option>
+<option value="2">3</option>
+<option value="3">4</option>
+<option value="4">5</option>
+<option value="5">6</option>
+<option value="6">7</option>
+</field>
+
+<field name="slideshow_controlnav" type="radio" default="0" label="Contol Navigation show" description="Show / hide the Control Navigation.">
+<option value="0">Yes</option>
+<option value="1">No</option>
+</field>
+</fieldset>
+
+<!-- SART SOCIALMEDIA  -->
+<!-- ######################  -->
+<!-- ######################  -->
+<fieldset name="social_media" label="SOCIALMEDIA">
+<field name="enable_disable_social_media" type="radio" class="btn-group" default="0" label="Social Media Links Of/On" description="Enable/Disable Social Media Links">
+<option value="0">No</option>
+<option value="1">Yes</option>
+</field>
+
+<field name="item_twitter_sw" type="radio" class="btn-group" default="0" label="Twitter" description="Enable Twitter Yes/No" value="1">
+<option value="0">No</option>
+<option value="1">Yes</option>
+</field>
+<field name="item_twitter" type="text" size="60" default="https://twitter.com/" label="Your Twitter Url" description="Twitter URL" />
+
+<field name="item_facebook_sw" type="radio" class="btn-group" default="0" label="Facebook" description="Enable Facebook Yes/No" value="1">
+<option value="0">No</option>
+<option value="1">Yes</option>
+</field>
+<field name="item_facebook" type="text" size="60" default="https://www.facebook.com/" label="Your Facebook Url" description="Facebook URL" />
+
+<field name="item_google_sw" type="radio" class="btn-group" default="0" label="Google" description="Enable Google Yes/No" value="1">
+<option value="0">No</option>
+<option value="1">Yes</option>
+</field>
+<field name="item_google" type="text" size="60" default="https://plus.google.com/" label="Your Google Url" description="Google URL" />
+
+<field name="item_myspace_sw" type="radio" class="btn-group" default="0" label="MySpace" description="Enable MySpace Yes/No" value="1">
+<option value="0">No</option>
+<option value="1">Yes</option>
+</field>
+<field name="item_myspace" type="text" size="60" default="http://www.myspace.com/" label="Your MySpace Url" description="MySpace URL" />
+
+<field name="item_linkedin_sw" type="radio" class="btn-group" default="0" label="LinkedIn" description="Enable LinkedIn Yes/No" value="1">
+<option value="0">No</option>
+<option value="1">Yes</option>
+</field>
+<field name="item_linkedin" type="text" size="60" default="http://www.linkedin.com/" label="Your LinkedIn Url" description="LinkedIn URL" />
+
+<field name="item_blogger_sw" type="radio" class="btn-group" default="0" label="Blogger" description="Enable Blogger Yes/No" value="1">
+<option value="0">No</option>
+<option value="1">Yes</option>
+</field>
+<field name="item_blogger" type="text" size="60" default="http://www.blogger.com/" label="Your Blogger Url" description="Blogger URL" />
+
+<field name="item_flickr_sw" type="radio" class="btn-group" default="0" label="Flickr" description="Enable Flickr Yes/No" value="1">
+<option value="0">No</option>
+<option value="1">Yes</option>
+</field>
+<field name="item_flickr" type="text" size="60" default="http://www.flickr.com/" label="Your Flickr Url" description="Flickr URL" />
+
+<field name="item_rssfeed_sw" type="radio" class="btn-group" default="0" label="RSS Feed" description="Enable RSS Feed Yes/No" value="1">
+<option value="0">No</option>
+<option value="1">Yes</option>
+</field>
+<field name="item_rssfeed" type="text" size="60" default="" label="Your RSS Feed Url" description="RSS Feed URL" />
+
+<field name="item_stumble_sw" type="radio" class="btn-group" default="0" label="Stumble" description="Enable Stumble Yes/No" value="1">
+<option value="0">No</option>
+<option value="1">Yes</option>
+</field>
+<field name="item_stumble" type="text" size="60" default="" label="Your Stumble Url" description="StumbleUpon URL" />
+</fieldset>
+<!-- END SOCIAL MEDIA LINKS -->
+<!-- ######################  -->
+<!-- ######################  -->
+
+<!-- MODULE OPTIONS -->
+<fieldset name="modl_opt" label="More Options">
+
+<field type="spacer" default="" label="UPGRADE_LINK" description=""/>
+
+<!-- TEMPLATE WIDTH -->
+<field name="fluidContainer" type="radio" class="btn-group" default="0" label="TPL_FLUID_LABEL" description="Choose between static or fullscreen resolution">
+<option value="0" disabled="true">TPL_STATIC</option>
+<option value="1" disabled="true">TPL_FLUID</option>
+</field>
+
+<field name="templateColor" class="" disabled="true" type="color" default="#3b7bb9" label="TPL_COLOR_LABEL" description="Custom template color at your choice" />
+
+<field name="body_textcolor" class="" disabled="true" type="color" default="#333333" label="Body Text Color" description="Choose Body Text Color" />
+
+<field name="responsv" type="radio" class="btn-group" default="0" label="Enable Responsive" description="Eanable/Disable Responsive Layout">
+<option value="0" disabled="true">No</option>
+<option value="1" disabled="true">Yes</option>
+</field>
+
+<field name="responsive_menu_text" type="text" label="Responsive Menu Text" description="Add here the responsive text menu in your own language, for small devices (e.x by default is (Select a page)) " default="Select a page!" disabled="true" />
+
+<field name="bootstrapfw" type="radio" class="btn-group" default="0" label="Load Bootstrap FW" description="Enable/Disable Bootstrap Framework">
+<option value="0" disabled="true">No</option>
+<option value="1" disabled="true">Yes</option>
+</field>
+
+<field name="column_layout" type="list" default="left-content-right" label="Side Column Layout" description="Side Column Layout">
+<option value="left-content-right" disabled="true">Column A + Component + Column B</option>
+<option value="left-right-content" disabled="true">Column A + Column B + Component</option>
+<option value="content-left-right" disabled="true">Component + Column A + Column B</option>
+</field>
+
+<field name="extens" type="radio" class="btn-group" default="0" label="Enable Extensions" description="Enable Extension Futures">
+<option value="0" disabled="true">No</option>
+<option value="1" disabled="true">Yes</option>
+</field>
+
+<field name="menuopt" type="radio" class="btn-group" default="0" label="Horizontal Menu" description="Extra Menu Options">
+<option value="0" disabled="true">No</option>
+<option value="1" disabled="true">Yes</option>
+</field>
+
+<field name="googlfonts" type="radio" class="btn-group" default="0" label="Google Fonts" description="Load more than 600 different google fonts">
+<option value="0" disabled="true">No</option>
+<option value="1" disabled="true">Yes</option>
+</field>
+
+<field name="typogr" type="radio" class="btn-group" default="0" label="Typography" description="Large typography">
+<option value="0" disabled="true">No</option>
+<option value="1" disabled="true">Yes</option>
+</field>
+
+<field name="modposit" type="radio" class="btn-group" default="0" label="Extra Positions" description="Load more positions">
+<option value="0" disabled="true">No</option>
+<option value="1" disabled="true">Yes</option>
+</field>
+
+<field name="analytcss" type="radio" class="btn-group" default="0" label="Google Analytics" description="Google analytics trackging code">
+<option value="0" disabled="true">No</option>
+<option value="1" disabled="true">Yes</option>
+</field>
+
+
+<field name="copyr_ft" type="radio" class="btn-group" default="0" label="Remove Footer Link" description="Remove footer copyrights">
+<option value="0" disabled="true">No</option>
+<option value="1" disabled="true">Yes</option>
+</field>
+
+</fieldset>
+
+</fields>
+</config>
+
+</extension>

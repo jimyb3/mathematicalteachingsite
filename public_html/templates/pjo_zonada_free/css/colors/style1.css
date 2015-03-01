@@ -1,54 +1,54 @@
-A
-{
-	color: #A0410D;
-}
-#hor_nav LI.active A
-{
-	background: #A0410D;
-}
-#hor_nav LI A:hover, #hor_nav LI:hover A, #hor_nav LI.sfHover A
-{
-	background: #A0410D;
-}
-#hor_nav LI LI A, #hor_nav LI LI.active A, #hor_nav LI LI A:hover
-{
-	background: #A0410D;
-}
-
-.slim-caption
-{
-	color: #A0410D;
-}
-.site-title
-{
-	color: #A0410D;
-}
-.site-description
-{
-	color: #A0410D;
-}
-#hor_nav
-{
-	background-color: #A0410D;
-}
-.well
-{
-	background-color: #FFFFFF;
-}
-.header .inputbox
-{
-border: 1px solid #A0410D;
-}
-#footer_inner #page_header_h3
-{
-border-bottom: 4px solid #A0410D;
-}
-
-#header-top
-{
-border-bottom: 4px solid #A0410D;
-}
-#hor_nav
-{
-border-bottom: 4px solid #A0410D;
+A
+{
+	color: #A0410D;
+}
+#hor_nav LI.active A
+{
+	background: #A0410D;
+}
+#hor_nav LI A:hover, #hor_nav LI:hover A, #hor_nav LI.sfHover A
+{
+	background: #A0410D;
+}
+#hor_nav LI LI A, #hor_nav LI LI.active A, #hor_nav LI LI A:hover
+{
+	background: #A0410D;
+}
+
+.slim-caption
+{
+	color: #A0410D;
+}
+.site-title
+{
+	color: #A0410D;
+}
+.site-description
+{
+	color: #A0410D;
+}
+#hor_nav
+{
+	background-color: #A0410D;
+}
+.well
+{
+	background-color: #FFFFFF;
+}
+.header .inputbox
+{
+border: 1px solid #A0410D;
+}
+#footer_inner #page_header_h3
+{
+border-bottom: 4px solid #A0410D;
+}
+
+#header-top
+{
+border-bottom: 4px solid #A0410D;
+}
+#hor_nav
+{
+border-bottom: 4px solid #A0410D;
 }

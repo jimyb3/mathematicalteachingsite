@@ -1,3 +1,3 @@
-README 
-
-http://www.ajaxbestiary.com/Labs/SilkSprite/
+README 
+
+http://www.ajaxbestiary.com/Labs/SilkSprite/

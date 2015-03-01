@@ -1,88 +1,88 @@
-#hor_nav
-{
-	background-image: url(../../images/menu/menu_bg.png);
-	height: 45px;
-	z-index: 1000;
-	position: relative;
-	margin-bottom: 10px;
-	border-bottom: 4px solid #CD2122;
-}
-#hor_nav UL
-{
-	margin: 0;
-}
-#hor_nav LI
-{
-	list-style: none;
-	float: left;
-	padding-left: 0;
-	height: 34px;
-	position: relative;
-	text-transform: capitalize;
-}
-#hor_nav LI A
-{
-	display: block;
-	padding: 0 10px;
-	line-height: 45px;
-	color: #FFF;
-	font-weight: bolder;
-	border-right: 2px solid #D8D8D8;
-	font-size: 100%;
-}
-#hor_nav LI.active A
-{
-	background: #828282;
-	color: #FFFFFF;
-}
-#hor_nav LI A:hover, #hor_nav LI:hover A, #hor_nav LI.sfHover A
-{
-	background: #828282;
-	color: #FFF;
-	text-decoration: none;
-}
-#hor_nav LI UL
-{
-	position: absolute;
-	width: 170px;
-	left: -999em;
-	margin-left: -4px;
-	border: 0;
-	border-top: 0;
-}
-#hor_nav LI UL UL
-{
-	margin: -31px 0 0 170px;
-}
-#hor_nav LI:hover UL UL, #hor_nav LI:hover UL UL UL, #hor_nav LI:hover UL UL UL UL, #hor_nav LI.sfHover UL UL, #hor_nav LI.sfHover UL UL UL, #hor_nav LI.sfHover UL UL UL UL
-{
-	left: -999em;
-}
-#hor_nav LI LI
-{
-	padding: 0;
-	height: auto;
-	background: #FFF;
-	width: 170px;
-}
-#hor_nav LI LI A, #hor_nav LI LI.active A, #hor_nav LI LI A:hover
-{
-	margin: 0;
-	height: 30px;
-	line-height: 30px;
-	background: #828282;
-	border-top: 1px solid #FFFFFF;
-	color: #4C4C4C;
-}
-#hor_nav LI LI A, #hor_nav LI.active LI A
-{
-	font-weight: normal;
-}
-#hor_nav LI:hover UL, #hor_nav LI.sfHover UL
-{
-	left: 4px;
-}
-#hor_nav LI LI:hover UL, #hor_nav LI LI LI:hover UL, #hor_nav LI LI LI LI:hover UL, #hor_nav LI LI.sfHover UL, #hor_nav LI LI LI.sfHover UL, #hor_nav LI LI LI LI.sfHover UL
-{
-	left: 0;
-}
+#hor_nav
+{
+	background-image: url(../../images/menu/menu_bg.png);
+	height: 45px;
+	z-index: 1000;
+	position: relative;
+	margin-bottom: 10px;
+	border-bottom: 4px solid #CD2122;
+}
+#hor_nav UL
+{
+	margin: 0;
+}
+#hor_nav LI
+{
+	list-style: none;
+	float: left;
+	padding-left: 0;
+	height: 34px;
+	position: relative;
+	text-transform: capitalize;
+}
+#hor_nav LI A
+{
+	display: block;
+	padding: 0 10px;
+	line-height: 45px;
+	color: #FFF;
+	font-weight: bolder;
+	border-right: 2px solid #D8D8D8;
+	font-size: 100%;
+}
+#hor_nav LI.active A
+{
+	background: #828282;
+	color: #FFFFFF;
+}
+#hor_nav LI A:hover, #hor_nav LI:hover A, #hor_nav LI.sfHover A
+{
+	background: #828282;
+	color: #FFF;
+	text-decoration: none;
+}
+#hor_nav LI UL
+{
+	position: absolute;
+	width: 170px;
+	left: -999em;
+	margin-left: -4px;
+	border: 0;
+	border-top: 0;
+}
+#hor_nav LI UL UL
+{
+	margin: -31px 0 0 170px;
+}
+#hor_nav LI:hover UL UL, #hor_nav LI:hover UL UL UL, #hor_nav LI:hover UL UL UL UL, #hor_nav LI.sfHover UL UL, #hor_nav LI.sfHover UL UL UL, #hor_nav LI.sfHover UL UL UL UL
+{
+	left: -999em;
+}
+#hor_nav LI LI
+{
+	padding: 0;
+	height: auto;
+	background: #FFF;
+	width: 170px;
+}
+#hor_nav LI LI A, #hor_nav LI LI.active A, #hor_nav LI LI A:hover
+{
+	margin: 0;
+	height: 30px;
+	line-height: 30px;
+	background: #828282;
+	border-top: 1px solid #FFFFFF;
+	color: #4C4C4C;
+}
+#hor_nav LI LI A, #hor_nav LI.active LI A
+{
+	font-weight: normal;
+}
+#hor_nav LI:hover UL, #hor_nav LI.sfHover UL
+{
+	left: 4px;
+}
+#hor_nav LI LI:hover UL, #hor_nav LI LI LI:hover UL, #hor_nav LI LI LI LI:hover UL, #hor_nav LI LI.sfHover UL, #hor_nav LI LI LI.sfHover UL, #hor_nav LI LI LI LI.sfHover UL
+{
+	left: 0;
+}

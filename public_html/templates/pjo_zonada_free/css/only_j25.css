@@ -1,100 +1,100 @@
-/*LOGIN*/
-.inputbox
-{
-	width: auto;
-}
-.header .inputbox
-{
-	font-weight: bold;
-	background-color: transparent;
-	background-image: url(../images/backgrounds/search_bg.png);
-	background-repeat: repeat;
-	width: 185px;
-	margin-top: 8px;
-	border: 1px solid #E9E8E8;
-}
-/*START PAGINATION JOOMLA 2.5*/
-.pagenav
-{
-	text-align: right;
-}
-.pagenav UL
-{
-	display: inline-block;
-	=display: inline;
-	/*IE7 inline-block hack*/
-	list-style-type: none;
-	margin-left: 0;
-	margin-bottom: 0;
-}
-.pagenav LI
-{
-	display: inline;
-	margin: 0px;
-	padding: 0;
-}
-.pagenav A, SPAN.pagenav
-{
-	padding: 0 14px;
-	margin: 0;
-	line-height: 1.9em;
-	text-decoration: none;
-	border: 1px solid #DDD;
-	border-left: 0px solid #DDD;
-	display: inline-block;
-	line-height: 1.9em;
-}
-.pagenav LI:first-child A, .pagination-start SPAN
-{
-	-webkit-border-radius: 3px 0 0 3px;
-	-moz-border-radius: 3px 0 0 3px;
-	border-radius: 3px 0 0 3px;
-	border-left: 1px solid #DDD;
-}
-.pagenav LI:last-child A, .pagination-end SPAN
-{
-	-webkit-border-radius: 0 3px 3px 0;
-	-moz-border-radius: 0 3px 3px 0;
-	border-radius: 0 3px 3px 0;
-}
-.pagination UL
-{
-	margin: 10px 10px 10px 0;
-	padding: 0;
-}
-.pagination LI
-{
-	display: inline;
-}
-.pagination A
-{
-	padding: 0 14px;
-	line-height: 2em;
-	text-decoration: none;
-	border: 1px solid #DDD;
-	border-left: 0px solid #DDD;
-	display: inline-block;
-}
-.pagination .active A
-{
-	cursor: default;
-}
-.pagination SPAN, .pagination SPAN A:hover
-{
-	cursor: default;
-	padding: 0 14px;
-	line-height: 2em;
-}
-.pagination LI:first-child A
-{
-	border-left-width: 1px;
-	-webkit-border-radius: 3px 0 0 3px;
-	-moz-border-radius: 3px 0 0 3px;
-	border-radius: 3px 0 0 3px;
-}
-.pagination LI:last-child A
-{
-	-webkit-border-radius: 0 3px 3px 0;
-	-moz-border-radius: 0 3px 3px 0;
-	border-radius: 0 3px 3px 0;
-}
+/*LOGIN*/
+.inputbox
+{
+	width: auto;
+}
+.header .inputbox
+{
+	font-weight: bold;
+	background-color: transparent;
+	background-image: url(../images/backgrounds/search_bg.png);
+	background-repeat: repeat;
+	width: 185px;
+	margin-top: 8px;
+	border: 1px solid #E9E8E8;
+}
+/*START PAGINATION JOOMLA 2.5*/
+.pagenav
+{
+	text-align: right;
+}
+.pagenav UL
+{
+	display: inline-block;
+	=display: inline;
+	/*IE7 inline-block hack*/
+	list-style-type: none;
+	margin-left: 0;
+	margin-bottom: 0;
+}
+.pagenav LI
+{
+	display: inline;
+	margin: 0px;
+	padding: 0;
+}
+.pagenav A, SPAN.pagenav
+{
+	padding: 0 14px;
+	margin: 0;
+	line-height: 1.9em;
+	text-decoration: none;
+	border: 1px solid #DDD;
+	border-left: 0px solid #DDD;
+	display: inline-block;
+	line-height: 1.9em;
+}
+.pagenav LI:first-child A, .pagination-start SPAN
+{
+	-webkit-border-radius: 3px 0 0 3px;
+	-moz-border-radius: 3px 0 0 3px;
+	border-radius: 3px 0 0 3px;
+	border-left: 1px solid #DDD;
+}
+.pagenav LI:last-child A, .pagination-end SPAN
+{
+	-webkit-border-radius: 0 3px 3px 0;
+	-moz-border-radius: 0 3px 3px 0;
+	border-radius: 0 3px 3px 0;
+}
+.pagination UL
+{
+	margin: 10px 10px 10px 0;
+	padding: 0;
+}
+.pagination LI
+{
+	display: inline;
+}
+.pagination A
+{
+	padding: 0 14px;
+	line-height: 2em;
+	text-decoration: none;
+	border: 1px solid #DDD;
+	border-left: 0px solid #DDD;
+	display: inline-block;
+}
+.pagination .active A
+{
+	cursor: default;
+}
+.pagination SPAN, .pagination SPAN A:hover
+{
+	cursor: default;
+	padding: 0 14px;
+	line-height: 2em;
+}
+.pagination LI:first-child A
+{
+	border-left-width: 1px;
+	-webkit-border-radius: 3px 0 0 3px;
+	-moz-border-radius: 3px 0 0 3px;
+	border-radius: 3px 0 0 3px;
+}
+.pagination LI:last-child A
+{
+	-webkit-border-radius: 0 3px 3px 0;
+	-moz-border-radius: 0 3px 3px 0;
+	border-radius: 0 3px 3px 0;
+}
