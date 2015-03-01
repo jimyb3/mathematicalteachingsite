@@ -1,0 +1,167 @@
+/**
+ * Stylesheet for font faces
+ *
+ * @package         NoNumber Framework
+ * @version         15.1.1
+ *
+ * @author          Peter van Westen <peter@nonumber.nl>
+ * @link            http://www.nonumber.nl
+ * @copyright       Copyright © 2015 NoNumber All Rights Reserved
+ * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ */
+
+.button-nonumber > a:after {
+	font-family: 'NoNumber' !important;
+	font-style: normal;
+	speak: none;
+	font-size: 16px !important;
+	line-height: 14px;
+	margin-left: 4px;
+	vertical-align: -3px;
+}
+
+.button-nonumber > a:after {
+	content: "\e000";
+}
+.button-addtomenu > a:after {
+	content: "\e001";
+}
+.button-adminbardocker > a:after {
+	content: "\e002";
+}
+.button-advancedmodulemanager > a:after {
+	content: "\e003";
+}
+.button-articlesanywhere > a:after {
+	content: "\e004";
+}
+.button-betterpreview > a:after {
+	content: "\e005";
+}
+.button-cachecleaner > a:after {
+	content: "\e006";
+}
+.button-cdnforjoomla > a:after {
+	content: "\e007";
+}
+.button-componentsanywhere > a:after {
+	content: "\e008";
+}
+.button-contenttemplater > a:after {
+	content: "\e009";
+}
+.button-dbreplacer > a:after {
+	content: "\e00a";
+}
+.button-dummycontent > a:after {
+	content: "\e017";
+}
+.button-emailprotector > a:after {
+	content: "\e00b";
+}
+.button-modals > a:after,
+.button-modalizer > a:after {
+	content: "\e00c";
+}
+.button-modulesanywhere > a:after {
+	content: "\e00d";
+}
+.button-rereplacer > a:after {
+	content: "\e00e";
+}
+.button-sliders > a:after {
+	content: "\e00f";
+}
+.button-snippets > a:after {
+	content: "\e010";
+}
+.button-sourcerer > a:after {
+	content: "\e011";
+}
+.button-tabs > a:after {
+	content: "\e012";
+}
+.button-timedstyles > a:after {
+	content: "\e013";
+}
+.button-tooltips > a:after {
+	content: "\e014";
+}
+.button-whatnothing > a:after {
+	content: " ";
+	width: 16px;
+	display: inline-block;
+}
+
+.button-nonumber.button-src-sourcetags > a:after {
+	font-family: 'NNIcons' !important;
+	content: "\e01b";
+}
+.button-nonumber.button-src-nosourcetags > a:after {
+	font-family: 'NNIcons' !important;
+	content: "\e01c";
+}
+.button-nonumber.button-src-tagstyle > a:after {
+	font-family: 'NNIcons' !important;
+	content: "\e01d";
+}
+.button-nonumber.button-src-tagstylebrackets > a:after {
+	font-family: 'NNIcons' !important;
+	content: "\e01e";
+}
+
+.button_view_state {
+	margin: 10px 0;
+	background-image: url(../images/button_left.png) !important;
+	float: left !important;
+
+	> div {
+		float: left !important;
+		height: 26px !important;
+		background: url(../images/button_blank.png) no-repeat 100% 0;
+
+		> a {
+			padding: 0 11px 0 5px;
+			color: #999;
+			&:before {
+				font-family: 'NNIcons' !important;
+				font-weight: normal;
+				font-style: normal;
+				speak: none;
+				font-size: 16px !important;
+				line-height: 14px;
+				content: "";
+				margin-right: 5px;
+				vertical-align: -3px;
+			}
+		}
+	}
+	&.simple > div > a:before {
+		content: "\e011";
+	}
+	&.normal > div > a:before {
+		content: "\e012";
+	}
+	&.advanced > div > a:before {
+		content: "\e013";
+	}
+}
+
+.view_state_0 .button_view_state.simple,
+.view_state_1 .button_view_state.normal,
+.view_state_2 .button_view_state.advanced {
+	background-position: 0 100%;
+}
+.view_state_0 .button_view_state.simple > div,
+.view_state_1 .button_view_state.normal > div,
+.view_state_2 .button_view_state.advanced > div {
+	background-position: 100% 100%;
+}
+.view_state_0 .button_view_state.simple > div > a,
+.view_state_1 .button_view_state.normal > div > a,
+.view_state_2 .button_view_state.advanced > div > a {
+	color: #333;
+}
+.button_view_state > div > a:hover {
+	color: #0B55C4;
+}
