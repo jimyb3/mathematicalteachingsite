@@ -1,1 +1,1 @@
-DROP TABLE `#__djimageslider`;
+DROP TABLE `#__djimageslider`;
