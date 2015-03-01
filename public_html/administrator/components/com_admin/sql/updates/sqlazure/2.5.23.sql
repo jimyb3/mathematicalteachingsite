@@ -1,1 +1,1 @@
-# Placeholder file for database changes for version 2.5.23
+# Placeholder file for database changes for version 2.5.23
