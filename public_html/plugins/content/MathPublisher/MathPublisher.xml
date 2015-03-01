@@ -1,99 +1,99 @@
-<?xml version="1.0" encoding="utf-8"?>
-<install version="1.5" type="plugin" group="content">
-  <name>Content - MathPublisher</name>
-  <author>Ian Holden (joomla@ianholden.com)</author>
-  <creationDate>Feb 04, 2011</creationDate>
-  <copyright>Copyright 2010,2011 Ian Holden. All rights reserved.</copyright>
-  <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
-  <authorUrl>http://www.ianholden.com</authorUrl>
-  <version>1.8</version>
-  <description><![CDATA[
-  <h3>MathPublisher (v 1.8)</h3> 
-  Allows you to include math formulae sections in your Joomla 1.6 or 1.5 content using {mathpublisher} or a custom tag.<br />
-  Plugin uses phpMathPublisher by Pascal Brachet from http://www.xm1math.net/phpmathpublisher/<br />
-  Usage example: {mathpublisher}pi=sum{n=0}{+infty}{{(n!)^2 2^{n+1}}/{(2n+1)!}}{/mathpublisher}
-  <h3>Remember to enable and configure using Plugin Manager</h3>
-  ]]></description>
-<files>
-<filename plugin="MathPublisher">MathPublisher.php</filename>
-<filename>mathpublisher/mathpublisher.php</filename>
-<filename>MathPublisherREADME.txt</filename>
-<filename>mathpublisher/CHANGELOG</filename>
-<filename>mathpublisher/COPYING</filename>
-<filename>mathpublisher/img/README</filename>
-<filename>mathpublisher/fonts/cmex10.ttf</filename>
-<filename>mathpublisher/fonts/cmmi10.ttf</filename>
-<filename>mathpublisher/fonts/cmr10.ttf</filename>
-<filename>mathpublisher/fonts/FreeSerif.ttf</filename>
-<filename>mathpublisher/fonts/FreeSerifItalic.ttf</filename>
-<filename>mathpublisher/fonts/msam10.ttf</filename>
-</files>
-<languages>
-		<language tag="en-GB">en-GB.plg_content_MathPublisher.ini</language>
-</languages>
-<config>
-	<fields name="params">
-
-	
-		<!-- for Joomla 1.6 use: -->
-			<fieldset name="basic">
-				<field name="alternativetag" type="text" default="math" 
-					label="Alternative tag to trigger the plugin usage." 
-					description="If you think that {mathpublisher} is too long and prefer shorter syntax, feel free to specify your own tag. For example: math (avoid very short tags e.g. m - consider sum{m}{n}{p})" 
-				/>
-				
-				<field name="joomla_url_root" type="text" default="" 
-					label="This is where joomla is accessed from your sites root url" 
-					description="Leave empty if Joomla is accessed from you sites root url. Otherwise use 'joomla' for http://my.site/joomla/* or '~user' for . http://my.site/~user/* etc." 
-				/>
-				
-				<field name="color" type="text" default="#000000" 
-					label="Font color (html #rrggbb style e.g. #ff8844 or #f84)" 
-					description="The color for the formula." 
-				/>
-				
-				<field name="bg_color" type="text" default="#ffffff" 
-					label="Background color (html #rrggbb style e.g. #ff8844 or #f84)"  
-					description="The background color - used for anti-aliasing which makes the characters look smoother. Choose a value that is close to the average background color behind the formula." 
-				/>
-				
-				<field name="enable_in_comments" type="list" default="0" 
-					label="Enable in comments" 
-					description="Select Yes to allow math to be used in comments. Tested with JComments on Joomla 1.5 only.">
-		  			<option value="0">No</option>
-		  			<option value="1">Yes</option>
-				</field>
-			</fieldset>
-	</fields>		
-</config>		
-	<!-- for Joomla 1.5 use: -->
-	<params>
-		<param name="alternativetag" type="text" default="math" 
-			label="Alternative tag to trigger the plugin usage." 
-			description="If you think that {mathpublisher} is too long and prefer shorter syntax, feel free to specify your own tag. For example: math (avoid very short tags e.g. m - consider sum{m}{n}{p})" 
-		/>
-		
-		<param name="joomla_url_root" type="text" default="" 
-			label="This is where joomla is accessed from your sites root url" 
-			description="Leave empty if Joomla is accessed from you sites root url. Otherwise use 'joomla' for http://my.site/joomla/* or '~user' for . http://my.site/~user/* etc." 
-		/>
-		
-		<param name="color" type="text" default="#000000" 
-			label="Font color (html #rrggbb style e.g. #ff8844 or #f84)" 
-			description="The color for the formula." 
-		/>
-		
-		<param name="bg_color" type="text" default="#ffffff" 
-			label="Background color (html #rrggbb style e.g. #ff8844 or #f84)"  
-			description="The background color - used for anti-aliasing which makes the characters look smoother. Choose a value that is close to the average background color behind the formula." 
-		/>
-		
-		<param name="enable_in_comments" type="list" default="0" 
-			label="Enable in comments" 
-			description="Select Yes to allow math to be used in comments. Tested with JComments on Joomla 1.5 only.">
-  			<option value="0">No</option>
-  			<option value="1">Yes</option>
-		</param>
-		
-	</params>
-</install>
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="content">
+  <name>Content - MathPublisher</name>
+  <author>Ian Holden (joomla@ianholden.com)</author>
+  <creationDate>Feb 04, 2011</creationDate>
+  <copyright>Copyright 2010,2011 Ian Holden. All rights reserved.</copyright>
+  <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+  <authorUrl>http://www.ianholden.com</authorUrl>
+  <version>1.8</version>
+  <description><![CDATA[
+  <h3>MathPublisher (v 1.8)</h3> 
+  Allows you to include math formulae sections in your Joomla 1.6 or 1.5 content using {mathpublisher} or a custom tag.<br />
+  Plugin uses phpMathPublisher by Pascal Brachet from http://www.xm1math.net/phpmathpublisher/<br />
+  Usage example: {mathpublisher}pi=sum{n=0}{+infty}{{(n!)^2 2^{n+1}}/{(2n+1)!}}{/mathpublisher}
+  <h3>Remember to enable and configure using Plugin Manager</h3>
+  ]]></description>
+<files>
+<filename plugin="MathPublisher">MathPublisher.php</filename>
+<filename>mathpublisher/mathpublisher.php</filename>
+<filename>MathPublisherREADME.txt</filename>
+<filename>mathpublisher/CHANGELOG</filename>
+<filename>mathpublisher/COPYING</filename>
+<filename>mathpublisher/img/README</filename>
+<filename>mathpublisher/fonts/cmex10.ttf</filename>
+<filename>mathpublisher/fonts/cmmi10.ttf</filename>
+<filename>mathpublisher/fonts/cmr10.ttf</filename>
+<filename>mathpublisher/fonts/FreeSerif.ttf</filename>
+<filename>mathpublisher/fonts/FreeSerifItalic.ttf</filename>
+<filename>mathpublisher/fonts/msam10.ttf</filename>
+</files>
+<languages>
+		<language tag="en-GB">en-GB.plg_content_MathPublisher.ini</language>
+</languages>
+<config>
+	<fields name="params">
+
+	
+		<!-- for Joomla 1.6 use: -->
+			<fieldset name="basic">
+				<field name="alternativetag" type="text" default="math" 
+					label="Alternative tag to trigger the plugin usage." 
+					description="If you think that {mathpublisher} is too long and prefer shorter syntax, feel free to specify your own tag. For example: math (avoid very short tags e.g. m - consider sum{m}{n}{p})" 
+				/>
+				
+				<field name="joomla_url_root" type="text" default="" 
+					label="This is where joomla is accessed from your sites root url" 
+					description="Leave empty if Joomla is accessed from you sites root url. Otherwise use 'joomla' for http://my.site/joomla/* or '~user' for . http://my.site/~user/* etc." 
+				/>
+				
+				<field name="color" type="text" default="#000000" 
+					label="Font color (html #rrggbb style e.g. #ff8844 or #f84)" 
+					description="The color for the formula." 
+				/>
+				
+				<field name="bg_color" type="text" default="#ffffff" 
+					label="Background color (html #rrggbb style e.g. #ff8844 or #f84)"  
+					description="The background color - used for anti-aliasing which makes the characters look smoother. Choose a value that is close to the average background color behind the formula." 
+				/>
+				
+				<field name="enable_in_comments" type="list" default="0" 
+					label="Enable in comments" 
+					description="Select Yes to allow math to be used in comments. Tested with JComments on Joomla 1.5 only.">
+		  			<option value="0">No</option>
+		  			<option value="1">Yes</option>
+				</field>
+			</fieldset>
+	</fields>		
+</config>		
+	<!-- for Joomla 1.5 use: -->
+	<params>
+		<param name="alternativetag" type="text" default="math" 
+			label="Alternative tag to trigger the plugin usage." 
+			description="If you think that {mathpublisher} is too long and prefer shorter syntax, feel free to specify your own tag. For example: math (avoid very short tags e.g. m - consider sum{m}{n}{p})" 
+		/>
+		
+		<param name="joomla_url_root" type="text" default="" 
+			label="This is where joomla is accessed from your sites root url" 
+			description="Leave empty if Joomla is accessed from you sites root url. Otherwise use 'joomla' for http://my.site/joomla/* or '~user' for . http://my.site/~user/* etc." 
+		/>
+		
+		<param name="color" type="text" default="#000000" 
+			label="Font color (html #rrggbb style e.g. #ff8844 or #f84)" 
+			description="The color for the formula." 
+		/>
+		
+		<param name="bg_color" type="text" default="#ffffff" 
+			label="Background color (html #rrggbb style e.g. #ff8844 or #f84)"  
+			description="The background color - used for anti-aliasing which makes the characters look smoother. Choose a value that is close to the average background color behind the formula." 
+		/>
+		
+		<param name="enable_in_comments" type="list" default="0" 
+			label="Enable in comments" 
+			description="Select Yes to allow math to be used in comments. Tested with JComments on Joomla 1.5 only.">
+  			<option value="0">No</option>
+  			<option value="1">Yes</option>
+		</param>
+		
+	</params>
+</install>

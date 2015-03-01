@@ -1,7 +1,7 @@
-.spoiler    { }
-.sp-head-click a        {text-decoration: none; font-weight: bold !important; margin-bottom: 3px; display: block;}
-.sp-head-click a:hover  {text-decoration: none; background: transparent !important;}
-.sp-head                {padding: 2px 10px 2px 24px; margin: 3px; cursor: pointer; background: #222 url(../overlay.png) repeat-x; display: inline-block; overflow: hidden;}
-.folded                 {display: block; background: transparent url(../down.gif) no-repeat left center ;}
-.unfolded               {display: block; background: transparent url(../up.gif) no-repeat left center;} 
+.spoiler    { }
+.sp-head-click a        {text-decoration: none; font-weight: bold !important; margin-bottom: 3px; display: block;}
+.sp-head-click a:hover  {text-decoration: none; background: transparent !important;}
+.sp-head                {padding: 2px 10px 2px 24px; margin: 3px; cursor: pointer; background: #222 url(../overlay.png) repeat-x; display: inline-block; overflow: hidden;}
+.folded                 {display: block; background: transparent url(../down.gif) no-repeat left center ;}
+.unfolded               {display: block; background: transparent url(../up.gif) no-repeat left center;} 
 .loading                {display: block; background: transparent url(../loading.gif) no-repeat left center;} 
