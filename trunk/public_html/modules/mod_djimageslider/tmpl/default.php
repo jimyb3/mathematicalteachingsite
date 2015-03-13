@@ -27,7 +27,7 @@
 
 // no direct access
 defined('_JEXEC') or die ('Restricted access'); ?>
-<div style="border: 0px !important;">
+<div style="border: 0px !important;width: 900px;">
 <div id="djslider-loader<?php echo $mid; ?>" class="djslider-loader">
     <div id="djslider<?php echo $mid; ?>" class="djslider">
         <div id="slider-container<?php echo $mid; ?>" class="slider-container">
