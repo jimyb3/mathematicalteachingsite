@@ -38,11 +38,11 @@ JHtml::_('behavior.keepalive');
 		
 		
 		
-		echo "<p>Λογισμός Ι  <progress value='$logismos1' max='100' style='margin-left: 20px;'></progress></p>";
+		echo "<p>Λογισμός Ι  <progress value='$logismos1' max='100' style='margin-left: 20px;'></progress> $logismos1%</p>";
 	 
-		echo "<p>Λογισμός ΙΙ  <progress value='$logismos2' max='100' style='margin-left: 16px;'></progress></p>";
+		echo "<p>Λογισμός ΙΙ  <progress value='$logismos2' max='100' style='margin-left: 16px;'></progress> $logismos2%</p>";
 	
-		echo "<p>Mathematica  <progress value='$mathematica' max='100' style='margin-left: 7px;'></progress></p>";
+		echo "<p>Mathematica  <progress value='$mathematica' max='100' style='margin-left: 7px;'></progress> $mathematica%</p>";
 	 ?>
 	
 	

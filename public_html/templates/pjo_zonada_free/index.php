@@ -102,8 +102,18 @@ echo '<div class="site-description">'. htmlspecialchars($this->params->get('site
 <!-- //////////////////////////////////////////////////// -->
 <div id="hor_nav"><?php echo $top_hornav; ?></div>
 <div class="clearfix"></div>
-
+<div id="all_in">
+<?php if ($mod_right) { ?>
+
+<div id="aside" class="span3" style="float: right;width: 270px;">
+
+<jdoc:include type="modules" name="right" style="well" />
+
+</div>
+
+<?php } ?>
 <jdoc:include type="modules" name="banner" style="xhtml" />
+</div>
 <div class="row-fluid">
 
 <!-- ///////////////////// START LEFT COLUMN ///////////// -->
@@ -148,14 +158,15 @@ require(YOURBASEPATH . DS . "includes/ict_slideshow.php");
 <!-- //////////////////////////////////////////////////// -->
 
 <!-- ///////////////////// START RIGHT COLUMN ///////////// -->
-<!-- //////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////// 
 <?php if ($mod_right) { ?>
 <div id="aside" class="span3">
 <jdoc:include type="modules" name="right" style="well" />
 </div>
-<?php } ?>
+<?php } ?>-->
 
 </div>
+
 <!-- ///////////////////// END RIGHT COLUMN ///////////// -->
 <!-- //////////////////////////////////////////////////// -->
 
