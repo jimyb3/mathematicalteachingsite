@@ -333,7 +333,9 @@ class modDJImageSliderHelper
 			position: relative;
 			height: '.$slider_height.'px; 
 			width: '.$slider_width.'px;
-			max-width: '.$slider_width.'px;
+			max-width: '.$slider_width.'px;
+			margin-left: 0px;
+			margin-right: 0px;
 		}
 		#slider-container'.$mid.' {
 			position: absolute;
