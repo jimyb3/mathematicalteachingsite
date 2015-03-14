@@ -29,7 +29,7 @@ $upper_limit = $lang->getUpperLimitSearchWord();
 		<?php endif;?>
 	</div>
 
-	<fieldset class="phrases">
+	<!--<fieldset class="phrases">
 		<legend><?php echo JText::_('COM_SEARCH_FOR');?>
 		</legend>
 			<div class="phrases-box">
@@ -41,7 +41,7 @@ $upper_limit = $lang->getUpperLimitSearchWord();
 			</label>
 			<?php echo $this->lists['ordering'];?>
 			</div>
-	</fieldset>
+	</fieldset>
 
 	<?php if ($this->params->get('search_areas', 1)) : ?>
 		<fieldset class="only">
@@ -55,7 +55,7 @@ $upper_limit = $lang->getUpperLimitSearchWord();
 			</label>
 		<?php endforeach; ?>
 		</fieldset>
-	<?php endif; ?>
+	<?php endif; ?>-->
 
 <?php if ($this->total > 0) : ?>
 
