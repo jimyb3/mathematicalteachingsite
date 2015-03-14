@@ -80,7 +80,7 @@ require(YOURBASEPATH . DS . "includes/socialmedia.php");
 <!-- ///////////////// END HEADER TOP ////////////////// -->
 <!-- //////////////////////////////////////////////////// -->
 
-<a class="brand pull-left" href="<?php echo $this->baseurl; ?>">
+<a class="brand" href="<?php echo $this->baseurl; ?>">
 <?php echo $logo;?> 
 <?php if ($this->params->get('sitedescription'))
 { 
