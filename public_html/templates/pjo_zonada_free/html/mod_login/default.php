@@ -11,7 +11,7 @@ defined('_JEXEC') or die;
 JHtml::_('behavior.keepalive');
 ?>
 <?php if ($type == 'logout') : ?>
-<form action="index.php" method="post" id="form-login">
+<form action="index.php" method="post" id="form-login" style="height: 194px;">
 <?php if ($params->get('greeting')) : ?>
 	<div style="position: relative;">
 	<?php if($params->get('name') == 0) : {
