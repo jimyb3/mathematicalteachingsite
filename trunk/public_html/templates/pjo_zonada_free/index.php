@@ -112,6 +112,7 @@ echo '<div class="site-description">'. htmlspecialchars($this->params->get('site
 </div>
 
 <?php } ?>
+
 <jdoc:include type="modules" name="banner" style="xhtml" />
 </div>
 <div class="row-fluid">

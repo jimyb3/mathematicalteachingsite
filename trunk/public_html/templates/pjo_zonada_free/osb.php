@@ -57,6 +57,9 @@ if(mysqli_num_rows($result)>0){
 	
 	
 }
+$today=date('d/m/Y');
+$query="INSERT INTO jos_".$lesson."_grades (username,grade,date) VALUES (\"$nameId\",$grade,\"$today\")";
+$conn->query($query);
 //$result->close();*/
 mysqli_close($conn);
 ?>

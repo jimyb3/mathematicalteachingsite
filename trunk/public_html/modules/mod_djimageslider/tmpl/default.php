@@ -113,4 +113,3 @@ defined('_JEXEC') or die ('Restricted access'); ?>
     </div>
 </div>
 </div>
-<div style="clear: both"></div>
