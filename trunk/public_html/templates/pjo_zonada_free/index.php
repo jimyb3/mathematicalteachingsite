@@ -108,7 +108,7 @@ echo '<div class="site-description">'. htmlspecialchars($this->params->get('site
 <div id="aside" class="span3" style="float: right;width: 270px;">
 
 <jdoc:include type="modules" name="right" style="well" />
-
+<a href="http://www.teicm.gr/"><img src="http://imathsite.net/images/teicmLogoBanner.png" ></a>
 </div>
 
 <?php } ?>
