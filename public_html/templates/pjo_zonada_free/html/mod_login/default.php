@@ -11,7 +11,7 @@ defined('_JEXEC') or die;
 JHtml::_('behavior.keepalive');
 ?>
 <?php if ($type == 'logout') : ?>
-<form action="index.php" method="post" id="form-login" style="height: 194px;">
+<form action="index.php" method="post" id="form-login" style="height: 194px;color: white;">
 <?php if ($params->get('greeting')) : ?>
 	<div style="position: relative;">
 	<?php if($params->get('name') == 0) : {
@@ -58,7 +58,7 @@ JHtml::_('behavior.keepalive');
 	<?php echo JHtml::_('form.token'); ?>
 </form>
 <?php else : ?>
-<form action="<?php echo JRoute::_('index.php', true, $params->get('usesecure')); ?>" method="post" id="form-login" >
+<form action="<?php echo JRoute::_('index.php', true, $params->get('usesecure')); ?>" method="post" id="form-login" style="color: white;">
 	<?php echo $params->get('pretext'); ?>
 	<fieldset class="input">
 	<p id="form-login-username">
@@ -81,20 +81,21 @@ JHtml::_('behavior.keepalive');
 	<input type="hidden" name="return" value="<?php echo $return; ?>" />
 	<?php echo JHtml::_('form.token'); ?>
 	</fieldset>
+	<br />
 	<ul>
 		<li>
-			<a href="<?php echo JRoute::_('index.php?option=com_users&view=reset'); ?>">
+			<a id="loginLinks" href="<?php echo JRoute::_('index.php?option=com_users&view=reset'); ?>">
 			<?php echo JText::_('MOD_LOGIN_FORGOT_YOUR_PASSWORD'); ?></a>
 		</li>
 		<li>
-			<a href="<?php echo JRoute::_('index.php?option=com_users&view=remind'); ?>">
+			<a id="loginLinks" href="<?php echo JRoute::_('index.php?option=com_users&view=remind'); ?>">
 			<?php echo JText::_('MOD_LOGIN_FORGOT_YOUR_USERNAME'); ?></a>
 		</li>
 		<?php
 		$usersConfig = JComponentHelper::getParams('com_users');
 		if ($usersConfig->get('allowUserRegistration')) : ?>
 		<li>
-			<a href="<?php echo JRoute::_('index.php?option=com_users&view=registration'); ?>">
+			<a id="loginLinks" href="<?php echo JRoute::_('index.php?option=com_users&view=registration'); ?>">
 				<?php echo JText::_('MOD_LOGIN_REGISTER'); ?></a>
 		</li>
 		<?php endif; ?>
