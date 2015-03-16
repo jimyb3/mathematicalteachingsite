@@ -27,8 +27,8 @@
 
 // no direct access
 defined('_JEXEC') or die ('Restricted access'); ?>
-<div style="border: 0px !important;width: 900px;">
-<div id="djslider-loader<?php echo $mid; ?>" class="djslider-loader">
+<div style="border: 0px !important;width: 900px;margin-bottom: 20px;">
+<div id="djslider-loader<?php echo $mid; ?>" class="djslider-loader" style="box-shadow: 8px 12px 2px rgba(0, 0, 0, 0.3);">
     <div id="djslider<?php echo $mid; ?>" class="djslider">
         <div id="slider-container<?php echo $mid; ?>" class="slider-container">
         	<ul id="slider<?php echo $mid; ?>">
@@ -112,4 +112,4 @@ defined('_JEXEC') or die ('Restricted access'); ?>
         <?php } ?>
     </div>
 </div>
-</div>
+</div>

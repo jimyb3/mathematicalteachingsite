@@ -52,6 +52,7 @@ echo '<div class="toolbar_fixed">
     						document.body.style.color="#E2E2E2";
 						}
 					}
+					
 				</script>
 				';
 				if ($params->get('img1')){
