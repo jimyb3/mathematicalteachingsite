@@ -49,24 +49,6 @@ JHtml::_('behavior.keepalive');
 	
 	</div>
 	
-	<script type="text/javascript">$(document).ready(function prog(){
-		var x=document.getElementsByClassName("prog");
-		for(i=0;i<3;i++){
-			var grade=x[i].value;
-			x[i].value=0;
-			var goMore=function(){
-				x[i].value=x[i].value+1;
-							
-				if(x[i].value==grade){
-					clearInterval(animate);		
-				}
-			};
-			
-			var animate=setInterval(function() {
-			    goMore();}, 100);
-	}   
-	});</script>
-	
 <?php endif; ?>
 	<div class="logout-button">
 		<input type="submit" name="Submit" class="button" value="<?php echo JText::_('JLOGOUT'); ?>" />
