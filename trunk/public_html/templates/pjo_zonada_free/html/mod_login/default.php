@@ -38,15 +38,35 @@ JHtml::_('behavior.keepalive');
 		
 		
 		
-		echo "<p>Λογισμός Ι  <progress value='$logismos1' max='100' style='margin-left: 20px;'></progress> $logismos1%</p>";
+		echo "<p>Λογισμός Ι  <progress class='prog' id='progressbar1' value='$logismos1' max='100' style='margin-left: 20px;'></progress> $logismos1%</p>";
 	 
-		echo "<p>Λογισμός ΙΙ  <progress value='$logismos2' max='100' style='margin-left: 16px;'></progress> $logismos2%</p>";
+		echo "<p>Λογισμός ΙΙ  <progress class='prog' id='progressbar2' value='$logismos2' max='100' style='margin-left: 16px;'></progress> $logismos2%</p>";
 	
-		echo "<p>Mathematica  <progress value='$mathematica' max='100' style='margin-left: 7px;'></progress> $mathematica%</p>";
+		echo "<p>Mathematica  <progress class='prog' id='progressbar3' value='$mathematica' max='100' style='margin-left: 7px;'></progress> $mathematica%</p>";
+		
 	 ?>
 	
 	
 	</div>
+	
+	<script type="text/javascript">$(document).ready(function prog(){
+		var x=document.getElementsByClassName("prog");
+		for(i=0;i<3;i++){
+			var grade=x[i].value;
+			x[i].value=0;
+			var goMore=function(){
+				x[i].value=x[i].value+1;
+							
+				if(x[i].value==grade){
+					clearInterval(animate);		
+				}
+			};
+			
+			var animate=setInterval(function() {
+			    goMore();}, 100);
+	}   
+	});</script>
+	
 <?php endif; ?>
 	<div class="logout-button">
 		<input type="submit" name="Submit" class="button" value="<?php echo JText::_('JLOGOUT'); ?>" />

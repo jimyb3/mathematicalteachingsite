@@ -36,8 +36,11 @@ require(YOURBASEPATH . DS . "includes/css3_style.php");
 <script type="text/javascript" src="/templates/pjo_zonada_free/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/javascript" src="/templates/pjo_zonada_free/jsxgraphcore.js"></script>
 <script type="text/javascript" src="/templates/pjo_zonada_free/js/d3.v2.min.js"></script>
-<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/mathjs/1.0.1/math.min.js"></script>
-
+
+
+<script src="/templates/pjo_zonada_free/js/jquery.js" type="text/javascript"></script>
+<script src="/templates/pjo_zonada_free/js/modernizr.js" type="text/javascript"></script>
+
 </head>
 
 <body class="site <?php echo $option . " view-" . $view . " layout-" . $layout . " task-" . $task . " itemid-" . $itemid . " ";?> <?php if ($this->params->get('fluidContainer')) { echo "fluid"; } ?>">
