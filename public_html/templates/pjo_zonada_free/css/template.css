@@ -4140,7 +4140,8 @@ A.label:hover, A.badge:hover
 	text-align: center;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 	background-color: #0E90D2;
-	background-image: -moz-linear-gradient(top,#149bdf,#0480be);
+	/* edw htan #149bdf,#0480be*/
+	background-image: -moz-linear-gradient(top,#1EDF14,#1EDF14);
 	background-image: -webkit-gradient(linear,0 0,0 100%,from(#149bdf),to(#0480be));
 	background-image: -webkit-linear-gradient(top,#149bdf,#0480be);
 	background-image: -o-linear-gradient(top,#149bdf,#0480be);

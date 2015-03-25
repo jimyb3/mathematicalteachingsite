@@ -1,6 +1,0 @@
-[30-Oct-2014 18:13:02 UTC] PHP Notice:  Undefined property: TemplatesTableStyle::$checked_out in /home/imathsit/public_html/libraries/joomla/application/component/modelform.php on line 101
-[30-Oct-2014 18:13:16 UTC] PHP Notice:  Undefined property: TemplatesTableStyle::$checked_out in /home/imathsit/public_html/libraries/joomla/application/component/modelform.php on line 101
-[01-Feb-2015 13:59:04 America/New_York] PHP Warning:  array_merge() [<a href='function.array-merge'>function.array-merge</a>]: Argument #1 is not an array in /home/imathsit/public_html/libraries/joomla/installer/installer.php on line 1868
-[01-Feb-2015 13:59:04 America/New_York] PHP Warning:  array_unique() expects parameter 1 to be array, null given in /home/imathsit/public_html/libraries/joomla/installer/installer.php on line 1868
-[01-Feb-2015 13:59:04 America/New_York] PHP Warning:  array_merge() [<a href='function.array-merge'>function.array-merge</a>]: Argument #1 is not an array in /home/imathsit/public_html/libraries/joomla/installer/installer.php on line 1868
-[01-Feb-2015 13:59:04 America/New_York] PHP Warning:  array_unique() expects parameter 1 to be array, null given in /home/imathsit/public_html/libraries/joomla/installer/installer.php on line 1868
