@@ -1,0 +1,72 @@
+﻿<script type="text/javascript">
+	$(document).ready(function prog(){
+	for(var i=1;i<=3){
+		var grade=document.getElementById("progressbar"+i).value;
+		document.getElementById("progressbar"+i).value=0;
+		
+		var goMore=function(){
+			document.getElementById("progressbar"+i).value=document.getElementById("progressbar"+i).value+1;
+						
+			if(document.getElementById("progressbar"+i).value==grade){
+				clearInterval(animate);
+				i=i+1;		
+			}
+		};
+		
+		var animate=setInterval(function() {
+		    goMore();}, 100);
+	}
+	});</script>
+
+Δουλεύει μόνο για ένα element
+
+<script type="text/javascript">
+	$(document).ready(function prog(){
+		var grade=document.getElementById("progressbar1").value;
+		document.getElementById("progressbar1").value=0;
+		
+		var goMore=function(){
+			document.getElementById("progressbar1").value=document.getElementById("progressbar1").value+1;
+						
+			if(document.getElementById("progressbar1").value==grade){
+				clearInterval(animate);		
+			}
+		};
+		
+		var animate=setInterval(function() {
+		    goMore();}, 100);
+	
+	});
+	$(document).ready(function prog(){
+		var grade=document.getElementById("progressbar2").value;
+		document.getElementById("progressbar2").value=0;
+		
+		var goMore=function(){
+			document.getElementById("progressbar2").value=document.getElementById("progressbar2").value+1;
+						
+			if(document.getElementById("progressbar2").value==grade){
+				clearInterval(animate);	
+			}
+		};
+		
+		var animate=setInterval(function() {
+		    goMore();}, 100);
+	
+	});
+	$(document).ready(function prog(){
+		var grade=document.getElementById("progressbar3").value;
+		document.getElementById("progressbar3").value=0;
+		
+		var goMore=function(){
+			document.getElementById("progressbar3").value=document.getElementById("progressbar3").value+1;
+						
+			if(document.getElementById("progressbar3").value==grade){
+				clearInterval(animate);
+			}
+		};
+		
+		var animate=setInterval(function() {
+		    goMore();}, 100);
+	
+	});
+	</script>

@@ -38,17 +38,86 @@ JHtml::_('behavior.keepalive');
 		
 		
 		
-		echo "<p>Λογισμός Ι  <progress class='prog' id='progressbar1' value='$logismos1' max='100' style='margin-left: 20px;'></progress> $logismos1%</p>";
+		echo "<p>Λογισμός Ι  <progress id='progressbar1' value='$logismos1' max='100' style='margin-left: 20px;'></progress> $logismos1%</p>";
 	 
-		echo "<p>Λογισμός ΙΙ  <progress class='prog' id='progressbar2' value='$logismos2' max='100' style='margin-left: 16px;'></progress> $logismos2%</p>";
+		echo "<p>Λογισμός ΙΙ  <progress id='progressbar2' value='$logismos2' max='100' style='margin-left: 16px;'></progress> $logismos2%</p>";
 	
-		echo "<p>Mathematica  <progress class='prog' id='progressbar3' value='$mathematica' max='100' style='margin-left: 7px;'></progress> $mathematica%</p>";
+		echo "<p>Mathematica  <progress id='progressbar3' value='$mathematica' max='100' style='margin-left: 7px;'></progress> $mathematica%</p>";
 		
 	 ?>
 	
 	
 	</div>
+
+	<script type="text/javascript">
+	$(document).ready(function prog(){
+		var grade=document.getElementById("progressbar1").value;
+		document.getElementById("progressbar1").value=0;
+		
+		var goMore=function(){
+							
+			if(document.getElementById("progressbar1").value==grade){
+				clearInterval(animate);		
+			}
+			
+			document.getElementById("progressbar1").value=document.getElementById("progressbar1").value+1;
+			
+			if(document.getElementById("progressbar1").value==grade){
+				clearInterval(animate);		
+			}
+		};
+		
+		var animate=setInterval(function() {
+		    goMore();}, 50);
 	
+	});
+	$(document).ready(function prog(){
+		var grade=document.getElementById("progressbar2").value;
+		document.getElementById("progressbar2").value=0;
+		
+		var goMore=function(){
+						
+			if(document.getElementById("progressbar2").value==grade){
+				clearInterval(animate);	
+			}
+			
+			document.getElementById("progressbar2").value=document.getElementById("progressbar2").value+1;
+			
+			if(document.getElementById("progressbar2").value==grade){
+				clearInterval(animate);	
+			}
+		};
+		
+		var animate=setInterval(function() {
+		    goMore();}, 50);
+	
+	});
+	$(document).ready(function prog(){
+		var grade=document.getElementById("progressbar3").value;
+		document.getElementById("progressbar3").value=0;
+		
+		var goMore=function(){
+			
+						
+			if(document.getElementById("progressbar3").value==grade){
+				clearInterval(animate);
+			}
+			
+			document.getElementById("progressbar3").value=document.getElementById("progressbar3").value+1;
+			
+			if(document.getElementById("progressbar3").value==grade){
+				clearInterval(animate);
+			}
+		};
+		
+		var animate=setInterval(function() {
+		    goMore();}, 50);
+	
+	});
+	</script>
+	
+	
+		
 <?php endif; ?>
 	<div class="logout-button">
 		<input type="submit" name="Submit" class="button" value="<?php echo JText::_('JLOGOUT'); ?>" />
