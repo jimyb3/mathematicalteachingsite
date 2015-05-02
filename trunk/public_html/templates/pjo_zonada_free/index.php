@@ -111,7 +111,17 @@ echo '<div class="site-description">'. htmlspecialchars($this->params->get('site
 <div id="aside" class="span3" style="float: right;width: 270px;">
 
 <jdoc:include type="modules" name="right" style="well" />
-<a href="http://www.teicm.gr/"><img src="http://imathsite.net/images/teicmLogoBanner.png" ></a>
+<a href="http://www.teicm.gr/"><img src="http://imathsite.net/images/LogoBanner/teicmLogoBanner.png" style="padding-bottom: 10px;"></a>
+<a href="http://www.math.uoa.gr/web/greek/"><img src="http://imathsite.net/images/LogoBanner/athensLogoBanner.png" style="padding-bottom: 10px;"></a>
+<a href="http://www.math.auth.gr/"><img src="http://imathsite.net/images/LogoBanner/aristoLogoBanner.png" style="padding-bottom: 10px;"></a>
+<a href="http://fourier.math.uoc.gr/~mathweb/"><img src="http://imathsite.net/images/LogoBanner/creteLogoBanner.png" style="padding-bottom: 10px;"></a>
+<a href="http://www.math.upatras.gr/"><img src="http://imathsite.net/images/LogoBanner/patraLogoBanner.png" style="padding-bottom: 10px;"></a>
+<a href="http://www.math.aegean.gr/"><img src="http://imathsite.net/images/LogoBanner/aigeouLogoBanner.png" style="padding-bottom: 10px;"></a>
+<a href="http://www.hms.gr/"><img src="http://imathsite.net/images/LogoBanner/hellenicMathComLogoBanner.png" style="padding-bottom: 10px;"></a>
+<a href="http://www.cms.org.cy/"><img src="http://imathsite.net/images/LogoBanner/cyprusMathCompLogoBanner.png" style="padding-bottom: 10px;"></a>
+<a href="http://www.euro-math-soc.eu/"><img src="http://imathsite.net/images/LogoBanner/emsLogoBanner.png" style="padding-bottom: 10px;"></a>
+<a href="http://www.ams.org/home/page"><img src="http://imathsite.net/images/LogoBanner/amsLogoBanner.png" style="padding-bottom: 10px;"></a>
+<a href="http://www.lms.ac.uk/"><img src="http://imathsite.net/images/LogoBanner/lmsLogoBanner.png" style="padding-bottom: 10px;"></a>
 </div>
 
 <?php } ?>
