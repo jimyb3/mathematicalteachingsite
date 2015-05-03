@@ -37,6 +37,11 @@ function resultExam() {
         response.remove();
 	    response.innerHTML=result;
 		insertAfter(document.getElementById("con"),response);
+			var div = document.getElementById("infoGradeDiv");
+			div.innerHTML='<img src ="http://www.livinggreenandfrugally.com/wp-content/uploads/2014/01/the-winner-is.jpg" style="border-radius:0px;"/><br><br>'+result;
+			
+			
+			
 		
     }
 
