@@ -21,9 +21,7 @@ function resultExam() {
         grade = checkValue(document.querySelector('input[name="q' + i + '"]:checked').value, grade);
     }
     //alert(grade);
-    var response = document.createElement("p");
-    response.id="response";
-    nameId=document.getElementById("nameId").innerHTML;
+   nameId=document.getElementById("nameId").innerHTML;
    
     //document.getElementById("con").after('<img src ="/images/ajax-loader.gif" alt="Currently loading" id = "loading" />');
     $.ajax({
@@ -34,11 +32,8 @@ function resultExam() {
         success: function(result){
         //do stuff after the AJAX calls successfully completes
         //alert("τρέχει σωστά ο Αιαντας!");
-        response.remove();
-	    response.innerHTML=result;
-		insertAfter(document.getElementById("con"),response);
 			var div = document.getElementById("infoGradeDiv");
-			div.innerHTML='<img src ="http://www.livinggreenandfrugally.com/wp-content/uploads/2014/01/the-winner-is.jpg" style="border-radius:0px;"/><br><br>'+result;
+			div.innerHTML='<img src ="http://www.livinggreenandfrugally.com/wp-content/uploads/2014/01/the-winner-is.jpg" style="border-radius:0px;"/><br><br><p style="font-size: 24px;">'+result+'</p><br><input type="button" value="Δοκίμασε ξανά!" onclick="location.reload()" /><input type="button" value="Κλείσιμο" onclick="$(this).parent().remove()" /><input type="button" value="Ιστορικό βαθμολογιών" onclick="window.location.href=\'http://imathsite.net/index.php/test/2015-03-14-21-15-20\'" />';
 			
 			
 			
