@@ -33,7 +33,10 @@ function resultExam() {
         //do stuff after the AJAX calls successfully completes
         //alert("τρέχει σωστά ο Αιαντας!");
 			var div = document.getElementById("infoGradeDiv");
-			div.innerHTML='<img src ="http://www.livinggreenandfrugally.com/wp-content/uploads/2014/01/the-winner-is.jpg" style="border-radius:0px;"/><br><br><p style="font-size: 24px;">'+result+'</p><br><input type="button" value="Δοκίμασε ξανά!" onclick="location.reload()" /><input type="button" value="Κλείσιμο" onclick="$(this).parent().remove()" /><input type="button" value="Ιστορικό βαθμολογιών" onclick="window.location.href=\'http://imathsite.net/index.php/test/2015-03-14-21-15-20\'" />';
+				div.style.width = "500px";
+				div.style.height = "330px";
+div.style.background = "rgba(0, 0, 0, 0.7)";			
+div.innerHTML='<img src ="http://www.livinggreenandfrugally.com/wp-content/uploads/2014/01/the-winner-is.jpg" style="border-radius:0px;"/><br><br><p style="font-size: 24px;">'+result+'</p><br><input type="button" value="Δοκίμασε ξανά!" onclick="location.reload()" /><input type="button" value="Κλείσιμο" onclick="$(this).parent().remove()" /><input type="button" value="Ιστορικό βαθμολογιών" onclick="window.location.href=\'http://imathsite.net/index.php/test/2015-03-14-21-15-20\'" />';
 			
 			
 			

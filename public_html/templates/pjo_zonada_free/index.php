@@ -112,7 +112,7 @@ echo '<div class="site-description">'. htmlspecialchars($this->params->get('site
 
 <jdoc:include type="modules" name="right" style="well" />
 <a href="http://www.teicm.gr/"><img src="http://imathsite.net/images/LogoBanner/teicmLogoBanner.png" style="padding-bottom: 10px;"></a>
-<a href="http://www.math.uoa.gr/web/greek/"><img src="http://imathsite.net/images/LogoBanner/athensLogoBanner.png" style="padding-bottom: 10px;"></a>
+<a href="http://noether.math.uoa.gr/"><img src="http://imathsite.net/images/LogoBanner/athensLogoBanner.png" style="padding-bottom: 10px;"></a>
 <a href="http://www.math.auth.gr/"><img src="http://imathsite.net/images/LogoBanner/aristoLogoBanner.png" style="padding-bottom: 10px;"></a>
 <a href="http://fourier.math.uoc.gr/~mathweb/"><img src="http://imathsite.net/images/LogoBanner/creteLogoBanner.png" style="padding-bottom: 10px;"></a>
 <a href="http://www.math.upatras.gr/"><img src="http://imathsite.net/images/LogoBanner/patraLogoBanner.png" style="padding-bottom: 10px;"></a>
