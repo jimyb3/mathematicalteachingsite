@@ -42,17 +42,21 @@ if(mysqli_num_rows($result)>0){
 	$query="UPDATE jos_grades SET $lesson=$grade WHERE username=\"$nameId\"";
 	$result=$conn->query($query);
 	if($result){
-		echo "Είσαι ο $nameId και εγραψες $grade ΑΝΑΒΑΘΜΙΣΗ";
+		//echo "Είσαι ο $nameId και εγραψες $grade ΑΝΑΒΑΘΜΙΣΗ";
+		echo "Η βαθμολογία σου είναι $grade.";
 	}else{
-		echo "Λάθος από Αναβάθμιση";
+		//echo "Λάθος από Αναβάθμιση";
+		echo "Προέκυψε κάποιο λάθος, προσπαθήστε ξανά αργότερα.";
 		}
 }else{
 	$query="INSERT INTO jos_grades (username,$lesson) VALUES (\"$nameId\",$grade)";
 	$result=$conn->query($query);
 	if($result){
-		echo "Είσαι ο $nameId και εγραψες $grade ΝΕΑ ΕΙΣΑΓΩΓΗ";
+		//echo "Είσαι ο $nameId και εγραψες $grade ΝΕΑ ΕΙΣΑΓΩΓΗ";
+		echo "Η βαθμολογία σου είναι $grade.";
 	}else{
-		echo "Λάθος από Εισαγωγή!";
+		//echo "Λάθος από Εισαγωγή!";
+		echo "Προέκυψε κάποιο λάθος, προσπαθήστε ξανά αργότερα.";
 		}
 	
 	
