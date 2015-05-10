@@ -33,10 +33,16 @@ function resultExam() {
         //do stuff after the AJAX calls successfully completes
         //alert("τρέχει σωστά ο Αιαντας!");
 			var div = document.getElementById("infoGradeDiv");
-				div.style.width = "500px";
+				div.style.width = "550px";
 				div.style.height = "330px";
-div.style.background = "rgba(0, 0, 0, 0.7)";			
-div.innerHTML='<img src ="http://www.livinggreenandfrugally.com/wp-content/uploads/2014/01/the-winner-is.jpg" style="border-radius:0px;"/><br><br><p style="font-size: 24px;">'+result+'</p><br><input type="button" value="Δοκίμασε ξανά!" onclick="location.reload()" /><input type="button" value="Κλείσιμο" onclick="$(this).parent().remove()" /><input type="button" value="Ιστορικό βαθμολογιών" onclick="window.location.href=\'http://imathsite.net/index.php/test/2015-03-14-21-15-20\'" />';
+				div.style.backgroundImage = "url('/images/board-597238_1280.jpg')";
+if(result<50){			
+div.innerHTML='<p style="font-size: 24px;margin-top:21px;margin-left:15px;">Η βαθμολογία σου είναι: </p><p style="color:red;font-size: 235px;font-family: Arial, Helvetica, sans-serif;height:0px;margin-top:100px;margin-left:130px;margin-bottom:45px">'+result+'</p><br><div style="width:550px;margin-left:114px;margin-top:79px"><input type="button" value="Κλείσιμο" onclick="$(this).parent().parent().remove()" /><input type="button" value="Δοκίμασε ξανά!" onclick="location.reload()" /><input type="button" value="Ιστορικό βαθμολογιών" onclick="window.location.href=\'http://imathsite.net/index.php/test/2015-03-14-21-15-20\'" /></div>';
+}else if(result<70){
+div.innerHTML='<p style="font-size: 24px;margin-top:21px;margin-left:15px;">Η βαθμολογία σου είναι: </p><p style="color:orange;font-size: 235px;font-family: Arial, Helvetica, sans-serif;height:0px;margin-top:100px;margin-left:130px;margin-bottom:45px">'+result+'</p><br><div style="width:550px;margin-left:114px;margin-top:79px"><input type="button" value="Κλείσιμο" onclick="$(this).parent().parent().remove()" /><input type="button" value="Δοκίμασε ξανά!" onclick="location.reload()" /><input type="button" value="Ιστορικό βαθμολογιών" onclick="window.location.href=\'http://imathsite.net/index.php/test/2015-03-14-21-15-20\'" /></div>';
+}else{
+div.innerHTML='<p style="font-size: 24px;margin-top:21px;margin-left:15px;">Η βαθμολογία σου είναι: </p><p style="color:lime;font-size: 235px;font-family: Arial, Helvetica, sans-serif;height:0px;margin-top:100px;margin-left:130px;margin-bottom:45px">'+result+'</p><br><div style="width:550px;margin-left:114px;margin-top:79px"><input type="button" value="Κλείσιμο" onclick="$(this).parent().parent().remove()" /><input type="button" value="Δοκίμασε ξανά!" onclick="location.reload()" /><input type="button" value="Ιστορικό βαθμολογιών" onclick="window.location.href=\'http://imathsite.net/index.php/test/2015-03-14-21-15-20\'" /></div>';
+}
 			
 			
 			

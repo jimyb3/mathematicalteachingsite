@@ -18,7 +18,6 @@ if(!$conn) {
 exit;
 }
 
-
 $grade=$_POST['grade'];  //access data like this
 $nameId=$_POST['nameId'];
 $lesson=$_POST['lesson'];
@@ -43,7 +42,7 @@ if(mysqli_num_rows($result)>0){
 	$result=$conn->query($query);
 	if($result){
 		//echo "Είσαι ο $nameId και εγραψες $grade ΑΝΑΒΑΘΜΙΣΗ";
-		echo "Η βαθμολογία σου είναι $grade.";
+		echo $grade;
 	}else{
 		//echo "Λάθος από Αναβάθμιση";
 		echo "Προέκυψε κάποιο λάθος, προσπαθήστε ξανά αργότερα.";
@@ -53,7 +52,7 @@ if(mysqli_num_rows($result)>0){
 	$result=$conn->query($query);
 	if($result){
 		//echo "Είσαι ο $nameId και εγραψες $grade ΝΕΑ ΕΙΣΑΓΩΓΗ";
-		echo "Η βαθμολογία σου είναι $grade.";
+		echo $grade;
 	}else{
 		//echo "Λάθος από Εισαγωγή!";
 		echo "Προέκυψε κάποιο λάθος, προσπαθήστε ξανά αργότερα.";
