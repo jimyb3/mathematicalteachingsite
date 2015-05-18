@@ -40,7 +40,16 @@ require(YOURBASEPATH . DS . "includes/css3_style.php");
 
 <script src="/templates/pjo_zonada_free/js/jquery.js" type="text/javascript"></script>
 <script src="/templates/pjo_zonada_free/js/modernizr.js" type="text/javascript"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+  ga('create', 'UA-63050559-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 </head>
 
 <body class="site <?php echo $option . " view-" . $view . " layout-" . $layout . " task-" . $task . " itemid-" . $itemid . " ";?> <?php if ($this->params->get('fluidContainer')) { echo "fluid"; } ?>">
@@ -122,6 +131,16 @@ echo '<div class="site-description">'. htmlspecialchars($this->params->get('site
 <a href="http://www.euro-math-soc.eu/"><img src="http://imathsite.net/images/LogoBanner/emsLogoBanner.png" style="padding-bottom: 10px;"></a>
 <a href="http://www.ams.org/home/page"><img src="http://imathsite.net/images/LogoBanner/amsLogoBanner.png" style="padding-bottom: 10px;"></a>
 <a href="http://www.lms.ac.uk/"><img src="http://imathsite.net/images/LogoBanner/lmsLogoBanner.png" style="padding-bottom: 10px;"></a>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- firstAd -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3031287159742602"
+     data-ad-slot="1374724773"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </div>
 
 <?php } ?>
