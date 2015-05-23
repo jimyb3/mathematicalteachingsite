@@ -110,9 +110,11 @@ function matrixDeterminant(matrix1) {
             }
         }
 
-        var para = document.createElement("p");
+
+
+        var para = document.createElement("h3");
         para.id = matrix1+"orizousa";
-        var node = document.createTextNode("orizousa :" + math.det(myTable));
+        var node = document.createTextNode("Ορίζουσα :" + math.det(myTable));
         document.getElementById(matrix1).addEventListener("click", function() {
     	deleteElement(matrix1+"orizousa");
 	});
@@ -128,7 +130,7 @@ function matrixDeterminant(matrix1) {
 
     }
     else {
-        alert("o pinakas prepei na einai tetragwnikos!");
+        alert("Ο πίνακας πρέπει να είναι τετραγωνικός!");
     }
 }
  
@@ -148,7 +150,7 @@ function upperTriangularMatrix(matrix1) {
         }
     }
     else {
-        alert("prepei o pinakas na einai tetragonikos gia ginei anw trigwnikos");
+        alert("Ο πίνακας πρέπει να είναι τετραγωνικός για να γίνει άνω τριγωνικός");
     }
 
 }
@@ -170,7 +172,7 @@ function lowerTriangularMatrix(matrix1) {
         }
     }
     else {
-        alert("prepei o pinakas na einai tetragonikos gia ginei anw trigwnikos");
+        alert("Ο πίνακας πρέπει να είναι τετραγωνικός για να γίνει κάτω τριγωνικός");
     }
 
 }
@@ -227,14 +229,14 @@ function inverseMatrix(matrix1) {
                 var td = document.createElement('TD');
                 td.width = '75';
                 var timh = inversedMatrix[i][j];
-                td.appendChild(document.createTextNode(timh));
+                td.appendChild(document.createTextNode(timh.toFixed(3)));
                 tr.appendChild(td);
             }
 
         }
         tblInvertedNameHeader=document.createElement('h3');
         tblInvertedNameHeader.id=matrix1+"invertedHeader";
-        tblInvertedNameHeader.innerHTML=matrix1+" inverted";
+        tblInvertedNameHeader.innerHTML=matrix1+" αντίστροφος";
          document.getElementById(matrix1).addEventListener("click", function() {
     	deleteElement(matrix1+"invertedHeader");
 		deleteElement(matrix1+"inverted");    
@@ -307,7 +309,7 @@ function matrixTranspose(matrix1) {
     }
     tblTransposedNameHeader=document.createElement('h3');
     tblTransposedNameHeader.id=matrix1+"transposedHeader";
-    tblTransposedNameHeader.innerHTML=matrix1+" transposed";
+    tblTransposedNameHeader.innerHTML=matrix1+" ανάστροφος";
     document.getElementById(matrix1).addEventListener("click", function() {
     	deleteElement(matrix1+"transposedHeader");
 		deleteElement(matrix1+"transposed");    
@@ -594,7 +596,7 @@ function addAllButtons(tableId) {
     oneBtnRightLeft.id = "oneBtnRightLeft"+tableId;
     oneBtnRightLeft.className = "ButtonsThatChangeTheMainTable";
     //oneButtonRightLeft.value = "Μοναδιαίο\ τον "+tableId;
-    oneBtnRightLeft.value = "Μοναδιαίο\\ ";
+    oneBtnRightLeft.value = "Μοναδιαίος\\ ";
     oneBtnRightLeft.setAttribute("onclick", "makeOneRightLeft('" + tableId + "')");
 
     oneBtnLeftRight = document.createElement('input');
@@ -602,14 +604,14 @@ function addAllButtons(tableId) {
     oneBtnLeftRight.id = "oneBtnLeftRight"+tableId;
     oneBtnLeftRight.className = "ButtonsThatChangeTheMainTable";
     //oneButtonLeftRight.value = "Μοναδιαίο/ τον "+tableId;
-    oneBtnLeftRight.value = "Μοναδιαίο/ ";
+    oneBtnLeftRight.value = "Μοναδιαίος/ ";
     oneBtnLeftRight.setAttribute("onclick", "makeOneLeftRight('" + tableId + "')");
 
-    changeTableNameBtn = document.createElement('input');
-    changeTableNameBtn.type = "button";
-    changeTableNameBtn.id = "changeTableNameBtn"+tableId;
-    changeTableNameBtn.value = "Μετονομασία";
-    changeTableNameBtn.setAttribute("onclick", "");
+    //changeTableNameBtn = document.createElement('input');
+    //changeTableNameBtn.type = "button";
+    //changeTableNameBtn.id = "changeTableNameBtn"+tableId;
+    //changeTableNameBtn.value = "Μετονομασία";
+    //changeTableNameBtn.setAttribute("onclick", "");
 
     saveTableTxtBtn = document.createElement('input');
     saveTableTxtBtn.type = "button";
@@ -620,7 +622,7 @@ function addAllButtons(tableId) {
     saveTableExcellBtn = document.createElement('input');
     saveTableExcellBtn.type = "button";
     saveTableExcellBtn.id = "saveTableExcellBtn"+tableId;
-    saveTableExcellBtn.value = "Αποθηκευση σε Excell";
+    saveTableExcellBtn.value = "Αποθηκευση σε Excel";
     saveTableExcellBtn.setAttribute("onclick", "saveTableToExcell('" + tableId + "')");
 
     saveTableNumbersBtn = document.createElement('input');
@@ -646,48 +648,48 @@ function addAllButtons(tableId) {
     matrixDeleteBtn = document.createElement('input');
     matrixDeleteBtn.type = "button";
     matrixDeleteBtn.id = "matrixDeleteBtn"+tableId;
-    matrixDeleteBtn.value = "διέγραψε πίνακα";
+    matrixDeleteBtn.value = "Διαγραφή πίνακα";
     matrixDeleteBtn.setAttribute("onclick", "deleteElement('" + tableId +"'+'ContainerDiv')");
     
     lowerTRmatrixBtn = document.createElement('input');
     lowerTRmatrixBtn.type = "button";
     lowerTRmatrixBtn.id = "lowerTRmatrixBtn"+tableId;
     lowerTRmatrixBtn.className = "ButtonsThatChangeTheMainTable";
-    lowerTRmatrixBtn.value = "κάτω τριγωνικός";
+    lowerTRmatrixBtn.value = "Κάτω τριγωνικός";
     lowerTRmatrixBtn.setAttribute("onclick", "lowerTriangularMatrix('" + tableId + "')");
     
     upperTRmatrixBtn = document.createElement('input');
     upperTRmatrixBtn.type = "button";
     upperTRmatrixBtn.id = "upperTRmatrixBtn"+tableId;
     upperTRmatrixBtn.className = "ButtonsThatChangeTheMainTable";
-    upperTRmatrixBtn.value = "άνω τριγωνικός";
+    upperTRmatrixBtn.value = "Άνω τριγωνικός";
     upperTRmatrixBtn.setAttribute("onclick", "upperTriangularMatrix('" + tableId + "')");
     
     matrixDeterminantBtn = document.createElement('input');
     matrixDeterminantBtn.type = "button";
     matrixDeterminantBtn.id = "matrixDeterminantBtn"+tableId;
-    matrixDeterminantBtn.value = "υπολόγισε ορίζουσα";
+    matrixDeterminantBtn.value = "Υπολογισμός ορίζουσας";
     matrixDeterminantBtn.setAttribute("onclick", "matrixDeterminant('" + tableId + "')");
     
     oppositeMatrixBtn = document.createElement('input');
     oppositeMatrixBtn.type = "button";
     oppositeMatrixBtn.id = "oppositeMatrixBtn"+tableId;
     oppositeMatrixBtn.className = "ButtonsThatChangeTheMainTable";
-    oppositeMatrixBtn.value = "κάνε αντίθετο";
+    oppositeMatrixBtn.value = "Κάνε αντίθετο";
     oppositeMatrixBtn.setAttribute("onclick", "oppositeMatrix('" + tableId + "')");
     
     randomizeMatrixBtn = document.createElement('input');
     randomizeMatrixBtn.type = "button";
     randomizeMatrixBtn.id = "randomizeMatrixBtn"+tableId;
     randomizeMatrixBtn.className = "ButtonsThatChangeTheMainTable";
-    randomizeMatrixBtn.value = "δώσε τυχαίες τιμές";
+    randomizeMatrixBtn.value = "Δώσε τυχαίες τιμές";
     randomizeMatrixBtn.setAttribute("onclick", "randomizeMatrix('" + tableId + "')");
     
     
     printMatrixBtn = document.createElement('input');
     printMatrixBtn.type = "button";
     printMatrixBtn.id = "printMatrixBtn"+tableId;
-    printMatrixBtn.value = "εκτύπωση";
+    printMatrixBtn.value = "Εκτύπωση";
     printMatrixBtn.setAttribute("onclick", "printMatrix('" + tableId + "')");
     
     closeAllBtn = document.createElement('input');
@@ -699,7 +701,7 @@ function addAllButtons(tableId) {
     container.appendChild(zeroBtn);
     container.appendChild(oneBtnRightLeft);
     container.appendChild(oneBtnLeftRight);
-    container.appendChild(changeTableNameBtn);
+    //container.appendChild(changeTableNameBtn);
     container.appendChild(saveTableTxtBtn);
     container.appendChild(saveTableExcellBtn);
     container.appendChild(saveTableNumbersBtn);
@@ -720,7 +722,7 @@ function closeEditButtons(tableId) {
     document.getElementById('zeroBtn'+tableId).parentNode.removeChild(document.getElementById('zeroBtn'+tableId));
     document.getElementById('oneBtnRightLeft'+tableId).parentNode.removeChild(document.getElementById('oneBtnRightLeft'+tableId));
     document.getElementById('oneBtnLeftRight'+tableId).parentNode.removeChild(document.getElementById('oneBtnLeftRight'+tableId));
-    document.getElementById('changeTableNameBtn'+tableId).parentNode.removeChild(document.getElementById('changeTableNameBtn'+tableId));
+    //document.getElementById('changeTableNameBtn'+tableId).parentNode.removeChild(document.getElementById('changeTableNameBtn'+tableId));
     document.getElementById('saveTableTxtBtn'+tableId).parentNode.removeChild(document.getElementById('saveTableTxtBtn'+tableId));
     document.getElementById('saveTableExcellBtn'+tableId).parentNode.removeChild(document.getElementById('saveTableExcellBtn'+tableId));
     document.getElementById('saveTableNumbersBtn'+tableId).parentNode.removeChild(document.getElementById('saveTableNumbersBtn'+tableId));
