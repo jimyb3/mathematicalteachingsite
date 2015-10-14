@@ -16,4 +16,10 @@ You can help us, just knowing us to your friends!
 Υποστήριξη
 Μπορείτε να μας βοηθήσετε, απλά γνωστοποιώντας μας στους φίλους σας!
 
+JavaScript, Academic, HTML, php, Mathematics, MathJax, JSXGraph, Joomla, MySQL, Interactive, Netbeans, jQuery
+
+Συμμετείχαν στο project:
+Δημήτριος Μπαταρλής
+Ιωάννα Κουφάκη
+
    
