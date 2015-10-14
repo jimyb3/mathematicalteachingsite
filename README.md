@@ -1,4 +1,4 @@
-Welcome to our Mathematic Site
+﻿Welcome to our Mathematic Site
 This is a Interactive Mathematic Site project for Technological Educational Institute of Central Macedonia at Serres (T.E.I. of Central Macedonia), Copyright © 2014-2015.
 
 Our goals!
@@ -6,7 +6,7 @@ Here you can learn mathematics and how to use programs for mathematics solutions
 
 Support
 You can help us, just knowing us to your friends!
---------------------------------------------------------------------------------------------------------------------------------
+
 Καλώς ήρθατε στη δική μας Μαθηματική Ιστοσελίδα
 Αυτή είναι μια διαδραστική μαθηματική ιστοσελίδα, πρόκειται για ένα έργο για το Τ.Ε.Ι. Κεντρικής Μακεδονίας, Copyright © 2014-2015.
 
