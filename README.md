@@ -19,7 +19,7 @@ You can help us, just knowing us to your friends!
 JavaScript, Academic, HTML, php, Mathematics, MathJax, JSXGraph, Joomla, MySQL, Interactive, Netbeans, jQuery
 
 Συμμετείχαν στο project:
-Δημήτριος Μπαταρλής
+Δημήτριος Μπαταρλής,
 Ιωάννα Κουφάκη
 
    
